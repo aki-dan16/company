@@ -1,0 +1,21 @@
+# 秘密情報・セキュリティ
+secrets/
+.env
+*.env
+*.key
+*.pem
+*.p12
+
+# クライアント情報
+projects/client-*/contracts/
+projects/client-*/data/
+
+# システムファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ログ・一時ファイル
+*.log
+tmp/
+temp/
