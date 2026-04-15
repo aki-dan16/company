@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls projects/)",
+      "Bash(ls it/)",
+      "Bash(claude mcp *)",
+      "Bash(schtasks *)"
+    ]
+  }
+}
