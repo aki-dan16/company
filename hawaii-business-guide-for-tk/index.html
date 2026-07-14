@@ -364,6 +364,140 @@ footer{
   body.ov-open{overflow:hidden}
 }
 
+/* ---------- 変更履歴 ---------- */
+.updated-at{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  background:var(--card);
+  border:1px solid var(--accent);
+  border-left:6px solid var(--accent);
+  padding:14px 18px;
+  margin:0 0 18px;
+}
+.updated-at .ua-label{
+  font-size:11px;font-weight:700;letter-spacing:.14em;
+  color:#A34E2C;
+  white-space:nowrap;
+}
+.updated-at .ua-date{
+  font-size:19px;font-weight:700;color:var(--navy);
+  line-height:1.5;
+}
+.updated-at .ua-note{
+  font-size:12.5px;color:var(--muted);
+  margin-left:auto;
+}
+
+.cl-intro{
+  background:#F2F1EC;
+  border:1px solid var(--line);
+  padding:13px 16px;
+  margin:0 0 16px;
+  font-size:14px;line-height:1.75;
+}
+.cl-intro b{color:#A34E2C}
+
+details.cl{
+  border:1px solid var(--line);
+  background:var(--card);
+  padding:0;
+}
+details.cl>summary{
+  list-style:none;
+  cursor:pointer;
+  padding:12px 16px;
+  font-size:14px;font-weight:700;
+  color:var(--navy);
+  background:#F2F1EC;
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:8px;
+  min-height:44px;
+}
+details.cl>summary::-webkit-details-marker{display:none}
+details.cl>summary::before{content:"▼";font-size:10px;color:var(--muted)}
+details.cl:not([open])>summary::before{content:"▶"}
+details.cl:not([open])>summary{border-bottom:none}
+.cl-body{padding:14px 16px}
+
+.cl-entry{
+  border:1px solid var(--line);
+  border-radius:6px;
+  margin-bottom:14px;
+  overflow:hidden;
+}
+.cl-entry:last-child{margin-bottom:0}
+.cl-head{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;
+  padding:10px 14px;
+  background:#F4F3EF;
+  border-bottom:1px solid var(--line-2);
+}
+.cl-date{
+  font-size:14px;font-weight:700;color:var(--navy);
+  font-variant-numeric:tabular-nums;
+}
+.cl-type{
+  font-size:11.5px;font-weight:700;letter-spacing:.04em;
+  padding:3px 9px;border-radius:999px;
+  white-space:nowrap;
+  border:1px solid transparent;
+}
+.cl-type--initial{background:#E8E8E4;color:#4A4F58;border-color:#D5D5CE}
+.cl-type--ui{background:#E8E8E4;color:#4A4F58;border-color:#D5D5CE}
+.cl-type--new{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cl-type--add{background:var(--slate-soft);color:#2F5773;border-color:#C4D6E4}
+.cl-type--fix{
+  background:#C0392B;color:#fff;border-color:#A93226;
+  box-shadow:0 0 0 3px rgba(192,57,43,.14);
+}
+.cl-content{padding:12px 14px;font-size:14.5px;line-height:1.8}
+.cl-content>p{margin-bottom:8px}
+.cl-content>p:last-child{margin-bottom:0}
+.cl-content ul{margin:6px 0 8px 1.2em}
+.cl-content li{margin-bottom:4px}
+.cl-fix{
+  background:#FBF0EB;
+  border-left:4px solid #C0392B;
+  padding:10px 12px;
+  margin:8px 0;
+  font-size:14px;
+}
+.cl-fix .cl-fix-t{
+  display:block;font-size:11.5px;font-weight:700;letter-spacing:.06em;
+  color:#A93226;margin-bottom:5px;
+}
+.cl-fix .cl-old{color:var(--muted);text-decoration:line-through}
+.cl-fix .cl-new{font-weight:700;color:var(--navy)}
+.cl-chapters{
+  margin-top:10px;padding-top:9px;
+  border-top:1px dotted var(--line);
+  font-size:13px;
+}
+.cl-chapters .cl-ch-t{font-weight:700;color:var(--navy-2);margin-right:6px}
+.cl-chapters a{margin-right:12px;display:inline-block;min-height:32px;line-height:32px}
+.cl-more{
+  -webkit-appearance:none;appearance:none;
+  display:block;width:100%;
+  min-height:44px;padding:0 14px;
+  font-family:inherit;font-size:13.5px;font-weight:700;
+  color:var(--navy-2);background:#F2F1EC;
+  border:1px solid var(--line);border-radius:2px;
+  cursor:pointer;margin-top:10px;
+}
+.cl-more:hover{color:#fff;background:var(--accent);border-color:var(--accent)}
+
+/* 更新された章のバッジ */
+.upd-badge{
+  display:inline-block;
+  font-size:10.5px;font-weight:700;letter-spacing:.03em;
+  color:#fff;background:var(--accent);
+  padding:2px 8px;border-radius:999px;
+  margin-left:8px;vertical-align:3px;
+  white-space:nowrap;
+}
+.toc .upd-badge{
+  margin-left:6px;font-size:9.5px;padding:1px 6px;vertical-align:1px;
+}
+
 /* ---------- 追加ボックス：日本との対比 / 用語 / 質問 ---------- */
 .jp-compare{
   background:#EDF2F7;
@@ -677,6 +811,17 @@ a.tref:hover{color:var(--accent);border-bottom-color:var(--accent)}
   p.lead{font-size:15px;padding:12px 13px}
   ul,ol{margin-left:1.15em}
   .week{grid-template-columns:1fr;gap:10px}
+  .updated-at{
+    flex-direction:column;align-items:flex-start;gap:6px;
+    padding:13px 14px;
+  }
+  .updated-at .ua-date{font-size:17px}
+  .updated-at .ua-note{margin-left:0}
+  .cl-head{padding:10px 12px;gap:6px 10px}
+  .cl-date{font-size:13.5px}
+  .cl-content{padding:12px;font-size:14px}
+  .cl-body{padding:12px}
+  .cl-intro{padding:12px 13px;font-size:13.5px}
   .questions{padding:14px 15px}
   .jp-compare,.term{padding:12px 13px;font-size:14px}
   .jp-compare .jc-k{min-width:auto}
@@ -889,6 +1034,12 @@ a.tref:hover{color:var(--accent);border-bottom-color:var(--accent)}
   body{background:#fff;color:#000;font-size:10.5pt;line-height:1.6}
   .sidebar,.toc-toggle,footer,.fabs,.ov{display:none !important}
   .toolbar,.ck-reset,.search__results,.swipe-hint{display:none !important}
+  details.cl,.cl-intro,.cl-more,.upd-badge{display:none !important}
+  .updated-at{
+    border:1pt solid #0F1B2D;border-left:3pt solid #0F1B2D;
+    padding:6pt 8pt;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
   .tw-wrap::after,.tw-wrap::before{display:none !important}
   .questions,.jp-compare,.term,.week-card,.gterm,.ck-bar{
     page-break-inside:avoid;break-inside:avoid;
@@ -932,7 +1083,7 @@ a.tref:hover{color:var(--accent);border-bottom-color:var(--accent)}
     <h1>ハワイで会社を経営する上で知っておくべきこと</h1>
     <p class="sub">日本在住のオーナーが、ハワイ州の既存法人を買収して事業を継続するにあたり、法令、税務、雇用、内部統制の各領域で最低限把握しておく必要がある事項を整理した実務資料です。</p>
     <div class="meta-row">
-      <span><b>最終更新：2026年7月</b></span>
+      <span id="mastUpdated"><b>最終更新：2026年7月14日（月）21:54 JST</b></span>
       <span>対象：<b>米国法人の経営が初めてのオーナー</b></span>
       <span>前提：<b>ハワイ州の清掃会社を法人ごと取得済み / ビザ未保有</b></span>
       <span>管轄：<b>連邦 / ハワイ州 / ホノルル市郡</b></span>
@@ -958,6 +1109,26 @@ a.tref:hover{color:var(--accent);border-bottom-color:var(--accent)}
   </nav>
 
   <main class="content">
+
+  <!-- ============ 変更履歴 ============ -->
+  <section id="updates">
+    <h2><span class="chap">Updates</span>変更履歴</h2>
+
+    <div class="updated-at">
+      <span class="ua-label">最終更新</span>
+      <span class="ua-date" id="uaDate">2026年7月14日（月）21:54 JST</span>
+      <span class="ua-note">日本時間で表記しています</span>
+    </div>
+
+    <div class="cl-intro">
+      本資料は、制度の変更や新しい情報に応じて更新されます。更新があった場合は、この欄に日時と変更点を記載します。特に <b>［内容を訂正］</b> と表示されている項目は、<b>以前の記述が誤っていた箇所</b>です。お手数ですが、該当する章を読み直してください。
+    </div>
+
+    <details class="cl" id="clBox" open>
+      <summary>変更履歴を見る</summary>
+      <div class="cl-body" id="clBody"></div>
+    </details>
+  </section>
 
   <!-- ============ 0 ============ -->
   <section id="s0">
@@ -5813,6 +5984,42 @@ a.tref:hover{color:var(--accent);border-bottom-color:var(--accent)}
 </div>
 
 <script>
+/* =========================================================
+   変更履歴（ここに追記するだけで、最終更新日時、変更履歴、
+   章の更新バッジ、目次の更新バッジが、すべて自動で更新される）
+
+   新しい更新は、この配列の【先頭】に追加すること。
+
+   type:
+     initial … 初版公開（グレー）
+     new     … 新章追加（アクセント色）
+     add     … 内容を追加（青系）
+     fix     … 内容を訂正（赤系。読者が既に読んだ内容が誤っていた場合）
+     ui      … 表示を改善（グレー。内容の変更を伴わないもの）
+
+   fixes: 訂正があった場合に書く。
+     { old: "以前の記述", new: "正しい記述" }
+
+   chapters: 更新マークを付ける章のセクションID（例 's6', 's9tip'）
+   ========================================================= */
+var CHANGELOG = [
+  {
+    date: '2026-07-14T21:54+09:00',
+    label: '初版公開',
+    type: 'initial',
+    summary: '初版を公開しました。',
+    details: [
+      '米国とハワイで会社を経営する上で必要な知識を、全24章にまとめました',
+      'ビザ、税務、雇用、保険、契約、内部統制、撤退までを扱っています',
+      '専門用語は用語集（93語）で解説しています',
+      '最初の90日でやるべきことを、チェックリストにしています',
+      '各章の末尾に「専門家に聞くべき質問」を用意しています'
+    ],
+    fixes: [],
+    chapters: []
+  }
+];
+
 (function () {
   'use strict';
 
@@ -5824,10 +6031,187 @@ a.tref:hover{color:var(--accent);border-bottom-color:var(--accent)}
      ========================================================= */
   sections.forEach(function (sec) {
     var h2 = sec.querySelector('h2');
-    if (!h2) { return; }
+    if (!h2 || sec.id === 'updates') { return; }
     var b = document.createElement('span');
     b.className = 'h-badge';
     b.textContent = '最終確認：2026年7月';
+    h2.appendChild(b);
+  });
+
+  /* =========================================================
+     0. 変更履歴の描画（CHANGELOG 配列から自動生成する）
+     ========================================================= */
+  var TYPE_LABEL = {
+    initial: '初版公開',
+    'new': '新章追加',
+    add: '内容を追加',
+    fix: '内容を訂正',
+    ui: '表示を改善'
+  };
+  var WD = ['日', '月', '火', '水', '木', '金', '土'];
+
+  function jstText(iso) {
+    // ISO文字列（+09:00 付き）を、日本時間の表記に整形する
+    var d = new Date(iso);
+    var jst = new Date(d.getTime() + (9 * 60 + d.getTimezoneOffset()) * 60000);
+    var mm = jst.getMinutes();
+    return jst.getFullYear() + '年' + (jst.getMonth() + 1) + '月' + jst.getDate() + '日'
+      + '（' + WD[jst.getDay()] + '）'
+      + jst.getHours() + ':' + (mm < 10 ? '0' + mm : mm) + ' JST';
+  }
+
+  function shortDate(iso) {
+    var d = new Date(iso);
+    var jst = new Date(d.getTime() + (9 * 60 + d.getTimezoneOffset()) * 60000);
+    return (jst.getMonth() + 1) + '/' + jst.getDate();
+  }
+
+  function chapterTitleOf(id) {
+    var sec = document.getElementById(id);
+    if (!sec) { return null; }
+    var h2 = sec.querySelector('h2');
+    if (!h2) { return null; }
+    var chap = h2.querySelector('.chap');
+    var num = chap ? chap.textContent.replace(/[^0-9]/g, '') : '';
+    var clone = h2.cloneNode(true);
+    Array.prototype.forEach.call(clone.querySelectorAll('.chap,.h-badge,.upd-badge'), function (x) { x.remove(); });
+    var title = clone.textContent.trim();
+    return (num ? '第' + num + '章 ' : '') + title;
+  }
+
+  var latest = CHANGELOG[0] || null;
+  var updatedChapters = latest ? (latest.chapters || []) : [];
+
+  // 最終更新日時
+  if (latest) {
+    var txt = jstText(latest.date);
+    var ua = document.getElementById('uaDate');
+    if (ua) { ua.textContent = txt; }
+    var mast = document.getElementById('mastUpdated');
+    if (mast) { mast.innerHTML = '<b>最終更新：' + txt + '</b>'; }
+  }
+
+  // 履歴の本体
+  (function renderChangelog() {
+    var box = document.getElementById('clBody');
+    if (!box) { return; }
+    var SHOW = 3;
+
+    function entryEl(e) {
+      var wrap = document.createElement('div');
+      wrap.className = 'cl-entry';
+
+      var head = document.createElement('div');
+      head.className = 'cl-head';
+      var d = document.createElement('span');
+      d.className = 'cl-date';
+      d.textContent = jstText(e.date);
+      var t = document.createElement('span');
+      t.className = 'cl-type cl-type--' + e.type;
+      t.textContent = e.label || TYPE_LABEL[e.type] || '更新';
+      head.appendChild(d);
+      head.appendChild(t);
+
+      var body = document.createElement('div');
+      body.className = 'cl-content';
+
+      if (e.summary) {
+        var p = document.createElement('p');
+        p.textContent = e.summary;
+        body.appendChild(p);
+      }
+
+      // 訂正：誤っていた内容と、正しい内容の両方を示す
+      (e.fixes || []).forEach(function (f) {
+        var fx = document.createElement('div');
+        fx.className = 'cl-fix';
+        var ft = document.createElement('span');
+        ft.className = 'cl-fix-t';
+        ft.textContent = 'この箇所は、以前の記述が誤っていました';
+        fx.appendChild(ft);
+        var p1 = document.createElement('p');
+        p1.innerHTML = '以前の記述：<span class="cl-old"></span>';
+        p1.querySelector('.cl-old').textContent = f.old;
+        var p2 = document.createElement('p');
+        p2.innerHTML = '正しい記述：<span class="cl-new"></span>';
+        p2.querySelector('.cl-new').textContent = f['new'];
+        fx.appendChild(p1);
+        fx.appendChild(p2);
+        body.appendChild(fx);
+      });
+
+      if (e.details && e.details.length) {
+        var h = document.createElement('p');
+        h.innerHTML = '<strong>主な内容</strong>';
+        body.appendChild(h);
+        var ul = document.createElement('ul');
+        e.details.forEach(function (line) {
+          var li = document.createElement('li');
+          li.textContent = line;
+          ul.appendChild(li);
+        });
+        body.appendChild(ul);
+      }
+
+      var chaps = (e.chapters || []).map(function (id) {
+        var title = chapterTitleOf(id);
+        return title ? { id: id, title: title } : null;
+      }).filter(Boolean);
+
+      if (chaps.length) {
+        var cw = document.createElement('div');
+        cw.className = 'cl-chapters';
+        var ct = document.createElement('span');
+        ct.className = 'cl-ch-t';
+        ct.textContent = '読み直す章：';
+        cw.appendChild(ct);
+        chaps.forEach(function (c) {
+          var a = document.createElement('a');
+          a.href = '#' + c.id;
+          a.textContent = c.title;
+          cw.appendChild(a);
+        });
+        body.appendChild(cw);
+      }
+
+      wrap.appendChild(head);
+      wrap.appendChild(body);
+      return wrap;
+    }
+
+    box.innerHTML = '';
+    CHANGELOG.slice(0, SHOW).forEach(function (e) { box.appendChild(entryEl(e)); });
+
+    if (CHANGELOG.length > SHOW) {
+      var rest = document.createElement('div');
+      rest.style.display = 'none';
+      CHANGELOG.slice(SHOW).forEach(function (e) { rest.appendChild(entryEl(e)); });
+      box.appendChild(rest);
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'cl-more';
+      btn.textContent = '過去の変更履歴をすべて表示（残り ' + (CHANGELOG.length - SHOW) + ' 件）';
+      btn.addEventListener('click', function () {
+        var open = rest.style.display === 'none';
+        rest.style.display = open ? 'block' : 'none';
+        btn.textContent = open
+          ? '過去の変更履歴を閉じる'
+          : '過去の変更履歴をすべて表示（残り ' + (CHANGELOG.length - SHOW) + ' 件）';
+      });
+      box.appendChild(btn);
+    }
+  })();
+
+  // 更新された章の見出しにバッジを付ける
+  updatedChapters.forEach(function (id) {
+    var sec = document.getElementById(id);
+    if (!sec) { return; }
+    var h2 = sec.querySelector('h2');
+    if (!h2) { return; }
+    var b = document.createElement('span');
+    b.className = 'upd-badge';
+    b.textContent = shortDate(latest.date) + ' 更新';
     h2.appendChild(b);
   });
 
@@ -5880,6 +6264,12 @@ a.tref:hover{color:var(--accent);border-bottom-color:var(--accent)}
       num.textContent = ch.num === '' ? '＊' : ch.num;
       a.appendChild(num);
       a.appendChild(document.createTextNode(ch.title));
+      if (updatedChapters.indexOf(ch.id) !== -1) {
+        var ub = document.createElement('span');
+        ub.className = 'upd-badge';
+        ub.textContent = shortDate(latest.date) + ' 更新';
+        a.appendChild(ub);
+      }
       row.appendChild(a);
 
       var subUl = null;
