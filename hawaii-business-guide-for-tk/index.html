@@ -356,9 +356,293 @@ footer{
   body.ov-open{overflow:hidden}
 }
 
+/* ---------- 追加ボックス：日本との対比 / 用語 / 質問 ---------- */
+.jp-compare{
+  background:#EDF2F7;
+  border:1px solid #C9D8E4;
+  border-left:5px solid var(--slate);
+  border-radius:0 2px 2px 0;
+  padding:13px 16px;margin:14px 0 16px;
+  font-size:14.5px;line-height:1.75;
+}
+.jp-compare .jc-t{
+  display:block;font-size:12px;font-weight:700;letter-spacing:.08em;
+  color:#2F5773;margin-bottom:6px;
+}
+.jp-compare .jc-row{display:block;margin-bottom:6px}
+.jp-compare .jc-row:last-child{margin-bottom:0}
+.jp-compare .jc-k{
+  display:inline-block;min-width:96px;
+  font-size:11.5px;font-weight:700;letter-spacing:.06em;
+  color:#fff;background:var(--slate);
+  padding:1px 8px;border-radius:2px;margin-right:8px;
+  vertical-align:1px;
+}
+.jp-compare .jc-k.jc-k--us{background:var(--accent)}
+.jp-compare .jc-k.jc-k--diff{background:var(--navy-2)}
+
+.term{
+  background:#F1F1EE;
+  border:1px solid var(--line);
+  border-left:4px solid #9BA1AB;
+  padding:11px 14px;margin:12px 0 14px;
+  font-size:14px;line-height:1.75;color:var(--navy-2);
+}
+.term .tm-t{
+  display:block;font-size:11.5px;font-weight:700;letter-spacing:.08em;
+  color:var(--muted);margin-bottom:4px;
+}
+.term b{color:var(--navy)}
+
+.questions{
+  border:1.5px solid var(--accent);
+  border-top:5px solid var(--accent);
+  background:#FDF8F5;
+  padding:15px 18px;margin:22px 0 4px;
+  border-radius:0 0 2px 2px;
+}
+.questions .q-t{
+  display:block;font-size:13px;font-weight:700;letter-spacing:.06em;
+  color:#A34E2C;margin-bottom:9px;
+}
+.questions ol{margin:0 0 0 1.25em}
+.questions li{margin-bottom:8px;font-size:14.5px;line-height:1.75}
+.questions li:last-child{margin-bottom:0}
+.questions .q-to{
+  display:inline-block;font-size:11px;font-weight:700;
+  color:#7A3E24;background:var(--accent-soft);border:1px solid #E2CCC0;
+  padding:0 6px;border-radius:2px;margin-right:6px;vertical-align:1px;
+}
+
+/* 見出し横の最終確認バッジ */
+.h-badge{
+  display:inline-block;
+  font-size:10.5px;font-weight:600;letter-spacing:.04em;
+  color:var(--muted);background:#EFEEE9;
+  border:1px solid var(--line);
+  padding:1px 7px;border-radius:999px;
+  margin-left:10px;vertical-align:3px;
+  white-space:nowrap;
+}
+
+/* 用語集 */
+.gterm{
+  border-bottom:1px solid var(--line-2);
+  padding:12px 0 11px;
+  scroll-margin-top:16px;
+}
+.gterm:last-child{border-bottom:none}
+.gterm .g-h{
+  font-size:15.5px;font-weight:700;color:var(--navy);
+  margin-bottom:4px;
+}
+.gterm .g-h .g-kana{
+  font-size:11.5px;font-weight:600;color:var(--muted);
+  margin-left:8px;letter-spacing:.04em;
+}
+.gterm p{font-size:14.5px;margin-bottom:5px}
+.gterm .g-links{font-size:12px;color:var(--muted)}
+.gterm .g-links a{margin-right:14px}
+.g-index{
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin:12px 0 18px;padding:12px;
+  background:#F2F1EC;border:1px solid var(--line);
+}
+.g-index a{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:44px;min-height:44px;padding:0 10px;
+  font-size:13px;font-weight:700;text-decoration:none;
+  color:var(--navy-2);background:var(--card);
+  border:1px solid var(--line);border-radius:2px;
+}
+.g-index a:hover{color:#fff;background:var(--accent);border-color:var(--accent)}
+.g-group{scroll-margin-top:16px}
+.g-group>h3{margin-top:22px}
+
+/* 本文中の用語リンク */
+a.tref{
+  color:var(--navy-2);
+  text-decoration:none;
+  border-bottom:1px dotted var(--slate);
+  cursor:help;
+}
+a.tref:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* ---------- ヘッダーのツールバー（検索 / 印刷） ---------- */
+.toolbar{
+  margin-top:20px;
+  display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;
+}
+.search{position:relative;flex:1 1 320px;max-width:460px}
+.search input{
+  width:100%;
+  font-family:inherit;font-size:16px;
+  color:#EDEFF2;background:#1B2A40;
+  border:1px solid #33455F;border-radius:2px;
+  padding:11px 38px 11px 13px;
+  min-height:46px;
+  -webkit-appearance:none;appearance:none;
+}
+.search input::placeholder{color:#7C8CA3}
+.search input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.search__clear{
+  position:absolute;top:0;right:0;
+  width:44px;height:100%;
+  display:none;align-items:center;justify-content:center;
+  background:none;border:none;cursor:pointer;
+  color:#8FA1B8;font-size:16px;font-family:inherit;
+}
+.search__clear.show{display:flex}
+.search__results{
+  display:none;
+  position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:80;
+  max-height:340px;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  background:var(--card);
+  border:1px solid var(--line);
+  box-shadow:0 8px 24px rgba(15,27,45,.28);
+}
+.search__results.show{display:block}
+.search__results button{
+  display:block;width:100%;text-align:left;
+  font-family:inherit;font-size:13.5px;line-height:1.6;
+  background:none;border:none;cursor:pointer;
+  border-bottom:1px solid var(--line-2);
+  padding:10px 13px;min-height:44px;
+  color:var(--text);
+}
+.search__results button:last-child{border-bottom:none}
+.search__results button:hover{background:#F4F3EF}
+.search__results .r-sec{
+  display:block;font-size:11px;font-weight:700;letter-spacing:.05em;
+  color:var(--accent);margin-bottom:2px;
+}
+.search__results mark{background:var(--accent-soft);color:var(--navy);font-weight:700}
+.search__results .r-none{padding:14px 13px;font-size:13px;color:var(--muted)}
+.btn-print{
+  -webkit-appearance:none;appearance:none;
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:46px;padding:0 18px;
+  font-family:inherit;font-size:13.5px;font-weight:700;
+  color:#D6DDE5;background:transparent;
+  border:1px solid #33455F;border-radius:2px;
+  cursor:pointer;white-space:nowrap;
+}
+.btn-print:hover{color:#fff;border-color:var(--accent);background:rgba(192,96,58,.18)}
+
+/* 検索でジャンプした箇所の一時ハイライト */
+.flash{animation:flash 1.8s ease-out 1}
+@keyframes flash{
+  0%,25%{background:#F6E3D8}
+  100%{background:transparent}
+}
+
+/* ---------- 2階層の目次 ---------- */
+.toc>li{border-bottom:1px solid var(--line-2)}
+.toc>li:last-child{border-bottom:none}
+.toc .toc-row{display:flex;align-items:stretch}
+.toc .toc-row>a{flex:1 1 auto;min-width:0}
+.toc .sub-toggle{
+  -webkit-appearance:none;appearance:none;
+  flex:0 0 auto;width:28px;
+  background:none;border:none;cursor:pointer;
+  color:#9BA1AB;font-size:9px;font-family:inherit;
+  line-height:1;
+}
+.toc .sub-toggle::before{content:"▶"}
+.toc .sub-toggle[aria-expanded="true"]::before{content:"▼"}
+.toc .subs{
+  display:none;list-style:none;margin:0 0 6px 0;padding:0;
+}
+.toc .subs.open{display:block}
+.toc .subs a{
+  padding:5px 8px 5px 30px;
+  font-size:12px;color:#7A828F;
+  border-left:2px solid transparent;
+}
+.toc .subs a:hover{color:var(--navy)}
+.toc .subs a.active{color:var(--accent);border-left-color:var(--accent);font-weight:600}
+
+/* ---------- 90日チェックリスト（localStorage） ---------- */
+.ck-bar{
+  display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+  background:var(--navy);color:#E7EBF0;
+  padding:12px 16px;margin:14px 0 18px;
+  border-left:5px solid var(--accent);
+}
+.ck-bar .ck-count{font-size:14px;font-weight:700;letter-spacing:.03em}
+.ck-bar .ck-count b{color:var(--accent);font-size:17px}
+.ck-bar .ck-track{
+  flex:1 1 160px;height:7px;min-width:120px;
+  background:#2C3E57;border-radius:999px;overflow:hidden;
+}
+.ck-bar .ck-fill{
+  display:block;height:100%;width:0;
+  background:var(--accent);
+  transition:width .25s;
+}
+.ck-reset{
+  -webkit-appearance:none;appearance:none;
+  min-height:44px;padding:0 14px;
+  font-family:inherit;font-size:12.5px;font-weight:700;
+  color:#D6DDE5;background:transparent;
+  border:1px solid #46586F;border-radius:2px;cursor:pointer;
+}
+.ck-reset:hover{color:#fff;border-color:var(--accent);background:rgba(192,96,58,.2)}
+.ck li{position:relative;padding-left:30px}
+.ck li input[type="checkbox"]{
+  position:absolute;left:0;top:3px;
+  width:19px;height:19px;margin:0;
+  accent-color:var(--accent);
+  cursor:pointer;
+}
+.ck li.done>label{color:var(--muted);text-decoration:line-through}
+.ck li>label{cursor:pointer;display:block}
+
+/* ---------- 最初の1週間カード ---------- */
+.week{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:12px;margin:16px 0 6px;
+}
+.week-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-top:4px solid var(--accent);
+  padding:14px 15px;
+  display:flex;flex-direction:column;
+}
+.week-card .w-n{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;
+  font-size:13px;font-weight:700;color:#fff;
+  background:var(--navy);border-radius:999px;
+  margin-bottom:8px;
+}
+.week-card .w-h{
+  font-size:15px;font-weight:700;color:var(--navy);
+  line-height:1.6;margin-bottom:7px;
+}
+.week-card .w-why{
+  font-size:13px;line-height:1.7;color:var(--navy-2);
+  padding-top:7px;border-top:1px dotted var(--line);
+  margin-top:auto;
+}
+.week-card .w-why b{color:#A34E2C}
+
 /* ---------- mobile ---------- */
 @media (max-width:768px){
   body{line-height:1.8}
+  .toolbar{margin-top:16px;gap:8px}
+  .search{flex:1 1 100%;max-width:none}
+  .btn-print{flex:1 1 100%}
+  .week{grid-template-columns:1fr;gap:10px}
+  .questions{padding:14px 15px}
+  .questions li{font-size:14.5px}
+  .jp-compare,.term{padding:12px 13px;font-size:14px}
+  .jp-compare .jc-k{min-width:auto}
+  .g-index{padding:10px}
+  .ck-bar{padding:11px 13px;gap:9px}
 
   /* サイドバー目次は非表示にし、FAB とオーバーレイに置き換える */
   .sidebar,.toc-toggle{display:none}
@@ -495,7 +779,16 @@ footer{
   html{scroll-behavior:auto}
   body{background:#fff;color:#000;font-size:10.5pt;line-height:1.6}
   .sidebar,.toc-toggle,footer,.fabs,.ov{display:none !important}
+  .toolbar,.ck-reset,.search__results{display:none !important}
   .tw-wrap::after,.tw-wrap::before{display:none !important}
+  .questions,.jp-compare,.term,.week-card,.gterm,.ck-bar{
+    page-break-inside:avoid;break-inside:avoid;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
+  .week{display:block}
+  .week-card{margin-bottom:8pt}
+  .h-badge{font-size:7.5pt;color:#555}
+  .ck li input[type="checkbox"]{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .masthead{
     background:#fff;color:#000;border-bottom:2pt solid #0F1B2D;padding:0 0 10pt;
   }
@@ -532,8 +825,17 @@ footer{
     <div class="meta-row">
       <span><b>最終更新：2026年7月</b></span>
       <span>対象：<b>米国法人の経営が初めてのオーナー</b></span>
-      <span>前提：<b>ハワイ州法人を取得済み / ビザ未保有</b></span>
+      <span>前提：<b>ハワイ州の清掃会社を法人ごと取得済み / ビザ未保有</b></span>
       <span>管轄：<b>連邦 / ハワイ州 / ホノルル市郡</b></span>
+    </div>
+    <div class="toolbar">
+      <div class="search">
+        <label for="q" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">資料内を検索</label>
+        <input type="search" id="q" placeholder="資料内を検索（例：PHCA、解雇、GET）" autocomplete="off" autocorrect="off" spellcheck="false">
+        <button type="button" class="search__clear" id="qClear" aria-label="検索をクリア">✕</button>
+        <div class="search__results" id="qResults" role="listbox" aria-label="検索結果"></div>
+      </div>
+      <button type="button" class="btn-print" id="btnPrint">印刷 / PDF保存</button>
     </div>
   </div>
 </header>
@@ -542,24 +844,8 @@ footer{
 
   <nav class="sidebar" aria-label="目次">
     <div class="toc-title">Contents</div>
-    <ul class="toc" id="toc">
-      <li><a href="#s0"><span class="num">0</span>はじめに / 免責事項</a></li>
-      <li><a href="#s1"><span class="num">1</span>総論：米国で会社を持つということ</a></li>
-      <li><a href="#s2"><span class="num">2</span>買収形態の理解</a></li>
-      <li><a href="#s3"><span class="num">3</span>ビザと就労資格</a></li>
-      <li><a href="#s4"><span class="num">4</span>会社の器と登記</a></li>
-      <li><a href="#s5"><span class="num">5</span>税務</a></li>
-      <li><a href="#s6"><span class="num">6</span>雇用</a></li>
-      <li><a href="#s7"><span class="num">7</span>従業員ハンドブック</a></li>
-      <li><a href="#s8"><span class="num">8</span>保険と許認可</a></li>
-      <li><a href="#s9"><span class="num">9</span>内部統制と affinity fraud</a></li>
-      <li><a href="#s10"><span class="num">10</span>銀行、給与、会計インフラ</a></li>
-      <li><a href="#s11"><span class="num">11</span>日本との違い早見表</a></li>
-      <li><a href="#s12"><span class="num">12</span>最初の90日チェックリスト</a></li>
-      <li><a href="#s13"><span class="num">13</span>専門家の探し方</a></li>
-      <li><a href="#s14"><span class="num">14</span>参考リンク集</a></li>
-      <li><a href="#s15"><span class="num">15</span>免責事項（再掲）</a></li>
-    </ul>
+    <!-- 目次は各セクションの見出しから自動生成する（章と節の2階層） -->
+    <ul class="toc" id="toc"></ul>
   </nav>
 
   <main class="content">
@@ -573,8 +859,15 @@ footer{
       <p>本資料は一般的な情報提供を目的としたものであり、法律、税務、移民に関する助言ではありません。作成者は弁護士、公認会計士、移民コンサルタントではありません。個別の判断は必ず有資格の専門家にご相談ください。情報は2026年7月時点のものであり、法令および料率は変更される可能性があります。</p>
     </div>
 
+    <div class="alert alert--warn">
+      <span class="at">警告：本資料は専門家のレビューを受けていません</span>
+      <p><span class="hl">本資料は公開情報をもとに整理したものであり、有資格の専門家によるレビューを受けていません。制度は変更される可能性があり、内容に誤りが含まれる可能性があります。実際の判断は必ず現地の専門家に確認してください。</span></p>
+      <p>この資料の目的は、あなたが専門家に「何を聞けばよいか」を分かった状態で面談に臨めるようにすることです。各章の末尾にある「専門家に聞くべき質問」を、そのまま持って行ってください。<strong>本資料の記述を根拠に、専門家の確認なしで判断しないでください。</strong></p>
+    </div>
+
     <h3>0-1 この資料が想定している状況</h3>
-    <p>日本に居住したまま、ハワイ州の既存法人を買収し、現地の従業員と現地マネージャーによって事業を継続する。オーナー本人は米国の就労ビザを持たず、渡米は短期滞在に限られる。この状況には、日本国内で会社を経営する場合には存在しない固有のリスクが同時に複数発生します。</p>
+    <p>日本に居住したまま、ハワイ州の既存の清掃会社を法人ごと買収し、現地の従業員と現地マネージャーによって事業を継続する。買収額は約100万円（推定で 6,500ドル前後）。オーナー本人は米国の就労ビザを持たず、渡米は短期滞在に限られる。日本では会社を経営しているが、米国での経営は初めてであり、英語での法務と税務の検証には限界がある。</p>
+    <p>この状況には、日本国内で会社を経営する場合には存在しない固有のリスクが、同時に複数発生します。<span class="hl">特に、買収額が小さいことは「損失が小さい」ことを意味しません。</span>法人ごと買った場合、買収額とは無関係に、その法人が抱えていた債務と違反状態をすべて引き継いでいるためです（第2章）。</p>
 
     <h3>0-2 優先順位</h3>
     <p>すべてを同時に解決することはできません。放置した場合に事業が停止する、または個人資産に及ぶ順に並べると次のとおりです。</p>
@@ -598,7 +891,7 @@ footer{
 
     <h3>0-3 この資料の使い方</h3>
     <ul>
-      <li>第12章の「最初の90日チェックリスト」を先に印刷し、各章はその裏付けとして読んでください。</li>
+      <li>第16章の「最初の90日チェックリスト」を先に印刷し、各章はその裏付けとして読んでください。</li>
       <li>各章は「結論、理由、数字、出典」の順に並んでいます。急ぐ場合は各章冒頭の枠囲みだけを読んでください。</li>
       <li>金額、税率、罰則はすべて出典URLを併記しています。専門家との面談前に、原典を確認してから臨んでください。</li>
       <li>「<span class="est">推定</span>」の表示がある数値は、法定値ではなく、一般的な水準からの試算です。実額は業種、規模、保険会社により変動します。</li>
@@ -606,7 +899,89 @@ footer{
 
     <div class="alert alert--key">
       <span class="at">重要</span>
-      <p>本資料に登場する専門家は、すべて「公的機関の検索窓口」として記載しています。特定の事務所や個人を推奨するものではありません。専門家の選定については第13章を参照してください。</p>
+      <p>本資料に登場する専門家は、すべて「公的機関の検索窓口」として記載しています。特定の事務所や個人を推奨するものではありません。専門家の選定については第17章を参照してください。</p>
+    </div>
+  </section>
+
+  <!-- ============ 最初の1週間 ============ -->
+  <section id="week1">
+    <h2><span class="chap">First Week</span>まず最初の1週間でやること</h2>
+
+    <p class="lead">この5つは、放置すると日単位で損害が増えるか、すでに個人の資産が危険にさらされている可能性がある項目です。第1章から順に読む前に、まずこの5つの現状確認から始めてください。確認だけなら、いずれも数日でできます。</p>
+
+    <div class="week">
+      <div class="week-card">
+        <span class="w-n">1</span>
+        <div class="w-h">今、従業員に健康保険を提供しているか確認する</div>
+        <p class="w-why"><b>なぜ今すぐか：</b>提供義務（PHCA）の違反は1日単位で罰金が積み上がり、最悪は営業停止になるため。（<a href="#s6">第6章 6-3</a>）</p>
+      </div>
+      <div class="week-card">
+        <span class="w-n">2</span>
+        <div class="w-h">前オーナーの未払税（GETと給与源泉税）がないか確認する</div>
+        <p class="w-why"><b>なぜ今すぐか：</b>法人ごと買った場合、これらは全部あなたの債務になっているため。給与源泉税の未納は個人責任にも及ぶ。（<a href="#s2">第2章</a>、<a href="#s5">第5章</a>）</p>
+      </div>
+      <div class="week-card">
+        <span class="w-n">3</span>
+        <div class="w-h">従業員が「業務委託」扱いになっていないか確認する</div>
+        <p class="w-why"><b>なぜ今すぐか：</b>誤分類は遡及課税と罰金の対象で、清掃業で最も多い違反であるため。（<a href="#s6">第6章 6-7、6-16</a>）</p>
+      </div>
+      <div class="week-card">
+        <span class="w-n">4</span>
+        <div class="w-h">賃貸契約（リース）に個人保証とオーナー変更条項がないか確認する</div>
+        <p class="w-why"><b>なぜ今すぐか：</b>知らないうちに個人で数十万ドルを保証している可能性があるため。（<a href="#s11">第11章</a>）</p>
+      </div>
+      <div class="week-card">
+        <span class="w-n">5</span>
+        <div class="w-h">会社が州に対して Good Standing（正常な登記状態）か確認する</div>
+        <p class="w-why"><b>なぜ今すぐか：</b>行政解散されていると、そもそも合法に営業できないため。（<a href="#s4">第4章 4-4</a>）</p>
+      </div>
+    </div>
+
+    <div class="tw">
+      <table>
+        <caption>最初の1週間：確認の手順と、確認する場所</caption>
+        <thead>
+          <tr><th class="num">#</th><th>確認すること</th><th>どこで確認するか</th><th>誰に聞くか</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">1</td>
+            <td>従業員ごとの週の労働時間と月収。医療保険の加入状況。HC-5（免除届）の有無と期限</td>
+            <td>給与記録、保険証券、従業員ファイル。制度の詳細は <a href="https://labor.hawaii.gov/dcd/home/about-phc/">labor.hawaii.gov</a></td>
+            <td>保険ブローカー、労働法専門の弁護士</td>
+          </tr>
+          <tr>
+            <td class="num">2</td>
+            <td>GETの申告履歴（G-45とG-49）と残高。連邦の Form 941 の納付状況</td>
+            <td><a href="https://hitax.hawaii.gov/">Hawaii Tax Online</a>、<a href="https://tax.hawaii.gov/geninfo/taxclearance/">Tax Clearance（Form A-6）</a>、<a href="https://www.eftps.gov/">EFTPS</a></td>
+            <td>ハワイの制度に精通したCPA（第13章）</td>
+          </tr>
+          <tr>
+            <td class="num">3</td>
+            <td>1099で支払っている人がいるか。いる場合、指揮命令、時間拘束、道具支給の実態</td>
+            <td>支払記録、契約書、実際の作業の指示方法</td>
+            <td>労働法専門の弁護士、CPA</td>
+          </tr>
+          <tr>
+            <td class="num">4</td>
+            <td>リース契約書の全文。個人保証（Personal Guaranty）、change of control 条項、残期間、賃料</td>
+            <td>契約書の原本。前オーナーから受領していない場合は、直ちに請求する</td>
+            <td>不動産取引を扱う弁護士</td>
+          </tr>
+          <tr>
+            <td class="num">5</td>
+            <td>法人の登記状態（Good Standing か、行政解散していないか）。Registered Agent は誰か</td>
+            <td><a href="https://hbe.ehawaii.gov/documents/search.html">DCCA Business Entity Search</a>（無料、誰でも検索できる）</td>
+            <td>企業法務の弁護士</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert--key">
+      <span class="at">重要：この5つに共通する構造</span>
+      <p>いずれも、<span class="hl">「買った会社が、すでに違反状態にあるかどうか」を確認する作業</span>です。あなたが何かを新たに始める前の話です。法人ごと買った場合、前オーナーの違反状態は、買収の瞬間からあなたの違反状態になっています（第2章）。</p>
+      <p>そして、<strong>発見した違反を自主的に是正する方が、行政に発見されるよりも、常に軽く済みます。</strong>確認を先延ばしにする合理的な理由はありません。</p>
     </div>
   </section>
 
@@ -669,7 +1044,7 @@ footer{
       <span class="at">重要</span>
       <p><span class="hl">会社の資産と個人の資産を分離すること</span>が、有限責任を維持する前提条件です。会社の口座から個人の支出を行う、会社と個人の間で記録のない金銭移動を行う、取締役会記録や年次登記を維持しない。これらはいずれも corporate veil を貫通される典型的な事実として扱われます。</p>
     </div>
-    <p class="src"><b>出典：</b>IRS Trust Fund Recovery Penalty <a href="https://www.irs.gov/individuals/international-taxpayers/trust-fund-recovery-penalty">https://www.irs.gov/individuals/international-taxpayers/trust-fund-recovery-penalty</a> / Hawaii DLIR Workers' Compensation <a href="https://labor.hawaii.gov/dcd/home/about-wc/">https://labor.hawaii.gov/dcd/home/about-wc/</a></p>
+    <p class="src"><b>出典：</b>IRS Trust Fund Recovery Penalty <a href="https://www.irs.gov/individuals/international-taxpayers/trust-fund-recovery-penalty">https://www.irs.gov/individuals/international-taxpayers/trust-fund-recovery-penalty</a> / Hawaii DLIR Workers' Compensation <a href="https://labor.hawaii.gov/dcd/">https://labor.hawaii.gov/dcd/</a></p>
 
     <h3>1-4 訴訟社会であることの実務的意味</h3>
     <p>米国では、原則として<span class="hl">勝訴しても自分の弁護士費用は自分で負担します</span>（American Rule）。日本の感覚では「不当な請求なら争えば取り返せる」と考えがちですが、米国では、争って勝っても弁護士費用は戻ってきません。</p>
@@ -683,6 +1058,14 @@ footer{
     <div class="alert alert--tip">
       <span class="at">ヒント</span>
       <p>日本では「争えば費用は相手持ちになることがある」と考えられがちですが、米国では契約書に「敗訴者が勝訴者の弁護士費用を負担する（prevailing party attorney's fees）」条項を明記して初めて、その回収可能性が生じます。今後締結するすべての契約書で、この条項の有無を確認してください。</p>
+    </div>
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第1章）</span>
+      <ol>
+        <li><span class="q-to">弁護士へ</span>「私の会社で、法人格を貫通して私個人に責任が及び得る場面を、具体的に列挙してください。今すぐ手を打つべきものはどれですか。」</li>
+        <li><span class="q-to">弁護士へ</span>「今後締結する契約書に、prevailing party attorney's fees（勝訴者の弁護士費用を敗訴者が負担する）条項を入れるべきですか。入れた場合、当社にとって有利になりますか、不利になりますか。」</li>
+        <li><span class="q-to">弁護士 / CPAへ</span>「会社の資産と私個人の資産の分離は、現状できていますか。corporate veil を貫通されないために、記録や運営で足りていない点を指摘してください。」</li>
+      </ol>
     </div>
   </section>
 
@@ -801,152 +1184,220 @@ footer{
       <span class="at">重要</span>
       <p>棚卸しの結果、未払税金や無保険期間が発見された場合、<span class="hl">発見した時点で自主的に是正する方が、行政に発見されるよりも常に軽く済みます</span>。IRS もハワイ州も、自主的な開示と納付に対しては加算税の減免制度を持っています。隠す判断は、ほぼすべての場合において最も高くつきます。</p>
     </div>
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第2章）</span>
+      <ol>
+        <li><span class="q-to">弁護士へ</span>「私は法人ごと（株式）買いましたか、資産だけ買いましたか。買収契約書を読んで判定してください。承継している債務の範囲はどこまでですか。」</li>
+        <li><span class="q-to">弁護士へ</span>「買収契約の表明保証と補償条項は、まだ有効ですか。存続期間はいつまでで、エスクローは残っていますか。簿外債務が見つかった場合、売主に請求できますか。」</li>
+        <li><span class="q-to">CPA / 弁護士へ</span>「棚卸しとして、Tax Clearance、UCC 検索、DCCA の登記状態、裁判所記録、労災の loss run を、いつまでに、誰が取得しますか。費用はいくらですか。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 3 ============ -->
   <section id="s3">
     <h2><span class="chap">Chapter 3</span>ビザと就労資格：ここが崩れると全部崩れる</h2>
 
-    <p class="lead">米国法人を所有することと、米国内で働くことは、法律上まったく別の問題です。所有には在留資格を要しませんが、米国内での労務提供には就労資格が必要です。ここを誤ると、入国拒否だけでなく、将来のビザ申請全体に恒久的な悪影響が及びます。</p>
+    <p class="lead">結論を先に書きます。買収額 6,500ドル（約100万円）の事業では、E-2 ビザ（条約投資家ビザ）は現実的に通りません。追加投資と事業計画の抜本的な作り直しをしない限り、この道は開きません。この章は、希望的観測を排して、何が可能で何が不可能かを整理します。</p>
 
-    <h3>3-1 米国法人を「所有」することと、米国内で「働く」ことは別物</h3>
-    <p>日本の経営者が最も誤解しやすい点です。<span class="hl">外国人が米国法人の株式を100%保有することは、まったく問題ありません。</span>ビザは不要です。配当を受け取ることも、株主として議決権を行使することも、取締役会に出席することも、原則として所有者の権利であり、就労にはあたりません。</p>
-    <p>しかし、米国内に物理的に滞在して「労務」を提供することは別です。従業員の指揮監督、営業活動、現場作業、顧客対応。これらは就労にあたり、適切な在留資格がなければ違法です。</p>
-    <div class="alert alert--key">
-      <span class="at">重要</span>
-      <p>オーナーとして正当に米国法人を保有し、日本から遠隔で経営することは合法です。問題が生じるのは、<span class="hl">米国内に滞在している間に、その資格で許されていない活動を行った場合</span>です。この区別を常に意識してください。</p>
-    </div>
-    <p class="src"><b>出典：</b>USCIS Working in the United States <a href="https://www.uscis.gov/working-in-the-united-states">https://www.uscis.gov/working-in-the-united-states</a></p>
+    <h3>3-1 大前提：米国法人を「所有」することと、米国内で「働く」ことは全く別</h3>
+    <p><strong>結論：</strong>外国人が米国法人を100%所有することは、<span class="hl">完全に合法で、ビザは不要です</span>。しかし、米国内に滞在して労務を提供することは、就労資格がなければ違法です。この2つは法律上、まったく別の問題です。</p>
 
-    <h3>3-2 ESTA / B-1 でできること、できないこと</h3>
-    <p>日本国籍者は ESTA（Visa Waiver Program）により、最大90日間、ビザなしで米国に入国できます。滞在目的は商用（B-1相当）または観光（B-2相当）に限られます。</p>
     <div class="tw">
       <table>
-        <caption>ESTA / B-1 で許容される活動と許容されない活動</caption>
+        <caption>「所有」と「就労」の区別</caption>
         <thead>
-          <tr><th>できる（商用活動の範囲内と一般に整理される）</th><th>できない（就労にあたり得る）</th></tr>
+          <tr><th>所有者として合法にできること（ビザ不要）</th><th>就労にあたるため、資格なしにはできないこと</th></tr>
         </thead>
         <tbody>
-          <tr><td>取締役会、株主総会への出席</td><td>従業員の日常的な指揮監督、シフト管理</td></tr>
-          <tr><td>契約の交渉、締結</td><td>現場作業、清掃、調理、配送などの実務</td></tr>
-          <tr><td>取引先との商談、会議への参加</td><td>顧客への営業活動、販売行為</td></tr>
-          <tr><td>事業所の視察、資産の確認</td><td>米国法人からの給与の受領</td></tr>
-          <tr><td>会計士、弁護士との打ち合わせ</td><td>継続的、実質的な業務の遂行</td></tr>
-          <tr><td>市場調査、投資先の調査</td><td>米国の労働市場の職を占めること</td></tr>
+          <tr><td>株式を保有する。配当を受け取る</td><td>従業員の日常的な指揮監督、シフト管理</td></tr>
+          <tr><td>株主として議決権を行使する</td><td>清掃の現場作業、配送、資材の運搬</td></tr>
+          <tr><td>取締役会に出席し、経営方針を決議する</td><td>顧客への営業活動、見積の提示、契約の日常的な履行</td></tr>
+          <tr><td>日本から遠隔で経営判断を行う</td><td><span class="hl">オフィスに座って指示を出す</span></td></tr>
+          <tr><td>米国法人から配当を受ける</td><td>米国法人から給与を受け取る</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="alert alert--warn">
-      <span class="at">警告</span>
-      <p>ESTA での入国を繰り返し、実質的に米国内で継続的に業務を行っている状態は、入国審査官に「実質的に就労している」と判断されるリスクがあります。ESTA での入国拒否には、通常のビザと異なり<span class="hl">審査に対する不服申立ての手続がありません</span>。空港で入国を拒否された場合、その場で帰国便に乗せられます。</p>
-      <p>また、一度でも虚偽の申告（入国目的の偽り）があったと認定されると、将来のビザ申請全般に重大な支障が生じます。</p>
-    </div>
-    <p class="src"><b>出典：</b>U.S. Department of State, Visitor Visa <a href="https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html">https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html</a> / ESTA <a href="https://esta.cbp.dhs.gov/">https://esta.cbp.dhs.gov/</a></p>
 
-    <h3>3-3 E-2 条約投資家ビザの要件と落とし穴</h3>
-    <p>日本と米国は通商航海条約の締結国であり、日本国籍者は E-2（Treaty Investor）ビザの対象です。日本在住のオーナーが自ら米国内で経営に関与するための、最も一般的な選択肢です。</p>
-    <div class="tw">
-      <table>
-        <caption>E-2 ビザの主要要件</caption>
-        <thead>
-          <tr><th>要件</th><th>内容</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>条約国国籍</td><td>申請者が日本国籍であること。かつ、米国法人の50%以上を条約国国籍者が保有していること</td></tr>
-          <tr><td>実質的な投資（substantial investment）</td><td>金額の下限は法定されていない。事業取得額または事業開始に必要な額との「比率」で判断される</td></tr>
-          <tr><td>投資済みであること（at risk）</td><td>資金が実際に投下され、失われるリスクにさらされていること。銀行に置いてあるだけでは不可</td></tr>
-          <tr><td>非限界性（not marginal）</td><td>申請者と家族の生計を立てるだけの事業では足りない。米国経済に貢献する能力（雇用創出等）が必要</td></tr>
-          <tr><td>事業の指揮</td><td>申請者が事業を develop and direct する立場にあること</td></tr>
-          <tr><td>出国の意思</td><td>ステータス終了時に米国を出国する意思があること</td></tr>
-        </tbody>
-      </table>
-    </div>
     <div class="alert alert--warn">
-      <span class="at">警告：substantiality の逆説</span>
-      <p>E-2 の「実質性」は<span class="hl">絶対額ではなく比率で判断されます</span>。事業の取得価額が低い場合、その事業を取得するために必要な額の大部分を投資していれば比率としては高くなりますが、絶対額が小さいと「事業を成立させ、成功させるのに十分な投資である」ことの立証が難しくなります。</p>
-      <p>つまり、<span class="hl">安く買えた事業ほど、E-2 の立証は容易ではなく、むしろ難しくなり得る</span>という逆説が生じます。加えて、non-marginality（限界性がないこと）の要件により、「オーナー一家が食べていけるだけの規模」と評価されると否認され得ます。雇用創出の実績と将来計画（通常5年の事業計画）が重要になります。</p>
+      <span class="at">警告：ESTA / B-1 でできることの限界</span>
+      <p>ESTA（電子渡航認証。ビザなしで最大90日の滞在ができる制度）または B-1（商用ビザ）で入国した場合にできるのは、<span class="hl">会議への出席、契約の交渉、事業所の視察、専門家との打ち合わせ、市場調査</span>までです。</p>
+      <p><strong>「オフィスに座って指示を出す」は完全にアウトです。</strong>現場に出て作業することも、従業員のシフトを組むことも、顧客に営業することも、すべて就労にあたります。オーナーであるかどうかは関係ありません。</p>
+      <p>ESTA での入国拒否には、通常のビザと異なり、<span class="hl">不服申立ての手続がありません</span>。空港で拒否された場合、その場で帰国便に乗せられます。</p>
     </div>
+
+    <p class="src"><b>出典：</b>USCIS Working in the United States <a href="https://www.uscis.gov/working-in-the-united-states">https://www.uscis.gov/working-in-the-united-states</a> / U.S. Department of State, Visitor Visa <a href="https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html">https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html</a> / ESTA <a href="https://esta.cbp.dhs.gov/">https://esta.cbp.dhs.gov/</a></p>
+
+    <h3>3-2 【厳しい現実】買収額100万円（約6,500ドル）では E-2 は通らない</h3>
+    <p><strong>結論：</strong>E-2 ビザに<span class="hl">法定の最低投資額はありません</span>。しかし、審査は次の2つの基準で行われ、6,500ドルという金額は、<span class="hl">そのどちらの基準も満たしません</span>。</p>
+
+    <div class="term">
+      <span class="tm-t">用語</span>
+      <p><b>E-2（条約投資家ビザ）：</b>米国と通商航海条約を結んだ国の国籍者が、米国の事業に相当額を投資し、その事業を指揮運営するために滞在できるビザ。日本は条約国です。永住権ではなく、事業が続く限り更新していく性質のものです。</p>
+    </div>
+
+    <p>1つ目の基準が Substantiality（投資の実質性）、2つ目が Marginality（限界性の否定）です。順に見ます。</p>
+
+    <h4>(1) Substantiality（投資の実質性）</h4>
+    <ul>
+      <li>投資額が、<strong>事業の総取得額に対して十分な比率</strong>であること。</li>
+      <li>かつ、<strong>絶対額として、その事業を成立させ、成功させるに足りる</strong>こと。</li>
+      <li><span class="hl">6,500ドルは、領事館が真剣に検討する金額ではありません<span class="est">推定</span>。</span></li>
+      <li>一般に、事業買収型の E-2 では、<strong>最低でも10万ドル前後、実務的には15万ドル以上</strong>が期待されるとされています<span class="est">推定</span>。これは法定要件ではなく、実務上の目安です。</li>
+    </ul>
+
+    <h4>(2) Marginality（限界性の否定）</h4>
+    <ul>
+      <li>投資家とその家族が、<strong>最低限の生活費を稼ぐだけの事業では不可</strong>です。</li>
+      <li>米国経済に貢献すること、<span class="hl">具体的には雇用を生むこと</span>が求められます。</li>
+      <li><strong>売上がゼロの、再稼働前の会社では、この立証は極めて困難です。</strong></li>
+    </ul>
+
+    <h4>(3) 投資済みであること（irrevocably committed）</h4>
+    <ul>
+      <li>資金が<strong>不可逆的に事業に拘束されている</strong>必要があります。</li>
+      <li><span class="hl">銀行口座に置いてあるだけの資金は、投資と認められません。</span>「これから使う予定の資金」も同様です。</li>
+      <li>すでに設備を購入した、リース契約に拘束された、といった<strong>後戻りできない状態</strong>であることを、証拠で示す必要があります。</li>
+    </ul>
+
+    <div class="alert alert--warn">
+      <span class="at">警告：安く買えたことは、E-2 では不利に働く</span>
+      <p>ここに逆説があります。<span class="hl">事業を安く取得できたことは、E-2 の審査では有利ではなく、不利に働きます。</span>投資の絶対額が小さいと、「その事業を成功させるに足りる投資である」ことの立証ができないためです。</p>
+      <p><strong>結論：現状のままでは E-2 は現実的ではありません。</strong>通すには、追加投資と事業計画の抜本的な組み立て直しが必要です。この事実を前提に、次の 3-3 か、3-4 の代替案を検討してください。</p>
+    </div>
+
     <p class="src"><b>出典：</b>USCIS E-2 Treaty Investors <a href="https://www.uscis.gov/working-in-the-united-states/temporary-workers/e-2-treaty-investors">https://www.uscis.gov/working-in-the-united-states/temporary-workers/e-2-treaty-investors</a> / U.S. Department of State, Treaty Countries <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/treaty.html">https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/treaty.html</a></p>
 
-    <h3>3-4 L-1A（日本法人の子会社化）の要件</h3>
-    <p>L-1A は、海外法人の管理職または役員を、その関連会社である米国法人に転勤させるためのビザです。日本に事業実体のある法人を持っている場合に、有力な選択肢になります。</p>
+    <h3>3-3 それでも E-2 を目指す場合に何が必要か</h3>
+
+    <h4>ステップ1：追加投資の計画を立てる</h4>
+    <ul>
+      <li>積み上げる項目：<strong>清掃機材、車両、設備、保険、初期運転資金、初期人件費、リース保証金、マーケティング費用。</strong></li>
+      <li><strong>資金の出所（source of funds）を証明できるようにする。</strong>日本の法人からの送金であれば、その法人の決算書と送金記録。個人資産であれば、その資産をどう形成したかの記録。</li>
+      <li><span class="hl">「合法に得た資金であること」の証明が必須です。</span>出所を説明できない資金は、それだけで否認の理由になります。</li>
+    </ul>
+
+    <h4>ステップ2：事業計画書（Business Plan）を作る</h4>
+    <ul>
+      <li>5年間の収支計画。</li>
+      <li><strong>雇用計画（何年目に何人雇うか）を必ず入れる。</strong>これが Marginality を否定する要です。</li>
+      <li>市場分析、競合分析。</li>
+      <li>移民弁護士と一緒に作るのが通例です。自作の計画書だけで通ることは、まずありません。</li>
+    </ul>
+
+    <h4>ステップ3：資金を実際に投下する（irrevocably committed の証明）</h4>
+    <ul>
+      <li>設備の購入、リースの締結、保険の付保などを実行し、<strong>後戻りできない状態</strong>を作ります。</li>
+      <li>エスクロー（条件付き預託。ビザが下りたら売主に支払われ、下りなければ返還される仕組み）を使う方法もあります。これにより、ビザが不許可の場合の損失を抑えつつ、資金の拘束を示せます。</li>
+    </ul>
+
+    <h4>ステップ4：E-2 登録（Treaty Investor Registration）</h4>
+    <ul>
+      <li>在日米国大使館または領事館に対し、企業として E-2 の要件を満たすことの登録を申請します。</li>
+    </ul>
+
+    <h4>ステップ5：DS-160 の提出、面接の予約</h4>
+    <h4>ステップ6：領事面接（東京または大阪）</h4>
+    <h4>ステップ7：発給</h4>
+    <ul>
+      <li>日本国籍の場合、ビザの有効期間は通常5年です（最長期間は国により異なります）。</li>
+      <li><span class="hl">入国時に与えられる滞在期間は、通常2年です。</span>その後、延長または再入国により更新していきます。ビザの有効期間と、1回の滞在許可期間は別のものです。</li>
+    </ul>
+
     <div class="tw">
       <table>
-        <caption>L-1A の主要要件</caption>
+        <caption>E-2 を目指す場合の所要期間と費用の目安</caption>
+        <thead>
+          <tr><th>項目</th><th>目安</th><th>備考</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>所要期間</td><td><strong>準備を含めて6か月から12か月</strong><span class="est">推定</span></td><td>事業計画の作成と、資金の投下に時間がかかる</td></tr>
+          <tr><td>移民弁護士の費用</td><td><strong>8,000ドルから15,000ドル程度</strong><span class="est">推定</span></td><td>事務所と案件の複雑さにより変動する</td></tr>
+          <tr><td>事業計画書の作成費用</td><td>別途必要になることが多い<span class="est">推定</span></td><td>専門の作成業者を使う場合</td></tr>
+          <tr><td>申請費用</td><td>公式の申請料が別途必要</td><td>金額は国務省の公式サイトで確認する</td></tr>
+          <tr><td>追加投資額</td><td>10万ドルから15万ドル以上が目安<span class="est">推定</span></td><td><span class="hl">法定要件ではないが、これを下回ると立証が困難になる</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">上記の金額はいずれも推定であり、法定の基準ではありません。実額は移民弁護士に確認してください。</p>
+
+    <h3>3-4 代替案の検討</h3>
+
+    <h4>(1) L-1A（日本法人からの企業内転勤）</h4>
+    <p><span class="hl">田中さんが日本で会社を経営しているなら、E-2 より現実的な可能性があります。</span></p>
+    <div class="tw">
+      <table>
+        <caption>L-1A の要件</caption>
         <thead>
           <tr><th>要件</th><th>内容</th></tr>
         </thead>
         <tbody>
-          <tr><td>資本関係（qualifying relationship）</td><td>日本法人と米国法人が、親子会社、支店、関連会社の関係にあること。<strong>単に同一人物が両方を所有しているだけでは足りない場合がある</strong>ため、資本関係の設計が必要</td></tr>
-          <tr><td>1年間の勤務実績</td><td>申請前の直近3年間のうち、継続して1年以上、海外法人で管理職、役員、または専門知識職として勤務していたこと</td></tr>
-          <tr><td>管理職性（managerial capacity）</td><td>米国での職務が、管理職または役員としての職務であること。<strong>実務の遂行が主である場合は該当しない</strong></td></tr>
-          <tr><td>両法人の事業継続</td><td>L-1 の期間中、日本法人と米国法人の双方が事業を継続していること</td></tr>
-          <tr><td>新設法人の場合</td><td>米国法人が設立1年未満の場合、当初の許可期間は1年に制限される</td></tr>
+          <tr><td>勤務実績</td><td>日本法人で、<strong>申請前の直近3年のうち1年以上</strong>、管理職または役員として勤務していたこと</td></tr>
+          <tr><td>資本関係</td><td><span class="hl">ハワイの法人を、日本法人の子会社または関連会社にする必要があります。</span>同一人物が両方を個人で所有しているだけでは足りない場合があるため、資本関係の組み替えが必要になり得ます</td></tr>
+          <tr><td>新設子会社の場合</td><td>初回の許可は<strong>1年のみ</strong>。その後、実績を見て延長される</td></tr>
+          <tr><td>管理職性</td><td><strong>「管理職としての実態」の立証が必要です。</strong>米国での職務が、現場の清掃実務が中心であれば、L-1A は認められません</td></tr>
+          <tr><td>両法人の事業継続</td><td>期間中、日本法人と米国法人の双方が事業を継続していること</td></tr>
         </tbody>
       </table>
     </div>
     <div class="alert alert--tip">
       <span class="at">ヒント</span>
-      <p>ハワイの法人をすでに買収済みで、日本にも法人がある場合、<span class="hl">日本法人が米国法人の株式を保有する形に資本関係を組み替えることで、L-1A の qualifying relationship を成立させられる可能性があります</span>。ただし、この組み替えは日本側のタックスヘイブン対策税制（第5章）や、米国側の Form 5472 の報告義務に影響します。移民弁護士と、日米両方の税務専門家を同時に関与させて設計してください。</p>
+      <p>資本関係の組み替え（日本法人がハワイ法人の株式を保有する形にする）は、<span class="hl">日本側のタックスヘイブン対策税制と、米国側の Form 5472 の報告義務に影響します</span>（第5章）。移民弁護士と、日米双方の税務専門家を<strong>同時に</strong>関与させて設計してください。片方だけで進めると、もう片方が壊れます。</p>
     </div>
     <p class="src"><b>出典：</b>USCIS L-1A Intracompany Transferee <a href="https://www.uscis.gov/working-in-the-united-states/temporary-workers/l-1a-intracompany-transferee-executive-or-manager">https://www.uscis.gov/working-in-the-united-states/temporary-workers/l-1a-intracompany-transferee-executive-or-manager</a></p>
 
-    <h3>3-5 「日本から人を呼んで雇う」が現実的でない理由</h3>
-    <p>信頼できる日本の人材を現地マネージャーとして送り込みたい、という発想は自然ですが、労働集約的な業種では就労ビザの取得は極めて困難です。</p>
-    <div class="tw">
-      <table>
-        <caption>主な就労ビザと、労働集約型事業における実現性</caption>
-        <thead>
-          <tr><th>ビザ</th><th>対象</th><th>労働集約型事業での実現性</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>H-1B</td><td>専門職（specialty occupation）。学士以上の学位を要する職務</td><td>低い。年次抽選（cap）があり、そもそも現場職務は「専門職」に該当しない</td></tr>
-          <tr><td>L-1A / L-1B</td><td>管理職、役員、専門知識職の企業内転勤</td><td>管理職性の立証が必要。現場実務が主だと不可</td></tr>
-          <tr><td>E-2 従業員</td><td>条約投資家企業の管理職または「特殊技能」を持つ従業員</td><td>「特殊技能」の立証が必要。一般的な現場作業は該当しない</td></tr>
-          <tr><td>H-2B</td><td>季節的、一時的な非農業労働</td><td>年間の発給枠が小さく、「一時的な需要」の立証が必要。継続的な事業には不向き</td></tr>
-          <tr><td>EB-3（永住権）</td><td>熟練労働者、非熟練労働者</td><td>労働認証（PERM）が必要で、処理に数年を要する。実務上、即戦力の確保手段にならない</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="alert alert--key">
-      <span class="at">重要</span>
-      <p>結論として、<span class="hl">現地の労働力は、米国内ですでに就労資格を持つ人材から採用する以外に、現実的な選択肢はありません</span>。日本から人を呼ぶ計画を事業計画の前提に置かないでください。この前提が崩れると、事業計画全体が崩れます。</p>
-    </div>
-
-    <h3>3-6 I-9 の雇用主義務。就労資格のない者を雇うことの罰則</h3>
-    <p>米国では、<span class="hl">すべての雇用主が、すべての新規採用者について、就労資格を確認する法的義務を負います</span>。日本には対応する制度がありません。</p>
-    <h4>雇用主の義務</h4>
+    <h4>(2) ビザを取らず、米国内では働かない</h4>
     <ul>
-      <li>採用日から<strong>3営業日以内</strong>に Form I-9 を完成させる。</li>
-      <li>従業員が提示する身元証明書と就労資格証明書の原本を確認する（List A、または List B と List C の組み合わせ）。</li>
-      <li>I-9 は、<strong>採用から3年、または退職から1年のいずれか遅い方</strong>まで保管する。</li>
-      <li>I-9 は人事ファイルとは<strong>分けて保管する</strong>のが実務上の推奨。監査時に他の人事情報を開示せずに済むためです。</li>
-      <li>特定の書類の提示を要求してはならない（document abuse として差別にあたる）。</li>
+      <li>所有者として、<strong>日本から遠隔で経営する</strong>。これは合法です。</li>
+      <li>ただし、<span class="hl">現地に全権限を持つ人間が必要になり、内部統制のリスクが跳ね上がります。</span></li>
+      <li>銀行の権限、給与の承認、顧客との契約、鍵の管理。これらをすべて他人に委ねることになります。</li>
+      <li><strong>この選択をする場合、第9章（内部統制と affinity fraud）を必ず併せて読んでください。</strong>統制の設計が、事業の存続そのものを左右します。</li>
     </ul>
-    <h4>罰則</h4>
+
+    <h4>(3) 撤退する</h4>
+    <ul>
+      <li><strong>これも選択肢です。</strong>感情ではなく、金額で判断してください。</li>
+      <li>撤退にもコストがかかります。何にいくらかかるかを知らないまま「やめる」と決めることはできません。</li>
+      <li><strong>撤退の手順とコストは、<a href="#s14">第14章</a>にまとめてあります。</strong>続けるか撤退するかを判断する前に、必ず第14章を読んでください。</li>
+    </ul>
+
+    <h3>3-5 【重要な警告】絶対にやってはいけないこと</h3>
     <div class="alert alert--warn">
-      <span class="at">警告</span>
+      <span class="at">警告：一度崩れると取り返しがつかない</span>
       <ul>
-        <li><strong>書類上の不備（paperwork violation）：</strong>I-9 の記載漏れ、署名漏れ、保管漏れ。就労資格のある従業員についてであっても、1件ごとに制裁金が課されます。金額は毎年インフレ調整されます。</li>
-        <li><strong>就労資格のない者を、知りながら雇用した場合：</strong>制裁金は大幅に重くなり、繰り返しの違反では<span class="hl">刑事責任（罰金および拘禁刑）に及び得ます</span>。</li>
-        <li><strong>買収により承継した従業員も対象です。</strong>株式譲渡で法人ごと取得した場合、既存従業員の I-9 も会社の責任下にあります。棚卸し（第2章）で必ず全件確認してください。</li>
+        <li><strong>ESTA で入国して働く。</strong>会議や視察を超えて、業務を行うこと。</li>
+        <li><strong>「オーナーだから労働ではない」という自己判断。</strong>所有と就労は別です（3-1）。この誤解が最も多く、最も高くつきます。</li>
+        <li><strong>就労資格のない人物を雇う。</strong>I-9（就労資格確認の様式）による確認は<span class="hl">雇用主の法的義務</span>です。従業員側の問題ではなく、会社と経営者の問題になります。</li>
+        <li><strong>I-9 で、外国人にだけ余分な書類を要求する。</strong>それ自体が差別であり、違法です。「安全側に倒したつもり」で違法行為になります。管轄は司法省の Immigrant and Employee Rights Section（IER）です。</li>
+        <li><span class="hl">一度でも不法就労と認定されると、その後のビザ取得が事実上不可能になります。</span>E-2 も L-1A も含めてです。</li>
       </ul>
     </div>
-    <p class="src"><b>出典：</b>USCIS Form I-9 <a href="https://www.uscis.gov/i-9">https://www.uscis.gov/i-9</a> / USCIS Handbook for Employers (M-274) <a href="https://www.uscis.gov/i-9-central/form-i-9-resources/handbook-for-employers-m-274">https://www.uscis.gov/i-9-central/form-i-9-resources/handbook-for-employers-m-274</a></p>
 
-    <h3>3-7 E-Verify</h3>
-    <p>E-Verify は、I-9 の情報を DHS と SSA のデータベースに照合する、連邦政府の無料オンラインシステムです。</p>
-    <ul>
-      <li><strong>民間企業には、連邦法上は原則として任意です。</strong>ただし、連邦政府との一定の契約を持つ事業者には義務付けられます。</li>
-      <li>ハワイ州は、州法により民間企業一般に E-Verify を義務付けてはいません。</li>
-      <li>採用した場合、<strong>全新規採用者に一律に適用する必要があります</strong>。特定の人だけに使うと差別にあたります。</li>
-      <li>E-Verify を使っても、I-9 の作成義務はなくなりません。両方必要です。</li>
-    </ul>
-    <div class="alert alert--tip">
-      <span class="at">ヒント</span>
-      <p>E-Verify の導入は、雇用主にとって「善意（good faith）」の立証材料になり得ます。遠隔経営で採用の実務を現地マネージャーに委ねる場合、E-Verify を全件必須の手続として組み込むことは、統制上の意味があります（第9章）。</p>
+    <div class="jp-compare">
+      <span class="jc-t">日本との対比：就労資格</span>
+      <span class="jc-row"><span class="jc-k">日本では</span>会社の代表者が自社で働くのに、在留資格の問題は生じない。雇用主が就労資格を確認する一般的な義務も限定的である。</span>
+      <span class="jc-row"><span class="jc-k jc-k--us">ハワイでは</span>会社を所有していても、就労資格がなければ米国内で働けない。さらに、全従業員について I-9 で就労資格を確認することが雇用主の義務である。</span>
+      <span class="jc-row"><span class="jc-k jc-k--diff">決定的な差</span>「経営者だから自由に働ける」という前提が存在しない。所有と就労が完全に分離されている。</span>
     </div>
-    <p class="src"><b>出典：</b>E-Verify（DHS） <a href="https://www.e-verify.gov/">https://www.e-verify.gov/</a></p>
+
+    <p class="src"><b>出典：</b>USCIS Form I-9 <a href="https://www.uscis.gov/i-9">https://www.uscis.gov/i-9</a> / USCIS Handbook for Employers (M-274) <a href="https://www.uscis.gov/i-9-central/form-i-9-resources/handbook-for-employers-m-274">https://www.uscis.gov/i-9-central/form-i-9-resources/handbook-for-employers-m-274</a> / DOJ Immigrant and Employee Rights Section <a href="https://www.justice.gov/crt/immigrant-and-employee-rights-section">https://www.justice.gov/crt/immigrant-and-employee-rights-section</a> / E-Verify <a href="https://www.e-verify.gov/">https://www.e-verify.gov/</a></p>
+
+    <h3>3-6 I-9 と E-Verify（雇用主の義務）</h3>
+    <ul>
+      <li><strong>I-9：</strong>すべての新規採用者について、<strong>採用日から3営業日以内</strong>に作成します。従業員が提示する身元証明書と就労資格証明書を確認します。保管期間は<strong>採用から3年、または退職から1年のいずれか遅い方</strong>まで。人事ファイルとは分けて保管するのが実務上の推奨です。</li>
+      <li><strong>買収により承継した従業員も対象です。</strong>既存従業員の I-9 が揃っているかを、今すぐ全件確認してください。</li>
+      <li><strong>書類上の不備（記載漏れ、署名漏れ、保管漏れ）も、それ自体が制裁金の対象です。</strong>就労資格のある従業員についてであっても同じです。</li>
+      <li><strong>E-Verify：</strong>I-9 の情報を政府のデータベースに照合する無料のオンラインシステム。連邦法上、民間企業には原則として任意です。ハワイ州も、州法により民間企業一般に義務付けてはいません。採用する場合、<span class="hl">全新規採用者に一律に適用する必要があります</span>（特定の人だけに使うと差別になります）。</li>
+    </ul>
+
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第3章）</span>
+      <ol>
+        <li><span class="q-to">移民弁護士へ</span>「買収額が 6,500ドルの清掃会社です。E-2 を通すには、あと何にいくら追加投資し、何人の雇用計画を示す必要がありますか。それとも、私の場合は L-1A を狙う方が現実的ですか。判断の根拠も教えてください。」</li>
+        <li><span class="q-to">移民弁護士へ</span>「私が日本で経営している会社を親会社にして、ハワイの法人をその子会社にする形に組み替えた場合、L-1A の qualifying relationship を満たしますか。組み替えの具体的な手順と、必要な期間を教えてください。」</li>
+        <li><span class="q-to">移民弁護士へ</span>「ビザを取らずに日本から遠隔で経営する場合、私が米国に短期滞在する間に行ってよい行為と、行ってはいけない行為を、私の業種（清掃業）に即して、具体的に線引きしてください。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 4 ============ -->
@@ -1031,7 +1482,7 @@ footer{
       </ul>
       <p>買収した法人の登記状態を、DCCA の Business Entity Search で<strong>今すぐ確認してください</strong>。Good Standing でない可能性があります。</p>
     </div>
-    <p class="src"><b>出典：</b>DCCA Annual Business Filings <a href="https://cca.hawaii.gov/breg/registration/annualfiling/">https://cca.hawaii.gov/breg/registration/annualfiling/</a> / DCCA Business Entity Search <a href="https://hbe.ehawaii.gov/documents/search.html">https://hbe.ehawaii.gov/documents/search.html</a></p>
+    <p class="src"><b>出典：</b>DCCA Annual Business Filings <a href="https://cca.hawaii.gov/breg/">https://cca.hawaii.gov/breg/</a> / DCCA Business Entity Search <a href="https://hbe.ehawaii.gov/documents/search.html">https://hbe.ehawaii.gov/documents/search.html</a></p>
 
     <h3>4-5 EIN の取得（SSNなしでも可能）</h3>
     <p>EIN（Employer Identification Number）は、米国法人の納税者番号です。銀行口座開設、給与支払、税務申告のすべてに必要です。買収した法人にはすでに EIN があるはずですが、新法人を設立する場合は取得が必要です。</p>
@@ -1068,6 +1519,14 @@ footer{
       <p>ハワイ州法に基づいて設立された法人であれば、オーナーが外国人であっても、現時点では domestic reporting company に該当し、BOI 報告は免除されます。<span class="hl">ただし、最終規則の内容によっては義務が復活する可能性があるため、FinCEN の BOI ページを定期的に確認してください。</span>年1回の確認を、Annual Report の提出時期に合わせて習慣化することを推奨します。</p>
     </div>
     <p class="src"><b>出典：</b>FinCEN Beneficial Ownership Information <a href="https://www.fincen.gov/boi">https://www.fincen.gov/boi</a> / FinCEN BOI FAQs <a href="https://www.fincen.gov/boi-faqs">https://www.fincen.gov/boi-faqs</a></p>
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第4章）</span>
+      <ol>
+        <li><span class="q-to">CPAへ</span>「当社の連邦税務上のステータスは C Corp ですか、S Corp ですか。S Corp だった場合、非居住外国人である私が株主になったことで S 選択は失効していますか。その処理をどうしますか。」</li>
+        <li><span class="q-to">弁護士へ</span>「当社は現在 Good Standing ですか。Registered Agent は誰で、訴状が届く先はどこですか。前オーナーの関係者のままなら、どう変更しますか。」</li>
+        <li><span class="q-to">CPAへ</span>「EIN の responsible party は誰になっていますか。私本人でない場合、Form 8822-B で変更してください。BOI 報告（FinCEN）の義務は、現時点で当社に生じますか。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 5 ============ -->
@@ -1094,6 +1553,12 @@ footer{
           <tr><td>免税事業者制度</td><td>ある（一定売上以下）</td><td><strong>ない</strong>。売上規模にかかわらず登録と申告が必要</td></tr>
         </tbody>
       </table>
+    </div>
+    <div class="jp-compare">
+      <span class="jc-t">日本との対比：GET と消費税</span>
+      <span class="jc-row"><span class="jc-k">日本では</span>消費税は、預かった税から支払った税を差し引いて納める。実質的な負担者は消費者であり、赤字なら還付されることもある。</span>
+      <span class="jc-row"><span class="jc-k jc-k--us">ハワイでは</span>GET は消費税に見えるが、実際は<strong>売上に対して課される事業者の税</strong>である。仕入税額控除がないので、<strong>赤字でも払う</strong>。日本の外形標準課税に近い。</span>
+      <span class="jc-row"><span class="jc-k jc-k--diff">決定的な差</span>GET は「原価」として価格に織り込む必要がある。消費税の感覚で価格を設定すると、その分だけ利益が消えます。</span>
     </div>
     <h4>pyramiding（税の累積）とは</h4>
     <p>GET には仕入税額控除がないため、下請けが元請けに請求する段階でも GET が課され、元請けが最終顧客に請求する段階でも、その総額に対して再び GET が課されます。同じ経済価値に対して税が重ねて課される現象を pyramiding と呼びます。</p>
@@ -1241,6 +1706,12 @@ footer{
         <li><strong>複数人が同時に責任を負い得ます。</strong>連帯して全額の責任を負います。</li>
       </ul>
     </div>
+    <div class="jp-compare">
+      <span class="jc-t">日本との対比：源泉税の未納</span>
+      <span class="jc-row"><span class="jc-k">日本では</span>源泉所得税の未納について、代表者個人が第二次納税義務を負う制度はあるが、発動される場面は限定的である。</span>
+      <span class="jc-row"><span class="jc-k jc-k--us">ハワイでは</span>Trust Fund Recovery Penalty により、<strong>責任ある個人が未納額の全額を負担します</strong>。会社が破産しても消えません。</span>
+      <span class="jc-row"><span class="jc-k jc-k--diff">決定的な差</span>日本の第二次納税義務に近い制度ですが、<strong>発動される頻度が高く、対象者の範囲も広い</strong>。「他の支払を優先した」だけで要件を満たします。</span>
+    </div>
     <div class="alert alert--key">
       <span class="at">重要：遠隔経営における含意</span>
       <p>「現地マネージャーに給与処理を任せていたので、未納を知らなかった」という状況でも、オーナーが小切手の署名権や支払判断の権限を持っていれば、responsible person と認定され得ます。<span class="hl">給与税の納付状況を、オーナー自身が毎月確認できる仕組み（EFTPS の閲覧権限、Payroll サービスの管理者権限）を必ず確保してください</span>（第9章、第10章）。</p>
@@ -1269,6 +1740,63 @@ footer{
       <p>したがって、<strong>ビザの設計と、日米の税務設計は、必ず同時に検討してください</strong>。片方だけを最適化すると、もう片方が壊れます。</p>
     </div>
     <p class="src"><b>出典：</b>国税庁（外国税額控除、外国子会社合算税制の解説） <a href="https://www.nta.go.jp/">https://www.nta.go.jp/</a> / IRS United States Income Tax Treaties A to Z <a href="https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z">https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z</a></p>
+    <h3>5-9 GET の卸売レート（0.5%）を使えているか</h3>
+    <p><strong>結論：</strong>清掃サービスを<span class="hl">他の事業者に対して下請けとして提供している場合</span>、4.5% ではなく <strong>0.5% の卸売レート（wholesale rate）</strong>が適用できる可能性があります。<span class="hl">知らずに 4.5% を払い続けている事業者は少なくありません。</span></p>
+    <div class="tw">
+      <table>
+        <caption>GET の税率区分（オアフ島）</caption>
+        <thead>
+          <tr><th>区分</th><th class="num">州の税率</th><th>典型的な例</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>小売（retail）</td><td class="num">4.0%（＋郡0.5%）</td><td>最終顧客（一般企業、施設、個人）に直接、清掃サービスを提供する</td></tr>
+          <tr><td><strong>卸売（wholesale）</strong></td><td class="num"><strong>0.5%（＋郡0.5%）</strong></td><td>元請けの清掃会社や管理会社に対し、<strong>下請けとして役務を提供する</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert alert--tip">
+      <span class="at">ヒント：金額のインパクト</span>
+      <p>年間売上が20万ドルで、その全額が下請け（卸売）に該当する場合、税率の差は単純計算で数千ドル規模になります<span class="est">推定</span>。売上が大きくなるほど、この差は拡大します。</p>
+      <p><strong>ただし、卸売レートの適用には条件があります。</strong>取引の相手方が、その役務を再販していること（つまり、その相手が最終顧客に対して課税対象の取引を行っていること）が前提であり、証憑の整備も必要です。<span class="hl">自社の取引が卸売に該当するかは、必ずCPAに確認してください。</span>誤って適用すると、追徴の対象になります。</p>
+    </div>
+    <p class="src"><b>出典：</b>Hawaii DOTAX General Excise Tax <a href="https://tax.hawaii.gov/geninfo/get/">https://tax.hawaii.gov/geninfo/get/</a> / Hawaii DOTAX <a href="https://tax.hawaii.gov/">https://tax.hawaii.gov/</a></p>
+
+    <h3>5-10 EIN は承継されるのか</h3>
+    <p><strong>結論：</strong>買収の形態によって異なります。<span class="hl">自分がどちらなのかを、まず確認してください。</span></p>
+    <div class="tw">
+      <table>
+        <caption>買収形態と EIN の扱い</caption>
+        <thead>
+          <tr><th>買収の形態</th><th>EIN</th><th>実務上の含意</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>法人ごと（株式 / 持分）買った</strong></td>
+            <td><span class="hl">そのまま承継される</span></td>
+            <td>同じ EIN のまま。<strong>過去の申告義務、未納、違反状態もすべて同じ法人に紐づいたまま残ります</strong>（第2章）。IRS の responsible party（責任者）の登録を、Form 8822-B でオーナー本人に変更してください</td>
+          </tr>
+          <tr>
+            <td>資産だけ買って新会社を作った</td>
+            <td>新規に取得が必要</td>
+            <td>新法人として、新しい EIN を取得します。過去の債務は原則として承継しません</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert alert--key">
+      <span class="at">重要</span>
+      <p>EIN の <strong>responsible party</strong>（責任者）には、<span class="hl">実際に法人を支配している自然人、つまりオーナー本人を登録する必要があります</span>。現地マネージャーや会計事務所の名前になっていると、IRS からの通知（滞納、監査、照会）がその人物に届き、オーナーが把握できません。これは内部統制上の重大な欠陥です（第9章）。<strong>Form 8822-B で今すぐ変更してください。</strong></p>
+    </div>
+    <p class="src"><b>出典：</b>IRS Form 8822-B <a href="https://www.irs.gov/forms-pubs/about-form-8822-b">https://www.irs.gov/forms-pubs/about-form-8822-b</a> / IRS Apply for an EIN <a href="https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online">https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online</a></p>
+
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第5章）</span>
+      <ol>
+        <li><span class="q-to">CPAへ</span>「当社の売上のうち、他の事業者への下請けにあたる部分はありますか。あるなら GET の卸売レート（0.5%）を適用できますか。適用するために、契約書と請求書に何を記載する必要がありますか。」</li>
+        <li><span class="q-to">CPAへ</span>「当社は外国人が100%保有する米国法人です。Form 5472 の提出義務がありますか。買収資金の払い込みは報告対象取引に当たりますか。過年度の提出漏れがある場合、どう是正しますか。」</li>
+        <li><span class="q-to">CPAへ</span>「前オーナーの時代の GET（G-45 と G-49）と給与源泉税（Form 941）に、未納や未提出はありませんか。Tax Clearance（Form A-6）を取得して確認してください。未納があった場合、Trust Fund Recovery Penalty で私個人に及ぶ範囲はどこまでですか。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 6 ============ -->
@@ -1293,6 +1821,12 @@ footer{
           <tr><td>最終賃金の支払</td><td>請求から7日以内</td><td><strong>解雇の場合は原則として即日または翌営業日</strong>。自主退職は次の給与支払日まで</td></tr>
         </tbody>
       </table>
+    </div>
+    <div class="jp-compare">
+      <span class="jc-t">日本との対比：解雇</span>
+      <span class="jc-row"><span class="jc-k">日本では</span>解雇権濫用法理により、客観的に合理的な理由と社会通念上の相当性がなければ解雇は無効。実務上、解雇は極めて困難。</span>
+      <span class="jc-row"><span class="jc-k jc-k--us">ハワイでは</span>at-will が原則。<strong>理由なく、予告なく解雇できます。</strong>これは日本の解雇規制の真逆です。</span>
+      <span class="jc-row"><span class="jc-k jc-k--diff">決定的な差</span>ただし<strong>差別的な理由や報復による解雇は違法</strong>であり、その立証を封じるのは日々の記録だけです。「自由に解雇できる」は「記録なしに解雇してよい」ではありません。</span>
     </div>
     <div class="alert alert--warn">
       <span class="at">警告：at-will には例外がある。ここが訴訟になる</span>
@@ -1392,6 +1926,12 @@ footer{
       <p>したがって、<strong>従業員1人あたりの人件費を「時給 × 時間」で見積もると、大幅に過小評価します</strong>。医療保険は、賃金とは独立した固定費として積み上がります（6-10 参照）。</p>
     </div>
 
+    <div class="jp-compare">
+      <span class="jc-t">日本との対比：医療保険</span>
+      <span class="jc-row"><span class="jc-k">日本では</span>公的な健康保険があり、会社負担は概ね賃金の15%程度（他の社会保険と合算）。</span>
+      <span class="jc-row"><span class="jc-k jc-k--us">ハワイでは</span>PHCA により、雇用主が民間の医療保険を提供する義務がある。<strong>従業員負担の上限が月給の1.5%に制限されるため、低賃金の従業員では雇用主が保険料の9割以上を負担します。</strong></span>
+      <span class="jc-row"><span class="jc-k jc-k--diff">決定的な差</span>日本の社会保険に似ていますが、<strong>会社負担の割合が桁違いに重く、しかも賃金が低いほど重くなります。</strong>「安い人を多く雇う」モデルが成立しません。</span>
+    </div>
     <h4>罰則</h4>
     <div class="alert alert--warn">
       <span class="at">警告</span>
@@ -1463,7 +2003,7 @@ footer{
       <p>労災保険に加入していれば、業務上の負傷について、従業員は原則として労災保険の給付のみを受け、雇用主を不法行為で訴えることはできません（exclusive remedy の原則）。これは<span class="hl">雇用主にとっての保護でもあります</span>。</p>
       <p>無保険であった場合、この保護が外れ、<strong>従業員は逸失利益や慰謝料を含めて直接会社を訴えることができます</strong>。賠償額に上限はありません。買収した法人の付保状況は、最優先で確認してください。</p>
     </div>
-    <p class="src"><b>出典：</b>Hawaii DLIR Workers' Compensation <a href="https://labor.hawaii.gov/dcd/home/about-wc/">https://labor.hawaii.gov/dcd/home/about-wc/</a> / HRS Chapter 386 <a href="https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0386/">https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0386/</a></p>
+    <p class="src"><b>出典：</b>Hawaii DLIR Workers' Compensation <a href="https://labor.hawaii.gov/dcd/">https://labor.hawaii.gov/dcd/</a> / HRS Chapter 386 <a href="https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0386/">https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0386/</a></p>
 
     <h3>6-6 失業保険（UI）。前オーナーの料率を引き継ぐ場合がある</h3>
     <p>失業保険（Unemployment Insurance）は、雇用主が保険料（tax）を負担し、州に納付します。従業員負担はありません。</p>
@@ -1554,7 +2094,7 @@ footer{
       <li>届出を怠ると制裁金の対象になり得ます。</li>
       <li>給与計算サービスを使っている場合、代行してくれることが多いですが、<strong>契約に含まれているかを必ず確認してください</strong>。</li>
     </ul>
-    <p class="src"><b>出典：</b>Hawaii Child Support Enforcement Agency, New Hire Reporting <a href="https://ag.hawaii.gov/csea/new-hire-reporting/">https://ag.hawaii.gov/csea/new-hire-reporting/</a> / U.S. Office of Child Support Services <a href="https://www.acf.hhs.gov/css/employers">https://www.acf.hhs.gov/css/employers</a></p>
+    <p class="src"><b>出典：</b>Hawaii Child Support Enforcement Agency, New Hire Reporting <a href="https://ag.hawaii.gov/csea/">https://ag.hawaii.gov/csea/</a> / U.S. Office of Child Support Services <a href="https://www.acf.hhs.gov/css/employers">https://www.acf.hhs.gov/css/employers</a></p>
 
     <h3>6-10 従業員1人あたりの「本当のコスト」試算表</h3>
     <p><strong>結論：</strong>ハワイでは、<span class="hl">従業員の総コストは、支払う賃金の概ね 1.3倍から 1.4倍になります</span>。時給18ドルの従業員は、会社にとって時給23ドルから25ドル相当の負担です<span class="est">推定</span>。</p>
@@ -1586,6 +2126,226 @@ footer{
       <p>そして、この負担は<span class="hl">賃金が低いほど「率」として重くなります</span>（6-3 の構造）。「安い人を多く雇う」というモデルは、ハワイでは想定より高くつきます。<strong>少人数を高い時給で雇う方が、総コスト効率が良くなる場合があります。</strong>事業計画は、必ずこの表の形で作り直してください。</p>
     </div>
     <p class="src"><b>出典：</b>IRS Employment Taxes <a href="https://www.irs.gov/businesses/small-businesses-self-employed/employment-taxes">https://www.irs.gov/businesses/small-businesses-self-employed/employment-taxes</a> / IRS FUTA <a href="https://www.irs.gov/taxtopics/tc759">https://www.irs.gov/taxtopics/tc759</a> / Hawaii DLIR <a href="https://labor.hawaii.gov/">https://labor.hawaii.gov/</a></p>
+    <h3>6-11 ハワイの雇用差別法は、従業員1人から適用される（HRS 378）</h3>
+    <p><strong>結論：</strong>連邦の Title VII（公民権法第7編）は従業員15人以上の事業者が対象ですが、<span class="hl">ハワイ州法（HRS 378）は従業員1人でも適用されます</span>。<strong>「小さい会社だから関係ない」は、完全な誤りです。</strong></p>
+    <div class="tw">
+      <table>
+        <caption>連邦法とハワイ州法の適用範囲</caption>
+        <thead>
+          <tr><th>項目</th><th>連邦（Title VII 等）</th><th>ハワイ州（HRS 378）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>適用される事業規模</td><td>従業員15人以上（年齢差別は20人以上）</td><td><span class="hl">従業員1人以上</span></td></tr>
+          <tr><td>管轄機関</td><td>EEOC（雇用機会均等委員会）</td><td>Hawaii Civil Rights Commission（ハワイ州公民権委員会）</td></tr>
+          <tr><td>保護される属性</td><td>人種、肌の色、宗教、性別、出身国、年齢（40歳以上）、障害、遺伝情報</td><td>左記に加え、<strong>性的指向、性自認、婚姻状況、逮捕歴および有罪歴（制限あり）、信用情報、生殖に関する意思決定、家庭内暴力等の被害者であること</strong>など、<span class="hl">連邦より広い</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="jp-compare">
+      <span class="jc-t">日本との対比：雇用差別</span>
+      <span class="jc-row"><span class="jc-k">日本では</span>男女雇用機会均等法、障害者雇用促進法などが個別に規制する。紛争は多くの場合、行政のあっせんや労働審判で処理される。</span>
+      <span class="jc-row"><span class="jc-k jc-k--us">ハワイでは</span>保護される属性が広く、従業員1人の会社にも適用される。<strong>個人が直接、会社を提訴できる。</strong></span>
+      <span class="jc-row"><span class="jc-k jc-k--diff">決定的な差</span>対象属性の広さと、個人が直接提訴できる点。加えて、勝訴しても自社の弁護士費用は自己負担（第1章）。</span>
+    </div>
+    <p class="src"><b>出典：</b>Hawaii Civil Rights Commission <a href="https://labor.hawaii.gov/hcrc/">https://labor.hawaii.gov/hcrc/</a> / HRS Chapter 378 <a href="https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0378/">https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0378/</a> / EEOC <a href="https://www.eeoc.gov/employers">https://www.eeoc.gov/employers</a></p>
+
+    <h3>6-12 【最重要】ban the box：採用前の犯罪歴の照会は原則違法</h3>
+    <p><strong>結論：</strong>ハワイでは、<span class="hl">採用の内定を出す「前」に、犯罪歴を聞くこと、および調べることが原則として違法です</span>。照会できるのは、<strong>条件付きの内定（conditional offer）を出した後</strong>です。</p>
+    <ul>
+      <li>応募書類や面接で、<strong>犯罪歴や逮捕歴を尋ねてはいけません。</strong>「箱にチェックを入れさせない」ことから ban the box と呼ばれます。</li>
+      <li>条件付き内定の後であれば照会できますが、<strong>遡って参照できる期間にも制限があります。</strong>重罪（felony）と軽罪（misdemeanor）で期間が異なり、法改正もあり得ます。<span class="hl">具体的な年数は、必ず弁護士に確認してください。</span></li>
+      <li>照会した犯罪歴を理由に内定を取り消せるのは、その犯罪が<strong>職務と合理的に関連する</strong>場合に限られます。</li>
+      <li><strong>逮捕歴（有罪判決に至っていないもの）は、ハワイ州法上の保護属性です</strong>（6-11）。理由にできません。</li>
+    </ul>
+
+    <div class="alert alert--warn">
+      <span class="at">警告：第9章の「検証せよ」と矛盾しないように</span>
+      <p>本資料の<strong>第9章では「採用前に相手の経歴を検証せよ」</strong>と書いています。しかし、<span class="hl">犯罪歴に関しては、その検証方法を間違えると、あなた自身が違法行為を行うことになります。</span>次の区別を、必ず守ってください。</p>
+      <div class="tw">
+        <table>
+          <caption>内定前に検証してよいものと、してはいけないもの</caption>
+          <thead>
+            <tr><th>内定前に検証してよい</th><th>内定前に検証してはいけない</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>事業者の職業ライセンス（DCCA）</li>
+                  <li>事業者の行政処分歴（DCCA RICO）</li>
+                  <li>法人の設立履歴、役員歴（DCCA）</li>
+                  <li>民事訴訟の記録（裁判所の公開記録）</li>
+                  <li>前職へのリファレンス（在籍期間、職位の確認）</li>
+                  <li>学歴、資格の確認</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><strong>個人の犯罪歴（有罪歴）</strong></li>
+                  <li><strong>個人の逮捕歴</strong></li>
+                  <li>信用情報（ハワイ州法上の保護属性。職務との関連がなければ不可）</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>バックグラウンドチェックを外部業者に委託する場合も、</strong>連邦の FCRA（公正信用報告法）の手続を守る必要があります。具体的には、<span class="hl">(1) 事前に、独立した書面で本人の同意を得ること、(2) 報告書を理由に不利益な措置を取る前に、事前通知と報告書の写しを交付すること</span>です。手続を誤ると、それ自体が訴訟の原因になります。</p>
+      <p><strong>要するに：「会社と資格の検証」は自由にやってよく、「個人の前科の詮索」は内定前にやってはいけません。</strong>この線を越えないでください。</p>
+    </div>
+    <p class="src"><b>出典：</b>Hawaii Civil Rights Commission <a href="https://labor.hawaii.gov/hcrc/">https://labor.hawaii.gov/hcrc/</a> / HRS Chapter 378 <a href="https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0378/">https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0378/</a> / EEOC 逮捕歴および有罪歴の取扱い <a href="https://www.eeoc.gov/laws/guidance/enforcement-guidance-consideration-arrest-and-conviction-records-employment-decisions">https://www.eeoc.gov/laws/guidance/enforcement-guidance-consideration-arrest-and-conviction-records-employment-decisions</a> / FTC 雇用目的の信用調査（FCRA） <a href="https://www.ftc.gov/business-guidance/resources/using-consumer-reports-what-employers-need-know">https://www.ftc.gov/business-guidance/resources/using-consumer-reports-what-employers-need-know</a></p>
+
+    <h3>6-13 解雇時の最終給与は【即日】払い（HRS 388-3）</h3>
+    <p><strong>結論：</strong><span class="hl">会社都合で解雇した場合、その日のうちに全額を支払う義務があります。</span>従業員の自己都合退職であれば、次の給与日まででかまいません。</p>
+    <div class="tw">
+      <table>
+        <caption>退職事由と最終給与の支払期限（ハワイ州）</caption>
+        <thead>
+          <tr><th>退職の事由</th><th>支払期限</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>会社都合の解雇（discharge）</strong></td><td><span class="hl">解雇したその日（即日）</span>。事情により、遅くとも翌営業日までとされる場合がある</td></tr>
+          <tr><td>従業員の自己都合退職（quit）</td><td>次の通常の給与支払日まで（一定の事前予告がある場合、より早い期限が適用され得る）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>未使用の有給休暇を支払う義務があるかは、<strong>就業規則やハンドブックの書き方に依存します</strong>（第7章）。「退職時に未消化分を精算する」と書いてあれば、支払義務が生じます。</li>
+      <li>支払を怠ると、制裁金の対象になります。2025年の Act 115 により、賃金時間法違反には最低500ドルの民事制裁金が課され得ます（6-2）。</li>
+    </ul>
+    <div class="jp-compare">
+      <span class="jc-t">日本との対比：最終給与</span>
+      <span class="jc-row"><span class="jc-k">日本では</span>労働基準法23条により、請求があった場合は7日以内に支払う。実務上は次の給与日に支払うことも多い。</span>
+      <span class="jc-row"><span class="jc-k jc-k--us">ハワイでは</span>会社都合の解雇なら<strong>即日</strong>。自己都合退職なら次の給与日まで。</span>
+      <span class="jc-row"><span class="jc-k jc-k--diff">決定的な差</span>この非対称（解雇は即日、自主退職は通常どおり）を知らないと、必ず違反します。<span class="hl">解雇を決めた時点で、その日の支払の準備を同時に始めてください。</span></span>
+    </div>
+    <p class="src"><b>出典：</b>Hawaii DLIR Wage Standards Division <a href="https://labor.hawaii.gov/wsd/">https://labor.hawaii.gov/wsd/</a> / HRS Chapter 388 <a href="https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0388/">https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0388/</a></p>
+
+    <h3>6-14 給与は月2回以上支払う義務（HRS 388-2）</h3>
+    <ul>
+      <li><span class="hl">ハワイ州では、給与を月に2回以上、支払う義務があります。</span><strong>日本の「月1回払い」は、そのままでは違法です。</strong></li>
+      <li>原則として、<strong>給与計算期間の終了後7日以内</strong>に支払う必要があります。</li>
+      <li>一定の条件のもとで、州の許可を得て月1回払いにできる例外がありますが、<strong>許可なしに月1回にすることはできません。</strong></li>
+      <li>買収した会社の給与サイクルが、この要件を満たしているかを確認してください。</li>
+    </ul>
+    <p class="src"><b>出典：</b>Hawaii DLIR Wage Standards Division <a href="https://labor.hawaii.gov/wsd/">https://labor.hawaii.gov/wsd/</a> / HRS Chapter 388 <a href="https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0388/">https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0388/</a></p>
+
+    <h3>6-15 ハワイ州の給与源泉徴収（連邦の Form 941 とは別制度）</h3>
+    <p><strong>結論：</strong><span class="hl">連邦（IRS）と州（DOTAX）は完全に別の役所であり、給与の源泉徴収についても、両方に別々の申告義務があります。</span>片方だけやっていれば足りる、ということはありません。</p>
+    <div class="tw">
+      <table>
+        <caption>給与源泉徴収：連邦と州の対応関係</caption>
+        <thead>
+          <tr><th>役割</th><th>連邦（IRS）</th><th>ハワイ州（DOTAX）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>従業員の申告書（扶養等の申告）</td><td>Form W-4</td><td><strong>Form HW-4</strong></td></tr>
+          <tr><td>源泉税の定期申告</td><td>Form 941（四半期）</td><td><strong>Form HW-14</strong></td></tr>
+          <tr><td>年次の調整、集計</td><td>Form W-2、Form W-3</td><td><strong>Form HW-3</strong>、および W-2 の州への提出</td></tr>
+          <tr><td>納付</td><td>EFTPS（電子納付システム）</td><td>Hawaii Tax Online</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert alert--key">
+      <span class="at">重要</span>
+      <p>給与計算サービスに委託していても、<span class="hl">納税義務そのものは会社とオーナーに残ります</span>。連邦分の未納は Trust Fund Recovery Penalty により個人責任に及びます（5-7）。<strong>オーナー本人が、EFTPS と Hawaii Tax Online の両方で、納付が実行されたことを毎月確認してください。</strong></p>
+    </div>
+    <p class="src"><b>出典：</b>Hawaii DOTAX Forms <a href="https://tax.hawaii.gov/forms/">https://tax.hawaii.gov/forms/</a> / Hawaii Tax Online <a href="https://hitax.hawaii.gov/">https://hitax.hawaii.gov/</a> / IRS Form 941 <a href="https://www.irs.gov/forms-pubs/about-form-941">https://www.irs.gov/forms-pubs/about-form-941</a> / EFTPS <a href="https://www.eftps.gov/">https://www.eftps.gov/</a></p>
+
+    <h3>6-16 独立契約者の判定：州の失業保険では ABC テストが使われる（HRS 383-6）</h3>
+    <p><strong>結論：</strong>「業務委託かどうか」の判定は、<span class="hl">連邦（IRS）と州（ハワイ州失業保険）で、二重にチェックされます</span>。そして、<strong>州の ABC テストの方が、IRS の基準よりも厳しい</strong>のです。IRS の基準をクリアしても、州の失業保険では従業員と認定されることがあります。</p>
+    <div class="tw">
+      <table>
+        <caption>ABC テスト（3つすべてを満たさなければ従業員と扱われる）</caption>
+        <thead>
+          <tr><th>要素</th><th>要件</th><th>清掃会社が清掃員を業務委託にした場合</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>A</strong></td>
+            <td>その者が、契約上も実態としても、<strong>会社の指揮命令から自由</strong>であること</td>
+            <td>作業手順、現場、時間を会社が指定していれば、この時点で不可</td>
+          </tr>
+          <tr>
+            <td><strong>B</strong></td>
+            <td>その業務が、<strong>会社の通常の事業の範囲外</strong>であること</td>
+            <td><span class="hl">清掃会社にとって、清掃は「通常の事業そのもの」です。この時点でほぼ通りません。</span></td>
+          </tr>
+          <tr>
+            <td><strong>C</strong></td>
+            <td>その者が、<strong>独立した事業として確立している</strong>こと（対外的に営業し、複数の顧客を持つ）</td>
+            <td>あなたの会社の仕事しかしていなければ不可</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert alert--warn">
+      <span class="at">警告：清掃業では、Bの要件でほぼ確実に落ちる</span>
+      <p><span class="hl">清掃会社が、清掃員を独立契約者（1099）として扱うことは、ABC テストの B の要件を満たせないため、ほぼ確実に誤分類と判定されます。</span></p>
+      <p>「前オーナーがそうしていた」は抗弁になりません。買収により、その状態を承継しています。<strong>発覚した場合、遡及した源泉税、保険料（PHCA、TDI、労災、UI）、残業代、制裁金が、まとめて請求されます。</strong>そして源泉税の部分は、Trust Fund Recovery Penalty により<span class="hl">オーナー個人に及びます</span>（5-7）。</p>
+    </div>
+    <div class="jp-compare">
+      <span class="jc-t">日本との対比：業務委託</span>
+      <span class="jc-row"><span class="jc-k">日本では</span>実態が労働契約であれば偽装請負とされるが、是正指導が中心で、金銭的制裁は限定的なことが多い。</span>
+      <span class="jc-row"><span class="jc-k jc-k--us">ハワイでは</span>連邦（IRS のコモンロー基準）と州（ABC テスト）の二重の判定。誤分類は遡及課税、罰金、保険料の遡及、そして経営者個人の責任に及ぶ。</span>
+      <span class="jc-row"><span class="jc-k jc-k--diff">決定的な差</span>罰則の重さと、個人責任に到達する点。「契約書に業務委託と書いてある」ことは、まったく防御になりません。</span>
+    </div>
+    <p class="src"><b>出典：</b>Hawaii DLIR Unemployment Insurance <a href="https://labor.hawaii.gov/ui/">https://labor.hawaii.gov/ui/</a> / HRS Chapter 383 <a href="https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0383/">https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0383/</a> / IRS 独立契約者か従業員か <a href="https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee">https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee</a> / U.S. DOL 誤分類 <a href="https://www.dol.gov/agencies/whd/flsa/misclassification">https://www.dol.gov/agencies/whd/flsa/misclassification</a></p>
+
+    <h3>6-17 ハワイ版 WARN 法（Dislocated Workers Act）</h3>
+    <ul>
+      <li><strong>従業員50人以上の事業所</strong>が閉鎖または大量解雇を行う場合、<span class="hl">事前の通知義務</span>があります。連邦の WARN 法は従業員100人以上が対象なので、<strong>ハワイ州の方が厳しい</strong>ことになります。</li>
+      <li>加えて、<strong>退職手当（dislocated worker allowance）の支払義務</strong>が生じる場合があります。</li>
+      <li>現在の従業員数が50人未満であれば直ちに適用されませんが、<strong>撤退や事業縮小を検討する段階では、必ず確認してください</strong>（第14章）。</li>
+    </ul>
+    <p class="src"><b>出典：</b>Hawaii DLIR <a href="https://labor.hawaii.gov/">https://labor.hawaii.gov/</a> / U.S. DOL WARN <a href="https://www.dol.gov/agencies/eta/layoffs/warn">https://www.dol.gov/agencies/eta/layoffs/warn</a></p>
+
+    <h3>6-18 その他の休暇と義務</h3>
+    <div class="tw">
+      <table>
+        <caption>見落とされやすい、その他の雇用主の義務</caption>
+        <thead>
+          <tr><th>制度</th><th>適用</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hawaii Family Leave Law（州の家族休暇）</td>
+            <td>従業員100人以上</td>
+            <td>出産、養子縁組、家族の看護のための休暇。現時点で適用がなくても、拡大時に注意</td>
+          </tr>
+          <tr>
+            <td><strong>被害者休暇（Victim Leave / HRS 378-8）</strong></td>
+            <td><span class="hl">従業員50人未満でも適用</span></td>
+            <td>家庭内暴力や性犯罪の被害者である従業員に、<strong>年5日の無給休暇</strong>を与える義務（従業員50人以上の場合は日数が増える）。<strong>小規模事業者にも義務があります</strong></td>
+          </tr>
+          <tr>
+            <td>OSHA 300 ログ</td>
+            <td>一定規模以上の事業者</td>
+            <td>労働災害と疾病の記録義務。免除業種と免除規模の判定を、HIOSH に確認してください（第8章）</td>
+          </tr>
+          <tr>
+            <td>退職者の医療保険の継続（COBRA）</td>
+            <td>一般に従業員20人以上</td>
+            <td>退職者が、一定期間、会社の医療保険を自己負担で継続できる連邦の制度。<strong>ハワイでは PHCA との関係で州独自の継続規定が適用される場面があるため、退職者が出る前に保険ブローカーに確認してください</strong></td>
+          </tr>
+          <tr>
+            <td><strong>情報漏洩通知法（HRS 487N）</strong></td>
+            <td>すべての事業者</td>
+            <td>従業員や顧客の個人情報（氏名と、SSN、運転免許証番号、口座番号等の組み合わせ）が漏洩した場合、<span class="hl">本人への通知義務</span>があります。<strong>清掃業でも、従業員名簿や顧客の鍵情報を扱う以上、無関係ではありません</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src"><b>出典：</b>Hawaii DLIR <a href="https://labor.hawaii.gov/">https://labor.hawaii.gov/</a> / HRS Chapter 378 <a href="https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0378/">https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0378/</a> / HRS Chapter 487N <a href="https://www.capitol.hawaii.gov/hrscurrent/Vol11_Ch0476-0490/HRS0487N/">https://www.capitol.hawaii.gov/hrscurrent/Vol11_Ch0476-0490/HRS0487N/</a> / OSHA 記録義務 <a href="https://www.osha.gov/recordkeeping">https://www.osha.gov/recordkeeping</a></p>
+
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第6章）</span>
+      <ol>
+        <li><span class="q-to">労働法弁護士へ</span>「当社の清掃員は、ハワイ州の ABC テスト（HRS 383-6）で従業員と判定されますか。1099 で支払っている人がいる場合、遡及して是正するには何をすればよく、想定される負担額はいくらですか。」</li>
+        <li><span class="q-to">労働法弁護士へ</span>「採用時に、応募者の何を、どの時点まで調べてよいですか。ban the box の下で、犯罪歴の照会は具体的にいつから可能で、遡れる期間は何年ですか。バックグラウンドチェックを外注する場合の FCRA の手続も教えてください。」</li>
+        <li><span class="q-to">保険ブローカー / 労働法弁護士へ</span>「現在の従業員全員について、PHCA（医療保険）、TDI、労災の加入義務を満たしていますか。満たしていない期間があった場合、想定される制裁金と、従業員の医療費負担のリスクはどの程度ですか。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 7 ============ -->
@@ -1703,12 +2463,26 @@ footer{
         <li><strong>報復（retaliation）は、それ自体が独立した違法行為です。</strong>ハラスメントの申立てが最終的に認められなかった場合でも、申立てを理由とする不利益取扱いは違法です。実務上、報復の主張は本体の主張よりも認められやすい傾向があります。</li>
       </ul>
     </div>
+    <div class="jp-compare">
+      <span class="jc-t">日本との対比：源泉税の未納</span>
+      <span class="jc-row"><span class="jc-k">日本では</span>源泉所得税の未納について、代表者個人が第二次納税義務を負う制度はあるが、発動される場面は限定的である。</span>
+      <span class="jc-row"><span class="jc-k jc-k--us">ハワイでは</span>Trust Fund Recovery Penalty により、<strong>責任ある個人が未納額の全額を負担します</strong>。会社が破産しても消えません。</span>
+      <span class="jc-row"><span class="jc-k jc-k--diff">決定的な差</span>日本の第二次納税義務に近い制度ですが、<strong>発動される頻度が高く、対象者の範囲も広い</strong>。「他の支払を優先した」だけで要件を満たします。</span>
+    </div>
     <div class="alert alert--key">
       <span class="at">重要：遠隔経営における含意</span>
       <p>現地マネージャーがハラスメントの行為者である場合、<span class="hl">その人物を通報経路にしていると、通報は永久にオーナーに届きません</span>。ハンドブックには、必ず<strong>オーナー本人への直通の通報経路</strong>を設けてください。これは第9章の内部統制と同じ思想です。</p>
       <p>また、年1回のハラスメント研修を実施し、参加記録を残してください。実施の記録は、そのまま抗弁の材料になります。</p>
     </div>
     <p class="src"><b>出典：</b>EEOC Harassment <a href="https://www.eeoc.gov/harassment">https://www.eeoc.gov/harassment</a> / EEOC Prohibited Employment Policies/Practices <a href="https://www.eeoc.gov/prohibited-employment-policiespractices">https://www.eeoc.gov/prohibited-employment-policiespractices</a> / EEOC Retaliation <a href="https://www.eeoc.gov/retaliation">https://www.eeoc.gov/retaliation</a> / Hawaii Civil Rights Commission <a href="https://labor.hawaii.gov/hcrc/">https://labor.hawaii.gov/hcrc/</a></p>
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第7章）</span>
+      <ol>
+        <li><span class="q-to">労働法弁護士へ</span>「現在のハンドブック（または、承継したハンドブック）に、at-will を壊す記載はありませんか。段階的懲戒の約束、permanent employee という語、正当理由がなければ解雇しない趣旨の記載を点検してください。」</li>
+        <li><span class="q-to">労働法弁護士へ</span>「ハラスメントの通報経路に、オーナーである私への直通経路を設けたいと考えています。現地マネージャーを迂回できる形にするには、どう規定すべきですか。」</li>
+        <li><span class="q-to">労働法弁護士へ</span>「従業員が英語を母語としない場合、ハンドブックと受領確認書は何語で用意すべきですか。翻訳版に署名させる場合、正文の指定はどう書きますか。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 8 ============ -->
@@ -1824,7 +2598,7 @@ footer{
           <tr><td>自社の業種にライセンスが必要か</td><td>DCCA PVL のサイトで、規制対象の職種一覧を確認する。建設、不動産、美容、警備、電気、配管などは典型的に必要</td></tr>
           <tr><td>買収した法人のライセンスが有効か</td><td><span class="hl">DCCA のライセンス検索で、状態（active / expired / 処分歴）を確認する</span>。買収により名義や資格者が変わると、ライセンスの維持に手続が必要な場合がある</td></tr>
           <tr><td>資格者が個人に紐づいていないか</td><td>ライセンスが<strong>前オーナー個人</strong>に紐づいている場合、その人が去るとライセンスが失われます。<span class="hl">これは事業継続に直結する最重要の確認事項です</span></td></tr>
-          <tr><td>行政処分歴（RICO）</td><td>DCCA の Regulated Industries Complaints Office（RICO）で、事業者に対する苦情と処分の履歴を確認できる（第13章）</td></tr>
+          <tr><td>行政処分歴（RICO）</td><td>DCCA の Regulated Industries Complaints Office（RICO）で、事業者に対する苦情と処分の履歴を確認できる（第17章）</td></tr>
           <tr><td>市郡の許認可</td><td>州のライセンスとは別に、市郡レベルの許可（営業許可、看板、消防、飲食であれば保健所）が必要な場合がある</td></tr>
         </tbody>
       </table>
@@ -1835,6 +2609,14 @@ footer{
       <p>買収した事業のライセンスが、誰の資格に依拠しているかを、DCCA の記録で今すぐ確認してください。その人物が現地マネージャーである場合、その人物の離職は、事業の即時停止を意味します。この依存関係は、第9章の内部統制上のリスクでもあります。</p>
     </div>
     <p class="src"><b>出典：</b>DCCA Professional and Vocational Licensing <a href="https://cca.hawaii.gov/pvl/">https://cca.hawaii.gov/pvl/</a> / DCCA License Search <a href="https://mypvl.dcca.hawaii.gov/public-license-search/">https://mypvl.dcca.hawaii.gov/public-license-search/</a> / DCCA RICO <a href="https://cca.hawaii.gov/rico/">https://cca.hawaii.gov/rico/</a></p>
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第8章）</span>
+      <ol>
+        <li><span class="q-to">保険ブローカーへ</span>「当社の現在の保険（労災、TDI、PHCA、General Liability）に、無保険の期間や補償の穴はありませんか。EPLI と Employee Dishonesty Coverage の見積もりも出してください。」</li>
+        <li><span class="q-to">保険ブローカーへ</span>「従業員が自家用車で業務（資材の運搬、現場間の移動）を行っています。Non-Owned Auto Liability は付いていますか。付いていない場合、事故が起きたら誰が賠償しますか。」</li>
+        <li><span class="q-to">HIOSH の無料相談 / 弁護士へ</span>「当社の清掃業務で、SDS の備置、Hazard Communication、血液媒介病原体の訓練は、どこまで必要ですか。現状で不足している項目を指摘してください。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 9 ============ -->
@@ -1941,7 +2723,7 @@ footer{
           </tr>
           <tr>
             <td><strong>弁護士、会計士、保険ブローカーを別々の人脈から選ぶ</strong></td>
-            <td>3者を同一の紹介者から選ばない。<span class="hl">相互に利害関係のない専門家を選ぶことで、相互牽制が働きます</span>。第13章の公的機関の検索を用いる</td>
+            <td>3者を同一の紹介者から選ばない。<span class="hl">相互に利害関係のない専門家を選ぶことで、相互牽制が働きます</span>。第17章の公的機関の検索を用いる</td>
             <td>全員が同じ人脈である場合、問題が発生しても、誰もオーナーに伝えない構造になり得る</td>
           </tr>
           <tr>
@@ -2063,8 +2845,8 @@ footer{
           </tr>
           <tr>
             <td><strong>弁護士の懲戒歴</strong></td>
-            <td>Office of Disciplinary Counsel で、弁護士の懲戒処分の履歴を確認する（第13章）</td>
-            <td><a href="https://dc.hawaii.gov/">https://dc.hawaii.gov/</a></td>
+            <td>Office of Disciplinary Counsel で、弁護士の懲戒処分の履歴を確認する（第17章）。<strong>州司法府の公式サイトから検索して辿ること</strong></td>
+            <td><a href="https://www.courts.state.hi.us/">https://www.courts.state.hi.us/</a></td>
           </tr>
           <tr>
             <td><strong>訴訟歴</strong></td>
@@ -2094,6 +2876,14 @@ footer{
       <p>ハワイ州法は、<span class="hl">採用の判断において、逮捕歴および有罪歴を利用することに制限を設けています</span>。連邦の EEOC も、有罪歴の一律の排除が差別につながり得るとしています。<strong>「前科があるから不採用」という判断を、確認せずに行わないでください。</strong>照会のタイミングと利用の範囲について、必ず弁護士に確認してから運用してください。</p>
     </div>
     <p class="src"><b>出典：</b>Investor.gov Affinity Fraud <a href="https://www.investor.gov/protect-your-investments/fraud/types-fraud/affinity-fraud">https://www.investor.gov/protect-your-investments/fraud/types-fraud/affinity-fraud</a> / DCCA RICO <a href="https://cca.hawaii.gov/rico/">https://cca.hawaii.gov/rico/</a> / EEOC Arrest and Conviction Records <a href="https://www.eeoc.gov/laws/guidance/enforcement-guidance-consideration-arrest-and-conviction-records-employment-decisions">https://www.eeoc.gov/laws/guidance/enforcement-guidance-consideration-arrest-and-conviction-records-employment-decisions</a></p>
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第9章）</span>
+      <ol>
+        <li><span class="q-to">CPA / 弁護士へ</span>「遠隔経営の内部統制として、銀行の閲覧権限、支払承認の上限、給与の最終承認を、私が保持する設計にしたい。銀行と給与サービスの設定で、具体的に何をどう変えますか。」</li>
+        <li><span class="q-to">弁護士へ</span>「現地マネージャーとの雇用契約に、競業避止、non-solicitation、会社資産（顧客リスト、鍵、パスワード）の定義を入れたい。ハワイ州法で有効に成立する範囲はどこまでですか。」</li>
+        <li><span class="q-to">弁護士へ</span>「採用時の検証について、私が合法にできることと、やってはいけないことを線引きしてください（第6章 6-12 の ban the box と矛盾しない形で）。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 10 ============ -->
@@ -2191,7 +2981,7 @@ footer{
     </div>
     <div class="alert alert--tip">
       <span class="at">ヒント：探し方</span>
-      <p>CPA は、<strong>Hawaii Society of CPAs</strong> の会員検索から探せます（第13章）。<span class="hl">紹介だけに依存せず、複数の候補に同じ質問をして、回答を比較してください。</span>第9章のとおり、弁護士、CPA、保険ブローカーは、<strong>別々の人脈から選ぶこと</strong>が内部統制になります。</p>
+      <p>CPA は、<strong>Hawaii Society of CPAs</strong> の会員検索から探せます（第17章）。<span class="hl">紹介だけに依存せず、複数の候補に同じ質問をして、回答を比較してください。</span>第9章のとおり、弁護士、CPA、保険ブローカーは、<strong>別々の人脈から選ぶこと</strong>が内部統制になります。</p>
     </div>
 
     <h3>10-4 会計年度と帳簿の保存義務</h3>
@@ -2219,11 +3009,472 @@ footer{
       <p>買収した法人については、<span class="hl">前オーナーの時代の帳簿と記録も、会社の記録として保持する必要があります</span>（株式譲渡で法人ごと取得した場合）。IRS やハワイ州の税務調査は、買収前の期間に及び得ます。<strong>前オーナーから、過去7年分の帳簿、申告書、給与記録、I-9、保険証券を、電子データで受領しているかを確認してください。</strong>受領していない場合、Purchase Agreement に基づいて請求できる可能性があります（第2章）。</p>
     </div>
     <p class="src"><b>出典：</b>IRS How Long Should I Keep Records <a href="https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records">https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records</a> / IRS Recordkeeping for Employers <a href="https://www.irs.gov/businesses/small-businesses-self-employed/employment-tax-recordkeeping">https://www.irs.gov/businesses/small-businesses-self-employed/employment-tax-recordkeeping</a> / U.S. DOL Recordkeeping under FLSA <a href="https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping">https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping</a> / IRS Form 7004 <a href="https://www.irs.gov/forms-pubs/about-form-7004">https://www.irs.gov/forms-pubs/about-form-7004</a></p>
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第10章）</span>
+      <ol>
+        <li><span class="q-to">銀行へ</span>「前オーナーの署名権とアクセス権は、完全に削除されていますか。私本人が全口座を常時閲覧でき、現地マネージャーの権限を閲覧のみに制限する設定は可能ですか。」</li>
+        <li><span class="q-to">給与計算サービスへ</span>「御社は、ハワイの TDI と PHCA に対応していますか。HC-5 の管理機能はありますか。New Hire Reporting は代行に含まれますか。給与の実行前に、私が対象者と支給額を承認する運用にできますか。」</li>
+        <li><span class="q-to">CPAへ</span>「前オーナーの時代の帳簿、申告書、給与記録、I-9、保険証券は、過去何年分を保存する義務がありますか。現在、手元にないものはどれですか。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 11 ============ -->
   <section id="s11">
-    <h2><span class="chap">Chapter 11</span>日本との違い早見表</h2>
+    <h2><span class="chap">Chapter 11</span>リース（賃貸借契約）と個人保証</h2>
+
+    <p class="lead">法人ごと買った場合、リース契約もそのまま承継されています。そして、そこに個人保証が付いている場合、会社が潰れても、あなた個人の資産で残債を払う義務が残ります。買収額が100万円でも、リースの残債は数十万ドルになり得ます。この章は、金額の桁が最も大きくなり得る領域です。</p>
+
+    <h3>11-1 なぜリースが最大のリスクになり得るのか</h3>
+    <p><strong>結論：</strong>米国の商業リースには、<span class="hl">acceleration clause（期限の利益喪失条項）</span>が入っていることが多く、賃料の支払を怠ると、<strong>残りの契約期間の賃料全額を、一括で請求できる</strong>構造になっています。</p>
+    <div class="term">
+      <span class="tm-t">用語</span>
+      <p><b>Personal Guaranty（個人保証）：</b>会社が賃料を払えなくなった場合に、経営者個人が代わりに支払うことを約束する契約。<span class="hl">署名すると、会社が倒産しても、個人の資産（預金、不動産）で支払う義務が残ります。</span>会社の有限責任は、この保証の前では機能しません。</p>
+    </div>
+    <p>たとえば、月額3,000ドルのリースが5年残っている場合、単純計算で残債は18万ドルです<span class="est">推定</span>。<span class="hl">買収額 6,500ドルの会社が、18万ドルの個人保証を抱えている可能性がある</span>ということです。金額の桁が違います。</p>
+
+    <h3>11-2 いま確認すべき5つのこと</h3>
+    <div class="tw">
+      <table>
+        <caption>リース契約で確認する項目</caption>
+        <thead>
+          <tr><th class="num">#</th><th>確認項目</th><th>なぜ重要か</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">1</td>
+            <td><strong>契約期間の残り、賃料、CAM（共益費）、賃料改定条項</strong></td>
+            <td>残期間 × 賃料が、最悪の場合の負担額の上限になる。CAM は賃料とは別に請求され、年々上がることがある</td>
+          </tr>
+          <tr>
+            <td class="num">2</td>
+            <td><strong>オーナー変更（change of control）条項</strong></td>
+            <td><span class="hl">法人の支配権が変わる場合、貸主の事前の承諾を要する条項が入っていることが多い。</span>承諾を取らずに買収していた場合、<strong>すでに契約違反の状態にある可能性があります</strong>。貸主に解除権が生じ得る</td>
+          </tr>
+          <tr>
+            <td class="num">3</td>
+            <td><strong>個人保証（Personal Guaranty）の有無</strong></td>
+            <td>前オーナーの個人保証が付いていた場合、<span class="hl">貸主は、あなたに新たな個人保証を要求してくる可能性が高い</span>。署名する前に、必ず弁護士に相談すること</td>
+          </tr>
+          <tr>
+            <td class="num">4</td>
+            <td><strong>Good Guy Clause の有無</strong></td>
+            <td>一定の条件（事前通知、物件の明渡し、未払賃料の清算）を満たせば、<strong>それ以降の個人保証が解除される</strong>条項。これがあるかないかで、撤退時のコストが桁違いに変わる（第14章）</td>
+          </tr>
+          <tr>
+            <td class="num">5</td>
+            <td>acceleration clause（期限の利益喪失条項）、原状回復義務、転貸（sublease）の可否</td>
+            <td>撤退時の出口が確保できるかを左右する。転貸が禁止されていると、途中でやめられない</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert--warn">
+      <span class="at">警告：個人保証への署名は、その場で判断しない</span>
+      <p>貸主から「オーナーが変わったので、新しい保証書に署名してほしい」と求められた場合、<span class="hl">その場で署名しないでください。</span>いったん持ち帰り、弁護士に見せてください。</p>
+      <p>交渉できる余地があります。たとえば、<strong>(1) Good Guy Clause を入れる、(2) 保証の上限額（cap）を設定する、(3) 保証の期間を限定する、(4) 保証の代わりに保証金（security deposit）を積む</strong>といった選択肢です。<strong>何も交渉せずに無限定の個人保証に署名することが、最悪の選択です。</strong></p>
+    </div>
+
+    <div class="jp-compare">
+      <span class="jc-t">日本との対比：賃貸借と保証</span>
+      <span class="jc-row"><span class="jc-k">日本では</span>事業用賃貸に連帯保証は付くが、退去すれば以後の賃料債務は原則として生じない。借主保護も比較的厚い。</span>
+      <span class="jc-row"><span class="jc-k jc-k--us">ハワイでは</span>個人保証に加え、acceleration clause により<strong>残期間の賃料全額</strong>を請求され得る。退去しても債務は消えない。</span>
+      <span class="jc-row"><span class="jc-k jc-k--diff">決定的な差</span>金額の桁。<span class="hl">日本の感覚で「やめれば終わり」と考えると、数十万ドルの個人債務が残ります。</span></span>
+    </div>
+
+    <h3>11-3 前オーナーから受け取っていない場合</h3>
+    <p>リース契約書の原本を受領していない場合、<strong>直ちに前オーナーに請求してください。</strong>それでも入手できない場合、<span class="hl">貸主（landlord）に直接連絡し、契約書の写しを求めてください。</span>貸主は、現在の借主が誰であるかを把握する必要があるため、通常は応じます。</p>
+    <p>あわせて、Purchase Agreement（買収契約書）の表明保証と補償条項を確認してください（第2章）。「未開示の契約上の債務はない」旨の表明があれば、売主に補償を請求できる可能性があります。</p>
+
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第11章）</span>
+      <ol>
+        <li><span class="q-to">弁護士へ</span>「このリース契約書を読んでください。個人保証は付いていますか。付いている場合、私は誰の、どの債務を、いくらまで保証することになりますか。」</li>
+        <li><span class="q-to">弁護士へ</span>「買収にあたり、change of control 条項に基づく貸主の承諾を取っていません。現在、契約違反の状態にありますか。是正するには何をすればよいですか。」</li>
+        <li><span class="q-to">弁護士へ</span>「貸主から新たな個人保証を求められています。Good Guy Clause、保証の上限額、期間の限定のうち、どれを交渉すべきですか。署名を拒否した場合、貸主は契約を解除できますか。」</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 12 ============ -->
+  <section id="s12">
+    <h2><span class="chap">Chapter 12</span>商業清掃契約の実務要件</h2>
+
+    <p class="lead">商業清掃では、保険証書（COI）を出せないと、そもそも契約が取れません。顧客は「自社を追加被保険者に指定した保険証書を出せ」と要求してきます。これは交渉事項ではなく、参入の前提条件です。</p>
+
+    <h3>12-1 COI（Certificate of Insurance / 保険証書）</h3>
+    <div class="term">
+      <span class="tm-t">用語</span>
+      <p><b>COI（Certificate of Insurance）：</b>保険に加入していることを証明する1枚の書類。保険会社またはブローカーが発行します。<b>Additional Insured（追加被保険者）</b>とは、<span class="hl">自社の保険で、顧客も一緒に守る</span>という指定のこと。清掃中の事故で顧客が訴えられた場合、あなたの保険が顧客の防御費用も負担します。</p>
+    </div>
+    <ul>
+      <li>顧客（オフィスビル、店舗、管理会社）は、契約の条件として<span class="hl">「自社を Additional Insured に指定した COI を提出せよ」</span>と要求してきます。</li>
+      <li><strong>出せないと、契約を切られます。</strong>これは業界の標準であり、例外はほとんどありません。</li>
+      <li>要求される補償額は、1件100万ドル、年間総額200万ドルが一般的な水準です<span class="est">推定</span>。顧客によってはこれより高い額を要求します。</li>
+      <li>COI は<strong>毎年の更新が必要です。</strong>保険が失効すると、顧客との契約も同時に危険にさらされます。<span class="hl">更新期日をカレンダーに固定してください。</span></li>
+    </ul>
+
+    <h3>12-2 Janitorial Bond（清掃業者向けの身元保証）</h3>
+    <ul>
+      <li><span class="hl">従業員が顧客の建物内で窃盗を行った場合の損害を補償するもの</span>です。商業清掃の契約では、事実上必須と考えてください。</li>
+      <li><strong>これは「顧客のため」のものであり、あなたの会社を守る保険ではありません。</strong>多くのボンドは、保険会社が顧客に支払った後、<span class="hl">あなたの会社に求償します</span>。最終的な負担は会社に戻ります。</li>
+      <li>会社自身を従業員の横領や窃盗から守るのは、<strong>Employee Dishonesty Coverage（または Crime Insurance）</strong>です。<strong>両方を、別々に、保険ブローカーに見積もらせてください</strong>（第8章、第9章）。</li>
+    </ul>
+
+    <div class="alert alert--key">
+      <span class="at">重要：清掃業に必要な保険の全体像</span>
+      <div class="tw">
+        <table>
+          <caption>清掃業で検討すべき保険とボンド</caption>
+          <thead>
+            <tr><th>種類</th><th>何を守るか</th><th>必要度</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Workers' Compensation（労災）</td><td>従業員の業務上の負傷</td><td><strong>法律上の義務（従業員1人から）</strong></td></tr>
+            <tr><td>TDI（一時傷病保険）</td><td>従業員の業務外の傷病</td><td><strong>法律上の義務</strong></td></tr>
+            <tr><td>PHCA（医療保険）</td><td>従業員の医療</td><td><strong>法律上の義務（週20時間以上）</strong></td></tr>
+            <tr><td>General Liability（一般賠償責任）</td><td>第三者の身体傷害、財物損壊。<span class="hl">および弁護士費用</span></td><td>顧客契約の前提条件</td></tr>
+            <tr><td><strong>Janitorial Bond</strong></td><td>顧客物件での従業員による窃盗（顧客のため）</td><td>商業契約では事実上必須</td></tr>
+            <tr><td><strong>Employee Dishonesty Coverage</strong></td><td><span class="hl">会社自身が受ける、従業員による横領や窃盗</span></td><td>遠隔経営では検討価値が高い</td></tr>
+            <tr><td>Commercial Auto / Non-Owned Auto</td><td>社用車、および<strong>従業員が自家用車で業務中に起こした事故</strong></td><td>運転させるなら必須</td></tr>
+            <tr><td>EPLI（雇用慣行賠償）</td><td>従業員からの訴訟（不当解雇、ハラスメント、差別）</td><td>従業員を雇う以上、検討すべき</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>12-3 鍵の管理と責任</h3>
+    <ul>
+      <li>清掃業は、<span class="hl">顧客の建物の鍵、アクセスカード、警報システムの暗証番号を預かる business です</span>。ここでの管理不備は、そのまま賠償責任になります。</li>
+      <li><strong>最低限やること：</strong>鍵の受渡し台帳（誰に、いつ、どの鍵を渡したか）、退職時の鍵の回収記録、警報コードの定期変更、鍵の複製の禁止をハンドブックに明記すること（第7章）。</li>
+      <li><strong>従業員の雇用契約で、鍵とパスワードを「会社資産」と明確に定義してください</strong>（第9章 9-5）。</li>
+      <li>鍵を紛失した場合、<span class="hl">建物全体のシリンダー交換費用（re-keying）を請求されることがあります。</span>金額は大きくなり得ます。保険で担保できるか、ブローカーに確認してください。</li>
+    </ul>
+
+    <h3>12-4 化学薬品の SDS（安全データシート）備置義務</h3>
+    <ul>
+      <li>職場で使用する<strong>すべての化学物質（洗剤、漂白剤、消毒剤、ワックスを含む）</strong>について、SDS を、<span class="hl">従業員が就業時間中いつでも閲覧できる状態で備え置く義務</span>があります。</li>
+      <li><strong>「ただの洗剤だから対象外」ではありません。</strong>清掃業は、HIOSH の検査でここを最初に見られる業種です。</li>
+      <li>あわせて、<strong>Hazard Communication プログラム</strong>（書面の計画、化学物質のリスト、容器のラベル表示、従業員への訓練）が必要です。<span class="hl">詰め替えたスプレーボトルにラベルがない状態は、典型的な指摘事項です。</span></li>
+      <li>訓練の実施記録（日付、参加者、内容）を保管してください（第8章 8-4）。</li>
+    </ul>
+
+    <h3>12-5 契約の解約条項</h3>
+    <div class="tw">
+      <table>
+        <caption>清掃契約で確認すべき条項</caption>
+        <thead>
+          <tr><th>条項</th><th>確認するポイント</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>解約条項（termination）</td><td>多くは<strong>30日前の通知で、理由なく解約可能</strong>です。<span class="hl">つまり、顧客はいつでも去れます。</span>売上の予測を、契約期間の長さに依存させないでください</td></tr>
+          <tr><td><strong>オーナー変更を理由とする解約条項</strong></td><td><span class="hl">「事業の支配権が変わった場合、顧客は解約できる」という条項が入っていないか。</span>入っている場合、買収の事実を知られた時点で解約され得ます。<strong>買収した契約の全件について、今すぐ確認してください</strong></td></tr>
+          <tr><td>保険の要求水準</td><td>要求される補償額と、Additional Insured の指定。現在の保険が満たしているか</td></tr>
+          <tr><td>賠償責任の範囲（indemnification）</td><td>顧客側の過失による事故まで、こちらが賠償する内容になっていないか。<strong>一方的な補償条項は交渉の対象です</strong></td></tr>
+          <tr><td>価格改定条項</td><td>最低賃金の上昇（2026年16.00ドル、2028年18.00ドル）を、価格に転嫁できる条項があるか。<span class="hl">ないと、人件費の上昇をすべて自社で被ります</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert--tip">
+      <span class="at">ヒント：価格改定条項は、生存に直結する</span>
+      <p>最低賃金は2026年1月に16.00ドル、2028年1月に18.00ドルへ上がることが決まっています（第6章）。PHCA の医療保険負担も、賃金に連動して増えます。<span class="hl">価格改定条項のない長期契約は、時間とともに赤字化します。</span>契約更新時に、必ず価格改定条項を入れる交渉をしてください。</p>
+    </div>
+
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第12章）</span>
+      <ol>
+        <li><span class="q-to">保険ブローカーへ</span>「当社の顧客が要求する COI の水準を満たしていますか。Additional Insured の指定は、顧客ごとに追加できますか。Janitorial Bond と Employee Dishonesty Coverage の両方の見積もりを出してください。」</li>
+        <li><span class="q-to">弁護士へ</span>「承継した顧客契約に、オーナー変更を理由とする解約条項はありますか。ある場合、顧客への通知義務を負っていますか。通知しなかった場合のリスクは何ですか。」</li>
+        <li><span class="q-to">弁護士 / 保険ブローカーへ</span>「顧客の鍵を紛失し、建物全体のシリンダー交換が必要になった場合、当社の保険で補償されますか。されない場合、どの補償を追加すべきですか。」</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 13 ============ -->
+  <section id="s13">
+    <h2><span class="chap">Chapter 13</span>ハワイで会計士・税理士を探す現実</h2>
+
+    <p class="lead">率直に書きます。ハワイは会計事務所の層が薄く、信頼できるCPAを見つけるのは、日本の主要都市で税理士を探すより難しいのが実情です。これは地理と市場規模の問題であり、能力の問題ではありません。前提として知っておいてください。</p>
+
+    <h3>13-1 3つの条件を同時に満たすCPAは、非常に少ない</h3>
+    <div class="tw">
+      <table>
+        <caption>あなたが必要としている条件</caption>
+        <thead>
+          <tr><th class="num">#</th><th>条件</th><th>これを満たさないと何が起きるか</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">1</td>
+            <td><strong>ハワイの GET を正確に理解している</strong></td>
+            <td><span class="hl">本土（メインランド）のCPAは、GET を消費税（sales tax）と誤解することがあります。</span>GET は売上総額課税で、仕入税額控除がありません。この違いを理解していないCPAに任せると、<strong>申告そのものが間違います</strong>（第5章）</td>
+          </tr>
+          <tr>
+            <td class="num">2</td>
+            <td><strong>Form 5472 を扱える</strong></td>
+            <td>外国人が25%以上を保有する米国法人の情報申告。<span class="hl">未提出の罰金は25,000ドル</span>。外国人保有法人を扱った経験がないCPAは、この様式を失念します（第5章）</td>
+          </tr>
+          <tr>
+            <td class="num">3</td>
+            <td>日本語で意思疎通できる</td>
+            <td>英語での税務の議論には限界があります。<strong>「分かったつもり」で進むことが、最大のリスクです</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert alert--warn">
+      <span class="at">警告</span>
+      <p><span class="hl">日本語対応を謳う事務所であっても、上記の (1) と (2) を満たすとは限りません。</span>「日本語が通じること」と「ハワイの制度と外国人保有法人の申告を正確に扱えること」は、別の能力です。<strong>日本語が通じることに安心して、能力の検証を省略しないでください。</strong>これは第9章で述べた「信頼が検証の代わりになる」構造そのものです。</p>
+    </div>
+
+    <h3>13-2 資格の違いを理解する</h3>
+    <div class="tw">
+      <table>
+        <caption>米国の税務関連資格</caption>
+        <thead>
+          <tr><th>資格</th><th>できること</th><th>注意点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CPA（公認会計士）</strong></td>
+            <td>州のライセンスに基づき、会計監査、税務申告の代理、財務諸表の作成</td>
+            <td><span class="hl">州ごとのライセンスです。</span>ハワイ州で開業ライセンスを持っているかを確認してください</td>
+          </tr>
+          <tr>
+            <td><strong>EA（Enrolled Agent / 米国税理士）</strong></td>
+            <td><strong>連邦税に関する代理権</strong>を持つ資格。IRS に対する申告代理と交渉ができる。<span class="hl">州をまたいで活動できます</span></td>
+            <td>連邦税が中心。<strong>ハワイ州の GET には、別途の知識が必要です</strong>。日本在住のEAも存在します</td>
+          </tr>
+          <tr>
+            <td>弁護士（税務）</td>
+            <td>申告代理、訴訟、税務調査の代理</td>
+            <td>費用は高い。争いになったときに必要</td>
+          </tr>
+          <tr>
+            <td><strong>「USCPA 資格保持者」</strong></td>
+            <td><span class="hl">試験に合格しただけの状態を指すことがあります。</span></td>
+            <td><strong>「USCPA 試験に合格している」ことと、「ハワイ州でCPAとして開業ライセンスを持っている」ことは、まったく別です。</strong>前者は申告代理の資格を意味しません</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert alert--key">
+      <span class="at">重要：申告代理ができるのは誰か</span>
+      <p>米国での税務申告書の作成と提出（申告代理）を業として行えるのは、<span class="hl">CPA、EA（Enrolled Agent）、弁護士</span>のいずれかの資格を持つ者に限られます。<strong>「USCPA」と名乗っているだけの人物に、申告を任せないでください。</strong>資格の有無は、下記の公式サイトで確認できます。</p>
+    </div>
+
+    <h3>13-3 資格を確認する方法</h3>
+    <ul class="links">
+      <li>
+        <span class="lk-t">ハワイ州のCPAライセンスの確認（DCCA）</span>
+        氏名または事務所名から、ライセンスの有無、有効期限、処分歴を検索できます。
+        <span class="lk-u"><a href="https://mypvl.dcca.hawaii.gov/public-license-search/">https://mypvl.dcca.hawaii.gov/public-license-search/</a></span>
+      </li>
+      <li>
+        <span class="lk-t">EA（Enrolled Agent）および申告代理人の確認（IRS）</span>
+        連邦の税務申告代理人のディレクトリ。資格の種類で絞り込めます。
+        <span class="lk-u"><a href="https://irs.treasury.gov/rpo/rpo.jsf">https://irs.treasury.gov/rpo/rpo.jsf</a></span>
+      </li>
+      <li>
+        <span class="lk-t">Enrolled Agent 制度の説明（IRS）</span>
+        EA が何をできる資格かの公式な説明。
+        <span class="lk-u"><a href="https://www.irs.gov/tax-professionals/enrolled-agents">https://www.irs.gov/tax-professionals/enrolled-agents</a></span>
+      </li>
+      <li>
+        <span class="lk-t">Hawaii Society of CPAs（ハワイ州の公認会計士協会）</span>
+        会員から候補を探せます。
+        <span class="lk-u"><a href="https://www.hscpa.org/">https://www.hscpa.org/</a></span>
+      </li>
+    </ul>
+
+    <h3>13-4 推奨する体制：二層構成</h3>
+    <p><strong>結論：</strong>1人ですべてを満たす専門家を探すより、<span class="hl">役割を分けた二層構成の方が、現実的で、かつ統制上も安全です。</span></p>
+    <div class="tw">
+      <table>
+        <caption>二層構成の例</caption>
+        <thead>
+          <tr><th>層</th><th>担当</th><th>選び方</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ハワイ側</td>
+            <td><strong>ハワイのCPA</strong>。GET（G-45、G-49）、州の給与源泉税（HW-14、HW-3）、州法人税</td>
+            <td>DCCA でライセンスを確認。<strong>13-6 の質問を必ずぶつける</strong></td>
+          </tr>
+          <tr>
+            <td>日本側</td>
+            <td><strong>日本在住の EA または USCPA 有資格者</strong>。日本語、日本時間での窓口。連邦税の確認、日本の税理士との橋渡し</td>
+            <td>IRS のディレクトリで EA 資格を確認。<span class="hl">「日本語で、日本時間でやり取りできること」の実務上の価値は非常に大きい</span></td>
+          </tr>
+          <tr>
+            <td>日本の税務</td>
+            <td>日本の税理士。外国税額控除、タックスヘイブン対策税制（第5章）</td>
+            <td>米国側と<strong>直接会話させること</strong>。伝言ゲームにしない</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert alert--warn">
+      <span class="at">警告：同じ人脈から全員を紹介してもらわない</span>
+      <p><span class="hl">弁護士、CPA、保険ブローカーを、一つの人脈から固めないでください。</span>相互に利害関係のない専門家を選ぶことで、初めて相互牽制が働きます。全員が同じ紹介者から来ている場合、問題が発生しても、誰もあなたに伝えない構造になり得ます。これは第9章の内部統制の核心です。</p>
+    </div>
+
+    <h3>13-5 費用の目安</h3>
+    <p>小規模な法人（従業員数名、売上20万ドル程度）の場合の年間費用は、次の程度が目安です<span class="est">推定</span>。実額は事務所と業務範囲により大きく変動します。</p>
+    <div class="tw">
+      <table>
+        <caption>会計まわりの年間費用の目安<span class="est">推定</span></caption>
+        <thead>
+          <tr><th>項目</th><th class="num">目安<span class="est">推定</span></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>記帳代行（bookkeeping）</td><td class="num">月額 200ドルから600ドル<span class="est">推定</span></td></tr>
+          <tr><td>GET の申告（G-45 / G-49）</td><td class="num">申告ごとに数十ドルから数百ドル<span class="est">推定</span></td></tr>
+          <tr><td>法人税申告（Form 1120）</td><td class="num">1,500ドルから4,000ドル<span class="est">推定</span></td></tr>
+          <tr><td><strong>Form 5472 の追加</strong></td><td class="num">別途、追加費用がかかることが多い<span class="est">推定</span></td></tr>
+          <tr><td>給与計算サービス</td><td class="num">月額 50ドルから150ドル＋従業員1人あたりの加算<span class="est">推定</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">上記はすべて推定であり、法定の基準ではありません。複数の事務所から見積もりを取得して比較してください。</p>
+
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第13章）</span>
+      <ol>
+        <li><span class="q-to">CPA候補へ</span>「ハワイの GET を、御社は普段どのように処理していますか。売上ゼロの月の申告はどうしますか。GET と sales tax の違いを、私に説明してください。」（<span class="hl">説明できない候補は、その時点で除外してください</span>）</li>
+        <li><span class="q-to">CPA候補へ</span>「Form 5472 の作成経験はありますか。何件、どのような形で扱いましたか。当社は外国人が100%保有する法人です。」</li>
+        <li><span class="q-to">CPA候補へ</span>「あなたはハワイ州のCPA開業ライセンスを持っていますか、それとも EA ですか、あるいは USCPA 試験の合格者ですか。ライセンス番号を教えてください。」（<strong>DCCA または IRS のサイトで、必ず自分で照合してください</strong>）</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 14 ============ -->
+  <section id="s14">
+    <h2><span class="chap">Chapter 14</span>撤退・清算の手順とコスト</h2>
+
+    <p class="lead">「うまくいかなかったとき、いくらかけて、どう畳むか」を先に知っておいてください。撤退のコストを知らないまま事業を続ける判断も、やめる判断も、できません。そして「放置して逃げる」は選択肢になりません。未払税と未払賃金は個人責任に及び、将来の米国入国にも影響し得ます。</p>
+
+    <h3>14-1 撤退が「選択肢」であることを、先に確認する</h3>
+    <p>事業を続けるかどうかの判断は、感情ではなく金額で行ってください。判断に必要な数字は次の3つです。</p>
+    <ol>
+      <li><strong>続けた場合の、年間の必要コスト。</strong>人件費は賃金の1.3倍から1.4倍（第6章 6-10）、保険、会計、リース、GETを積み上げてください。</li>
+      <li><strong>いま抱えている、承継した債務の総額。</strong>未払税、未払賃金、リースの残債、無保険期間のリスク（第2章、第11章）。</li>
+      <li><strong>撤退した場合の総コスト。</strong>それが 14-2 です。</li>
+    </ol>
+    <p><span class="hl">3が1と2より小さいなら、撤退は合理的な選択です。</span>この計算を、専門家と一緒に、数字で行ってください。</p>
+
+    <h3>14-2 撤退に必要な手続</h3>
+    <div class="tw">
+      <table>
+        <caption>清算の手順（順序が重要）</caption>
+        <thead>
+          <tr><th class="num">#</th><th>手続</th><th>内容と注意点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">1</td>
+            <td><strong>従業員への最終給与の即日支払い</strong></td>
+            <td><span class="hl">会社都合の解雇は、その日のうちに全額支払う義務があります</span>（第6章 6-13）。未消化の有給の扱いは、ハンドブックの記載に依存します。<strong>資金を用意してから解雇日を決めてください</strong></td>
+          </tr>
+          <tr>
+            <td class="num">2</td>
+            <td>従業員への通知（WARN / Dislocated Workers Act）</td>
+            <td>従業員50人以上の場合、事前通知義務と退職手当の支払義務が生じ得ます（第6章 6-17）</td>
+          </tr>
+          <tr>
+            <td class="num">3</td>
+            <td>顧客契約の解除</td>
+            <td>多くは30日前の通知で解約できます。<strong>契約書の解約条項を確認してください</strong>（第12章）。鍵とアクセスカードを全件返却し、受領書を取ること</td>
+          </tr>
+          <tr>
+            <td class="num">4</td>
+            <td><strong>リースの処理</strong></td>
+            <td><span class="hl">ここが最大のコストになりやすい部分です。</span>個人保証、acceleration clause、Good Guy Clause の有無で、金額が桁違いに変わります（第11章）。<strong>転貸（sublease）や合意解約（surrender）の交渉が必要です</strong></td>
+          </tr>
+          <tr>
+            <td class="num">5</td>
+            <td>州と連邦の最終税務申告</td>
+            <td>GET（G-45、G-49の最終分）、州の給与源泉税（HW-14、HW-3）、連邦の Form 941 と Form 940、法人税（Form 1120）と <strong>Form 5472</strong>。W-2 の従業員への交付</td>
+          </tr>
+          <tr>
+            <td class="num">6</td>
+            <td><strong>Tax Clearance（Form A-6）の取得</strong></td>
+            <td>州と連邦に未納がないことの証明。<span class="hl">これがないと、解散登記が受理されません</span></td>
+          </tr>
+          <tr>
+            <td class="num">7</td>
+            <td>DCCA への解散登記（Articles of Dissolution）</td>
+            <td>登記を閉じないと、<strong>Annual Report の提出義務が続き、放置すれば行政解散となり、債務だけが残ります</strong>（第4章）</td>
+          </tr>
+          <tr>
+            <td class="num">8</td>
+            <td>EIN のクローズ</td>
+            <td>IRS に対し、事業を終了した旨を通知し、口座を閉じます。<strong>EIN そのものは再利用されませんが、閉鎖の手続をしないと、申告義務が続いているものと扱われ得ます</strong></td>
+          </tr>
+          <tr>
+            <td class="num">9</td>
+            <td><strong>労災保険のテール</strong></td>
+            <td><span class="hl">過去の事故に関するクレームが、廃業後に出てくることがあります。</span>保険の解約時期と、遡及補償（tail coverage）の要否を、必ずブローカーに確認してください</td>
+          </tr>
+          <tr>
+            <td class="num">10</td>
+            <td>銀行口座の閉鎖、記録の保存</td>
+            <td>帳簿と記録は、<strong>廃業後も保存義務が続きます</strong>（最低でも数年、税務は7年を推奨。第10章）。オーナー本人がアクセスできるクラウドに保管してください</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>14-3 撤退コストの目安</h3>
+    <div class="tw">
+      <table>
+        <caption>撤退にかかる費用のレンジ<span class="est">推定</span></caption>
+        <thead>
+          <tr><th>項目</th><th class="num">目安<span class="est">推定</span></th><th>変動要因</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>最終給与、未消化有給の精算</td><td class="num">従業員数 × 給与の数週間分<span class="est">推定</span></td><td>従業員数、ハンドブックの規定</td></tr>
+          <tr><td><strong>リースの残債または解約金</strong></td><td class="num"><strong>0ドルから残期間の賃料全額</strong><span class="est">推定</span></td><td><span class="hl">Good Guy Clause の有無で桁が変わる。最大のリスク要因</span></td></tr>
+          <tr><td>承継していた未払税の清算</td><td class="num">未納額＋加算税＋利息<span class="est">推定</span></td><td>棚卸しの結果次第（第2章）</td></tr>
+          <tr><td>会計士の費用（最終申告一式）</td><td class="num">2,000ドルから6,000ドル<span class="est">推定</span></td><td>Form 5472 の要否、未申告の有無</td></tr>
+          <tr><td>弁護士の費用（清算、リース交渉）</td><td class="num">3,000ドルから10,000ドル以上<span class="est">推定</span></td><td>リースの交渉が難航するほど増える</td></tr>
+          <tr><td>解散登記、その他の公的手数料</td><td class="num">数十ドルから数百ドル<span class="est">推定</span></td><td>DCCA の手数料</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="3"><strong>最大の変数はリースです。個人保証と Good Guy Clause の有無を、今すぐ確認してください（第11章）。</strong></td></tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="tnote">上記はすべて推定であり、法定の基準ではありません。自社の実額は、リース契約書と棚卸しの結果をもとに、弁護士とCPAに試算させてください。</p>
+
+    <h3>14-4 「放置して逃げる」は不可能</h3>
+    <div class="alert alert--warn">
+      <span class="at">警告</span>
+      <ul>
+        <li><strong>未払の給与源泉税は、Trust Fund Recovery Penalty により、あなた個人に及びます</strong>（第5章 5-7）。<span class="hl">会社を放置しても、この債務は消えません。</span></li>
+        <li><strong>未払賃金についても、実質的な支配者として個人責任を問われ得ます</strong>（第1章 1-3）。</li>
+        <li><strong>リースの個人保証は、会社が消滅しても残ります</strong>（第11章）。</li>
+        <li>登記を放置すれば行政解散となり、<span class="hl">有限責任の保護を失った状態で、債務だけが残ります</span>（第4章 4-4）。</li>
+        <li>米国内に未解決の債務、判決、税務上の問題を残すことは、<strong>将来のビザ申請や入国審査に影響し得ます</strong>（第3章）。</li>
+      </ul>
+      <p><strong>撤退するなら、正面から、手順どおりに畳んでください。</strong>それが最も安く、最も安全です。</p>
+    </div>
+
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第14章）</span>
+      <ol>
+        <li><span class="q-to">弁護士へ</span>「今日、事業を畳むと決めた場合、総額でいくらかかりますか。リースの残債、最終給与、未払税、専門家費用を積み上げて、レンジで示してください。」</li>
+        <li><span class="q-to">弁護士へ</span>「リースを合意解約（surrender）または転貸するには、貸主とどう交渉すべきですか。私の個人保証は、どうすれば解除できますか。」</li>
+        <li><span class="q-to">CPAへ</span>「解散にあたり、必要な最終申告をすべて列挙してください（GET、州源泉税、連邦941、法人税、Form 5472、W-2）。Tax Clearance の取得には、どのくらいの期間がかかりますか。」</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 11 ============ -->
+  <section id="s15">
+    <h2><span class="chap">Chapter 15</span>日本との違い早見表</h2>
 
     <p class="lead">日本の経営で身についた前提のうち、ハワイでそのまま通用するものはほとんどありません。以下は、経営判断に直接影響する差分の一覧です。</p>
 
@@ -2331,11 +3582,19 @@ footer{
       <span class="at">重要</span>
       <p>この表の各行は、いずれも<span class="hl">「日本のやり方をそのまま持ち込むと違法または不利益になる」項目</span>です。特に、解雇、医療保険、GET、記録の3点は、日本の常識との乖離が大きく、かつ金額的な影響が大きい領域です。</p>
     </div>
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第15章）</span>
+      <ol>
+        <li><span class="q-to">弁護士 / CPAへ</span>「この早見表のうち、当社が現在すでに違反している、または違反の疑いがある項目はどれですか。優先度の高い順に3つ挙げてください。」</li>
+        <li><span class="q-to">弁護士へ</span>「日本の経営のやり方をそのまま持ち込むと違法になる行為を、私の業種（清掃業）に即して、具体的に列挙してください。」</li>
+        <li><span class="q-to">CPAへ</span>「日本の会計と米国の会計で、私が誤解しやすい点はどこですか。特に GET と人件費の扱いについて、私の理解が正しいか確認してください。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 12 ============ -->
-  <section id="s12">
-    <h2><span class="chap">Chapter 12</span>最初の90日チェックリスト</h2>
+  <section id="s16">
+    <h2><span class="chap">Chapter 16</span>最初の90日チェックリスト</h2>
 
     <p class="lead">放置した場合に事業が停止する、または個人資産に及ぶ順に並べています。30日以内の項目は、他のすべてに優先してください。印刷して使うことを想定しています。</p>
 
@@ -2405,7 +3664,7 @@ footer{
     <span class="phase">90日以内：仕組みを作り、恒常化する</span>
     <h3>専門家の体制</h3>
     <ul class="ck">
-      <li><strong>弁護士、CPA、保険ブローカーを、それぞれ別の人脈から選定した</strong>（第9章、第13章）。</li>
+      <li><strong>弁護士、CPA、保険ブローカーを、それぞれ別の人脈から選定した</strong>（第9章、第17章）。</li>
       <li>CPA に、GET、Form 5472、S Corp の3つの質問をして、回答を比較した（第10章）。</li>
       <li>移民弁護士（AILA 等で検索）と、ビザ戦略の方針を決めた。</li>
       <li>日本の税理士と米国 CPA を接続し、外国税額控除とタックスヘイブン対策税制の論点を共有した（第5章）。</li>
@@ -2436,11 +3695,19 @@ footer{
       <li><strong>年間の期限カレンダーを作成した：</strong>Annual Report（設立月による）、G-49（4月20日）、法人税（4月15日）、<strong>HC-5 の更新（12月31日）</strong>、保険の更新、FinCEN の BOI 規則の確認。</li>
       <li>過去7年分の帳簿、申告書、給与記録、I-9、保険証券を、<strong>オーナーがアクセスできるクラウドに保管した</strong>（第10章）。</li>
     </ul>
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第16章）</span>
+      <ol>
+        <li><span class="q-to">弁護士 / CPAへ</span>「このチェックリストのうち、私が自分でできるものと、専門家に依頼すべきものを分けてください。依頼分の費用の見積もりも出してください。」</li>
+        <li><span class="q-to">弁護士へ</span>「30日以内の項目のうち、すでに手遅れになっている可能性があるものはありますか。あるなら、被害を最小化する手順を教えてください。」</li>
+        <li><span class="q-to">CPA / 弁護士へ</span>「年間の期限カレンダー（Annual Report、G-49、法人税、HC-5 の更新、保険の更新）を作りたい。当社の場合の具体的な日付を、すべて挙げてください。」</li>
+      </ol>
+    </div>
   </section>
 
   <!-- ============ 13 ============ -->
-  <section id="s13">
-    <h2><span class="chap">Chapter 13</span>専門家の探し方</h2>
+  <section id="s17">
+    <h2><span class="chap">Chapter 17</span>専門家の探し方</h2>
 
     <p class="lead">専門家は、公的機関または公的性格を持つ団体の検索窓口から探してください。本資料は、特定の事務所や個人を推奨しません。そして最も重要な原則は、弁護士、会計士、保険ブローカーを、一つの人脈で固めないことです。</p>
 
@@ -2450,7 +3717,7 @@ footer{
       <p>紹介そのものが悪いのではありません。<strong>紹介を、独立した検証の代わりにしないこと</strong>が原則です。以下の公的な検索窓口を使い、複数の候補に同じ質問をして、回答を比較してください。<span class="hl">3者は、必ず別々の経路から選定してください。</span></p>
     </div>
 
-    <h3>13-1 弁護士を探す</h3>
+    <h3>17-1 弁護士を探す</h3>
     <ul class="links">
       <li>
         <span class="lk-t">Hawaii State Bar Association（ハワイ州弁護士会）</span>
@@ -2458,9 +3725,9 @@ footer{
         <span class="lk-u"><a href="https://hsba.org/">https://hsba.org/</a></span>
       </li>
       <li>
-        <span class="lk-t">Office of Disciplinary Counsel（懲戒歴の確認）</span>
-        <strong>候補となる弁護士の懲戒処分の履歴を確認できます。</strong>依頼する前に、必ず確認してください。
-        <span class="lk-u"><a href="https://dc.hawaii.gov/">https://dc.hawaii.gov/</a></span>
+        <span class="lk-t">Office of Disciplinary Counsel（弁護士の懲戒歴の確認）</span>
+        <strong>候補となる弁護士の懲戒処分の履歴を確認できます。</strong>依頼する前に必ず確認してください。ハワイ州司法府（Judiciary）の公式サイトから「Office of Disciplinary Counsel」を検索して辿ってください。
+        <span class="lk-u"><a href="https://www.courts.state.hi.us/">https://www.courts.state.hi.us/</a></span>
       </li>
     </ul>
     <div class="alert alert--tip">
@@ -2468,7 +3735,7 @@ footer{
       <p>米国の弁護士は専門分化しています。<strong>企業法務（M&amp;A、契約）、労働法（employment law）、移民法（immigration）は、それぞれ別の弁護士が扱うのが通常です。</strong>一人にすべてを任せようとしないでください。特に労働法は、ハワイ州法の知識が必須です。</p>
     </div>
 
-    <h3>13-2 移民弁護士を探す</h3>
+    <h3>17-2 移民弁護士を探す</h3>
     <ul class="links">
       <li>
         <span class="lk-t">AILA（American Immigration Lawyers Association）</span>
@@ -2482,7 +3749,7 @@ footer{
       </li>
     </ul>
 
-    <h3>13-3 CPA を探す</h3>
+    <h3>17-3 CPA を探す</h3>
     <ul class="links">
       <li>
         <span class="lk-t">Hawaii Society of CPAs（HSCPA）</span>
@@ -2501,7 +3768,7 @@ footer{
       </li>
     </ul>
 
-    <h3>13-4 無料の公的相談を使う</h3>
+    <h3>17-4 無料の公的相談を使う</h3>
     <ul class="links">
       <li>
         <span class="lk-t">Hawaii SBDC（Small Business Development Center）</span>
@@ -2525,7 +3792,7 @@ footer{
       </li>
     </ul>
 
-    <h3>13-5 事業者と個人の履歴を確認する</h3>
+    <h3>17-5 事業者と個人の履歴を確認する</h3>
     <ul class="links">
       <li>
         <span class="lk-t">DCCA RICO（Regulated Industries Complaints Office）</span>
@@ -2551,30 +3818,38 @@ footer{
 
     <div class="alert alert--warn">
       <span class="at">警告：専門家に会う前に</span>
-      <p>専門家の時間は高額です。<span class="hl">相談の前に、第12章のチェックリストを自分で埋めてから臨んでください。</span>「何がわからないかがわからない」状態で相談すると、費用だけがかかります。</p>
+      <p>専門家の時間は高額です。<span class="hl">相談の前に、第16章のチェックリストを自分で埋めてから臨んでください。</span>「何がわからないかがわからない」状態で相談すると、費用だけがかかります。</p>
       <p>また、専門家を選ぶ際は、<strong>「この分野は自分の専門ではない」と正直に言う人を評価してください。</strong>すべてに即答する専門家より、境界を明示する専門家の方が、結果として安全です。</p>
+    </div>
+    <div class="questions">
+      <span class="q-t">専門家に聞くべき質問（第17章）</span>
+      <ol>
+        <li><span class="q-to">候補となる専門家へ</span>「あなたの資格（州のライセンス番号、または EA の登録番号）を教えてください。私が公的サイトで照合します。」</li>
+        <li><span class="q-to">候補となる専門家へ</span>「私の案件のうち、あなたの専門ではない部分はどこですか。その部分は、誰に相談すべきですか。」（<strong>境界を明示する専門家の方が、結果として安全です</strong>）</li>
+        <li><span class="q-to">候補となる専門家へ</span>「費用は、時間制ですか、案件ごとの定額ですか。初回相談の費用と、想定される総額のレンジを教えてください。」</li>
+      </ol>
     </div>
   </section>
 
   <!-- ============ 14 ============ -->
-  <section id="s14">
-    <h2><span class="chap">Chapter 14</span>参考リンク集</h2>
+  <section id="s18">
+    <h2><span class="chap">Chapter 18</span>参考リンク集</h2>
 
     <p class="lead">本資料で引用した公式情報源を、カテゴリ別に整理しています。数値と制度は改定されるため、判断の前には必ず原典を確認してください。</p>
 
-    <h3>14-1 ハワイ州：登記、ライセンス（DCCA）</h3>
+    <h3>18-1 ハワイ州：登記、ライセンス（DCCA）</h3>
     <ul class="links">
       <li><span class="lk-t">DCCA（Department of Commerce and Consumer Affairs）</span><span class="lk-u"><a href="https://cca.hawaii.gov/">https://cca.hawaii.gov/</a></span></li>
       <li><span class="lk-t">Business Registration Division（法人登記）</span><span class="lk-u"><a href="https://cca.hawaii.gov/breg/">https://cca.hawaii.gov/breg/</a></span></li>
       <li><span class="lk-t">Business Entity Search（法人検索）</span><span class="lk-u"><a href="https://hbe.ehawaii.gov/documents/search.html">https://hbe.ehawaii.gov/documents/search.html</a></span></li>
-      <li><span class="lk-t">Annual Business Filings（年次報告）</span><span class="lk-u"><a href="https://cca.hawaii.gov/breg/registration/annualfiling/">https://cca.hawaii.gov/breg/registration/annualfiling/</a></span></li>
+      <li><span class="lk-t">Annual Business Filings（年次報告）</span><span class="lk-u"><a href="https://cca.hawaii.gov/breg/">https://cca.hawaii.gov/breg/</a></span></li>
       <li><span class="lk-t">Hawaii Business Express（各種手続）</span><span class="lk-u"><a href="https://hbe.ehawaii.gov/">https://hbe.ehawaii.gov/</a></span></li>
       <li><span class="lk-t">Professional and Vocational Licensing（職業ライセンス）</span><span class="lk-u"><a href="https://cca.hawaii.gov/pvl/">https://cca.hawaii.gov/pvl/</a></span></li>
       <li><span class="lk-t">License Search（ライセンス検索）</span><span class="lk-u"><a href="https://mypvl.dcca.hawaii.gov/public-license-search/">https://mypvl.dcca.hawaii.gov/public-license-search/</a></span></li>
       <li><span class="lk-t">RICO（行政処分歴、苦情）</span><span class="lk-u"><a href="https://cca.hawaii.gov/rico/">https://cca.hawaii.gov/rico/</a></span></li>
     </ul>
 
-    <h3>14-2 ハワイ州：税務（DOTAX）</h3>
+    <h3>18-2 ハワイ州：税務（DOTAX）</h3>
     <ul class="links">
       <li><span class="lk-t">Hawaii Department of Taxation</span><span class="lk-u"><a href="https://tax.hawaii.gov/">https://tax.hawaii.gov/</a></span></li>
       <li><span class="lk-t">General Excise Tax（GET）</span><span class="lk-u"><a href="https://tax.hawaii.gov/geninfo/get/">https://tax.hawaii.gov/geninfo/get/</a></span></li>
@@ -2585,22 +3860,22 @@ footer{
       <li><span class="lk-t">Filing Deadlines（申告期限）</span><span class="lk-u"><a href="https://tax.hawaii.gov/geninfo/duedates/">https://tax.hawaii.gov/geninfo/duedates/</a></span></li>
     </ul>
 
-    <h3>14-3 ハワイ州：雇用、労働（DLIR）</h3>
+    <h3>18-3 ハワイ州：雇用、労働（DLIR）</h3>
     <ul class="links">
       <li><span class="lk-t">Department of Labor and Industrial Relations（DLIR）</span><span class="lk-u"><a href="https://labor.hawaii.gov/">https://labor.hawaii.gov/</a></span></li>
       <li><span class="lk-t">Prepaid Health Care（PHCA、医療保険提供義務）</span><span class="lk-u"><a href="https://labor.hawaii.gov/dcd/home/about-phc/">https://labor.hawaii.gov/dcd/home/about-phc/</a></span></li>
       <li><span class="lk-t">Temporary Disability Insurance（TDI）</span><span class="lk-u"><a href="https://labor.hawaii.gov/dcd/home/about-tdi/">https://labor.hawaii.gov/dcd/home/about-tdi/</a></span></li>
-      <li><span class="lk-t">Workers' Compensation（労災保険）</span><span class="lk-u"><a href="https://labor.hawaii.gov/dcd/home/about-wc/">https://labor.hawaii.gov/dcd/home/about-wc/</a></span></li>
+      <li><span class="lk-t">Workers' Compensation（労災保険）</span><span class="lk-u"><a href="https://labor.hawaii.gov/dcd/">https://labor.hawaii.gov/dcd/</a></span></li>
       <li><span class="lk-t">Disability Compensation Division の各種様式（HC-5 等）</span><span class="lk-u"><a href="https://labor.hawaii.gov/dcd/forms/">https://labor.hawaii.gov/dcd/forms/</a></span></li>
       <li><span class="lk-t">Wage Standards Division（最低賃金、賃金時間法）</span><span class="lk-u"><a href="https://labor.hawaii.gov/wsd/">https://labor.hawaii.gov/wsd/</a></span></li>
       <li><span class="lk-t">労働法ポスター（州）</span><span class="lk-u"><a href="https://labor.hawaii.gov/wsd/posters-2/">https://labor.hawaii.gov/wsd/posters-2/</a></span></li>
       <li><span class="lk-t">Unemployment Insurance（失業保険）</span><span class="lk-u"><a href="https://labor.hawaii.gov/ui/">https://labor.hawaii.gov/ui/</a></span></li>
       <li><span class="lk-t">HIOSH（労働安全衛生）</span><span class="lk-u"><a href="https://labor.hawaii.gov/hiosh/">https://labor.hawaii.gov/hiosh/</a></span></li>
       <li><span class="lk-t">Hawaii Civil Rights Commission（州の差別禁止）</span><span class="lk-u"><a href="https://labor.hawaii.gov/hcrc/">https://labor.hawaii.gov/hcrc/</a></span></li>
-      <li><span class="lk-t">New Hire Reporting（ハワイ州）</span><span class="lk-u"><a href="https://ag.hawaii.gov/csea/new-hire-reporting/">https://ag.hawaii.gov/csea/new-hire-reporting/</a></span></li>
+      <li><span class="lk-t">New Hire Reporting（ハワイ州）</span><span class="lk-u"><a href="https://ag.hawaii.gov/csea/">https://ag.hawaii.gov/csea/</a></span></li>
     </ul>
 
-    <h3>14-4 連邦：税務（IRS）</h3>
+    <h3>18-4 連邦：税務（IRS）</h3>
     <ul class="links">
       <li><span class="lk-t">IRS（Internal Revenue Service）</span><span class="lk-u"><a href="https://www.irs.gov/">https://www.irs.gov/</a></span></li>
       <li><span class="lk-t">Form 5472（外国人保有法人の情報申告）</span><span class="lk-u"><a href="https://www.irs.gov/forms-pubs/about-form-5472">https://www.irs.gov/forms-pubs/about-form-5472</a></span></li>
@@ -2616,7 +3891,7 @@ footer{
       <li><span class="lk-t">How Long Should I Keep Records（帳簿の保存）</span><span class="lk-u"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records">https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records</a></span></li>
     </ul>
 
-    <h3>14-5 連邦：移民、就労資格</h3>
+    <h3>18-5 連邦：移民、就労資格</h3>
     <ul class="links">
       <li><span class="lk-t">USCIS</span><span class="lk-u"><a href="https://www.uscis.gov/">https://www.uscis.gov/</a></span></li>
       <li><span class="lk-t">E-2 Treaty Investors</span><span class="lk-u"><a href="https://www.uscis.gov/working-in-the-united-states/temporary-workers/e-2-treaty-investors">https://www.uscis.gov/working-in-the-united-states/temporary-workers/e-2-treaty-investors</a></span></li>
@@ -2628,7 +3903,7 @@ footer{
       <li><span class="lk-t">ESTA</span><span class="lk-u"><a href="https://esta.cbp.dhs.gov/">https://esta.cbp.dhs.gov/</a></span></li>
     </ul>
 
-    <h3>14-6 連邦：雇用、労働安全</h3>
+    <h3>18-6 連邦：雇用、労働安全</h3>
     <ul class="links">
       <li><span class="lk-t">U.S. Department of Labor（DOL）</span><span class="lk-u"><a href="https://www.dol.gov/">https://www.dol.gov/</a></span></li>
       <li><span class="lk-t">Minimum Wage（連邦最低賃金）</span><span class="lk-u"><a href="https://www.dol.gov/agencies/whd/minimum-wage">https://www.dol.gov/agencies/whd/minimum-wage</a></span></li>
@@ -2643,7 +3918,7 @@ footer{
       <li><span class="lk-t">OSHA Bloodborne Pathogens</span><span class="lk-u"><a href="https://www.osha.gov/bloodborne-pathogens">https://www.osha.gov/bloodborne-pathogens</a></span></li>
     </ul>
 
-    <h3>14-7 連邦：BOI、金融、詐欺</h3>
+    <h3>18-7 連邦：BOI、金融、詐欺</h3>
     <ul class="links">
       <li><span class="lk-t">FinCEN Beneficial Ownership Information（BOI）</span><span class="lk-u"><a href="https://www.fincen.gov/boi">https://www.fincen.gov/boi</a></span></li>
       <li><span class="lk-t">FinCEN BOI FAQs</span><span class="lk-u"><a href="https://www.fincen.gov/boi-faqs">https://www.fincen.gov/boi-faqs</a></span></li>
@@ -2652,7 +3927,7 @@ footer{
       <li><span class="lk-t">FTC（バックグラウンドチェックと FCRA）</span><span class="lk-u"><a href="https://www.ftc.gov/business-guidance/resources/using-consumer-reports-what-employers-need-know">https://www.ftc.gov/business-guidance/resources/using-consumer-reports-what-employers-need-know</a></span></li>
     </ul>
 
-    <h3>14-8 裁判所記録、法令、専門家</h3>
+    <h3>18-8 裁判所記録、法令、専門家</h3>
     <ul class="links">
       <li><span class="lk-t">Hawaii State Judiciary（州裁判所）</span><span class="lk-u"><a href="https://www.courts.state.hi.us/">https://www.courts.state.hi.us/</a></span></li>
       <li><span class="lk-t">PACER（連邦裁判所の記録）</span><span class="lk-u"><a href="https://pacer.uscourts.gov/">https://pacer.uscourts.gov/</a></span></li>
@@ -2660,7 +3935,7 @@ footer{
       <li><span class="lk-t">HRS Chapter 393（Prepaid Health Care Act）</span><span class="lk-u"><a href="https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0393/">https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0393/</a></span></li>
       <li><span class="lk-t">HRS Chapter 386（Workers' Compensation）</span><span class="lk-u"><a href="https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0386/">https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0386/</a></span></li>
       <li><span class="lk-t">Hawaii State Bar Association</span><span class="lk-u"><a href="https://hsba.org/">https://hsba.org/</a></span></li>
-      <li><span class="lk-t">Office of Disciplinary Counsel（弁護士の懲戒歴）</span><span class="lk-u"><a href="https://dc.hawaii.gov/">https://dc.hawaii.gov/</a></span></li>
+      <li><span class="lk-t">Office of Disciplinary Counsel（弁護士の懲戒歴）。州司法府の公式サイトから検索して辿る</span><span class="lk-u"><a href="https://www.courts.state.hi.us/">https://www.courts.state.hi.us/</a></span></li>
       <li><span class="lk-t">Hawaii Society of CPAs</span><span class="lk-u"><a href="https://www.hscpa.org/">https://www.hscpa.org/</a></span></li>
       <li><span class="lk-t">AILA（移民弁護士の検索）</span><span class="lk-u"><a href="https://www.ailalawyer.com/">https://www.ailalawyer.com/</a></span></li>
       <li><span class="lk-t">Hawaii SBDC</span><span class="lk-u"><a href="https://www.hisbdc.org/">https://www.hisbdc.org/</a></span></li>
@@ -2670,25 +3945,356 @@ footer{
     </ul>
   </section>
 
-  <!-- ============ 15 ============ -->
-  <section id="s15">
-    <h2><span class="chap">Chapter 15</span>免責事項（再掲）</h2>
+
+  <!-- ============ 19 ============ -->
+  <section id="s19">
+    <h2><span class="chap">Chapter 19</span>用語集</h2>
+
+    <p class="lead">本資料に出てくる専門用語を、五十音順（読みがな順）にまとめています。本文中の用語には、この用語集へのリンクが張られています。各項目の「本文へ戻る」から、その用語が説明されている箇所に戻れます。</p>
+
+    <div class="g-index">
+      <a href="#g-a">あ行</a>
+      <a href="#g-ka">か行</a>
+      <a href="#g-sa">さ行</a>
+      <a href="#g-ta">た行</a>
+      <a href="#g-na">な行</a>
+      <a href="#g-ha">は行</a>
+      <a href="#g-ma">ま行</a>
+      <a href="#g-ya">や行</a>
+      <a href="#g-ra">ら行</a>
+      <a href="#g-wa">わ行</a>
+    </div>
+
+    <div class="g-group" id="g-a">
+      <h3>あ行</h3>
+
+      <div class="gterm" id="g-i9" data-term="I-9">
+        <div class="g-h">I-9<span class="g-kana">アイ・ナイン</span></div>
+        <p>従業員の就労資格を確認するための連邦の様式。<b>すべての雇用主が、すべての新規採用者について、採用日から3営業日以内に作成する義務</b>があります。書類上の不備（記載漏れ、保管漏れ）自体が制裁金の対象です。買収により承継した従業員についても、会社の責任下にあります。</p>
+        <p class="g-links"><a href="#s3">関連：第3章</a><a class="gback" href="#s3">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-irs" data-term="IRS">
+        <div class="g-h">IRS<span class="g-kana">アイ・アール・エス</span></div>
+        <p>米国の連邦税を所管する役所（内国歳入庁）。日本の国税庁に相当します。<b>ハワイ州の税務局（DOTAX）とは完全に別の役所</b>であり、連邦と州の両方に申告義務があります。</p>
+        <p class="g-links"><a href="#s5">関連：第5章</a><a class="gback" href="#s5">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-atwill" data-term="At-will" data-match="At-will|at-will">
+        <div class="g-h">At-will（随意雇用）<span class="g-kana">アット・ウィル</span></div>
+        <p>雇用主も従業員も、理由の有無にかかわらず、いつでも雇用関係を終了できるという原則。<b>日本の解雇権濫用法理の真逆</b>です。ただし、差別的な理由、報復、公序良俗違反による解雇は違法です。ハンドブックに段階的懲戒を約束する記載があると、この原則が壊れます。</p>
+        <p class="g-links"><a href="#s6">関連：第6章 6-1</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-affinity" data-term="affinity fraud">
+        <div class="g-h">affinity fraud<span class="g-kana">アフィニティ・フラウド</span></div>
+        <p>識別可能な集団（宗教団体、職業団体、高齢者など）の構成員を標的とする詐欺の類型。SEC / Investor.gov が定義する、<b>あらゆるコミュニティで発生し得る一般的な犯罪類型</b>です。集団内の信頼関係そのものが詐欺の道具として利用され、被害者は関係を守るために通報をためらう傾向があります。特定の民族や国籍に結びついた現象ではありません。</p>
+        <p class="g-links"><a href="#s9">関連：第9章 9-1</a><a class="gback" href="#s9">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-addins" data-term="Additional Insured">
+        <div class="g-h">Additional Insured（追加被保険者）<span class="g-kana">アディショナル・インシュアード</span></div>
+        <p>自社の保険で、顧客も一緒に守る指定のこと。商業清掃では、<b>顧客が「自社を Additional Insured に指定した保険証書（COI）を出せ」と要求してきます</b>。出せないと契約が取れません。</p>
+        <p class="g-links"><a href="#s12">関連：第12章 12-1</a><a class="gback" href="#s12">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-1099" data-term="1099">
+        <div class="g-h">1099<span class="g-kana">イチ・マル・キュウ・キュウ</span></div>
+        <p>独立契約者（業務委託）への支払を報告する様式。転じて、<b>「1099 で払う」＝業務委託として扱う</b>という意味で使われます。実態が従業員であれば、契約書の名称にかかわらず従業員と認定され、遡及課税と罰金の対象になります。清掃業では ABC テストの B の要件でほぼ通りません。</p>
+        <p class="g-links"><a href="#s6">関連：第6章 6-7、6-16</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-ein" data-term="EIN">
+        <div class="g-h">EIN<span class="g-kana">イー・アイ・エヌ</span></div>
+        <p>米国法人の納税者番号。銀行口座開設、給与支払、税務申告のすべてに必要です。<b>法人ごと買った場合は、そのまま承継されます</b>。IRS の responsible party（責任者）の登録は、オーナー本人にしてください。</p>
+        <p class="g-links"><a href="#s4">関連：第4章 4-5、第5章 5-10</a><a class="gback" href="#s4">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-ea" data-term="EA（Enrolled Agent）" data-match="EA（Enrolled Agent / 米国税理士）|EA（Enrolled Agent）|Enrolled Agent">
+        <div class="g-h">EA（Enrolled Agent / 米国税理士）<span class="g-kana">イー・エー</span></div>
+        <p>連邦税に関する代理権を持つ資格。IRS に対する申告代理と交渉ができ、<b>州をまたいで活動できます</b>。日本在住の EA も存在します。CPA と異なり州のライセンスではないため、ハワイ州の GET については別途の知識が必要です。</p>
+        <p class="g-links"><a href="#s13">関連：第13章 13-2</a><a class="gback" href="#s13">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-everify" data-term="E-Verify">
+        <div class="g-h">E-Verify<span class="g-kana">イー・ベリファイ</span></div>
+        <p>I-9 の情報を政府のデータベースに照合する、連邦の無料オンラインシステム。民間企業には原則として任意ですが、<b>採用する場合は全新規採用者に一律に適用する必要があります</b>（特定の人だけに使うと差別になります）。</p>
+        <p class="g-links"><a href="#s3">関連：第3章 3-6</a><a class="gback" href="#s3">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-eeoc" data-term="EEOC">
+        <div class="g-h">EEOC<span class="g-kana">イー・イー・オー・シー</span></div>
+        <p>連邦の雇用機会均等委員会。雇用差別とハラスメントを所管します。連邦法（Title VII）は従業員15人以上が対象ですが、<b>ハワイ州法は従業員1人から適用されます</b>（管轄は Hawaii Civil Rights Commission）。</p>
+        <p class="g-links"><a href="#s6">関連：第6章 6-11、第7章 7-5</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-indemnification" data-term="Indemnification">
+        <div class="g-h">Indemnification（補償条項）<span class="g-kana">インデムニフィケーション</span></div>
+        <p>契約で、一方が他方の損害を補償することを約束する条項。買収契約では、<b>売主の表明が虚偽であった場合に、売主が損害を補償する</b>根拠になります。上限額（cap）と下限額（basket）、存続期間を必ず確認してください。</p>
+        <p class="g-links"><a href="#s2">関連：第2章 2-4</a><a class="gback" href="#s2">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-abc" data-term="ABC テスト" data-match="ABC テスト|ABCテスト|ABC test">
+        <div class="g-h">ABC テスト<span class="g-kana">エー・ビー・シー・テスト</span></div>
+        <p>ハワイ州の失業保険（HRS 383-6）で使われる、従業員か独立契約者かの判定基準。<b>IRS のコモンロー基準より厳しい</b>ものです。A（指揮命令からの自由）、B（会社の通常の事業の範囲外）、C（独立した事業としての確立）の3つすべてを満たさなければ、従業員として扱われます。<b>清掃会社が清掃員を業務委託にするのは、B の要件でほぼ通りません。</b></p>
+        <p class="g-links"><a href="#s6">関連：第6章 6-16</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-escrow" data-term="エスクロー" data-match="エスクロー|Escrow">
+        <div class="g-h">Escrow（エスクロー / 条件付き預託）<span class="g-kana">エスクロー</span></div>
+        <p>第三者に資金を預け、一定の条件が満たされたときに相手方に支払われる仕組み。買収では、<b>売買代金の一部を留保して、簿外債務が出た場合の補償の原資にする</b>ために使われます。E-2 ビザでは、不許可の場合に返還される形で資金を拘束する方法としても使われます。</p>
+        <p class="g-links"><a href="#s2">関連：第2章 2-4、第3章 3-3</a><a class="gback" href="#s2">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-scorp" data-term="S Corp" data-match="S Corp|S Corporation">
+        <div class="g-h">S Corp（S Corporation）<span class="g-kana">エス・コープ</span></div>
+        <p>法人段階では課税されず、株主段階で課税される（パススルー）法人形態。<b>非居住外国人は株主になれません。</b>買収により非居住外国人が株主になった時点で、S 選択は失効し、C Corporation として課税されます。買収した法人が S Corp だった場合、最優先で CPA に確認してください。</p>
+        <p class="g-links"><a href="#s4">関連：第4章 4-2</a><a class="gback" href="#s4">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-llc" data-term="LLC">
+        <div class="g-h">LLC<span class="g-kana">エル・エル・シー</span></div>
+        <p>有限責任会社。運営の柔軟性が高く、非居住外国人も社員（メンバー）になれます。<b>ただし原則としてパススルー課税のため、オーナー個人に米国での申告義務が生じます。</b>米国での個人申告を避けたい場合、C Corporation の方が構造的に単純です。</p>
+        <p class="g-links"><a href="#s4">関連：第4章 4-1</a><a class="gback" href="#s4">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-osha" data-term="OSHA">
+        <div class="g-h">OSHA<span class="g-kana">オーシャ</span></div>
+        <p>連邦の労働安全衛生庁、およびその基準。ハワイ州は、州独自のプログラム（HIOSH）を運営しています。清掃業では、SDS（安全データシート）の備置、Hazard Communication、容器のラベル表示が、検査で最初に見られます。</p>
+        <p class="g-links"><a href="#s8">関連：第8章 8-4</a><a class="gback" href="#s8">本文へ戻る</a></p>
+      </div>
+    </div>
+
+    <div class="g-group" id="g-ka">
+      <h3>か行</h3>
+
+      <div class="gterm" id="g-goodstanding" data-term="Good Standing">
+        <div class="g-h">Good Standing（正常な登記状態）<span class="g-kana">グッド・スタンディング</span></div>
+        <p>法人が、州に対する登記義務（Annual Report の提出など）を果たしており、適法に事業を行える状態にあること。<b>Annual Report を怠ると行政解散となり、有限責任の保護そのものを失います。</b>DCCA の Business Entity Search で、誰でも無料で確認できます。</p>
+        <p class="g-links"><a href="#s4">関連：第4章 4-4</a><a class="gback" href="#s4">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-cobra" data-term="COBRA">
+        <div class="g-h">COBRA<span class="g-kana">コブラ</span></div>
+        <p>退職者が、一定期間、会社の医療保険を自己負担で継続できる連邦の制度。<b>一般に従業員20人以上の事業者が対象</b>です。ハワイでは、PHCA との関係で、州独自の継続規定が適用される場面があるため、退職者が出る際は保険ブローカーに確認してください。</p>
+        <p class="g-links"><a href="#s6">関連：第6章</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+    </div>
+
+    <div class="g-group" id="g-sa">
+      <h3>さ行</h3>
+
+      <div class="gterm" id="g-ccorp" data-term="C Corp" data-match="C Corp|C Corporation">
+        <div class="g-h">C Corp（C Corporation）<span class="g-kana">シー・コープ</span></div>
+        <p>法人段階で課税され、配当時に再び課税される（二重課税）法人形態。<b>非居住外国人も株主になれます。</b>配当への源泉徴収（原則30%、条約で軽減可能）で完結するため、オーナー個人の米国申告義務が原則として生じません。日本在住のオーナーにとっては構造が単純です。</p>
+        <p class="g-links"><a href="#s4">関連：第4章 4-1</a><a class="gback" href="#s4">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-cpa" data-term="CPA">
+        <div class="g-h">CPA（公認会計士）<span class="g-kana">シー・ピー・エー</span></div>
+        <p>州のライセンスに基づく資格。税務申告の代理ができます。<b>「USCPA 試験に合格している」ことと、「ハワイ州で CPA の開業ライセンスを持っている」ことは別です。</b>ライセンスは DCCA のサイトで確認できます。</p>
+        <p class="g-links"><a href="#s13">関連：第13章 13-2</a><a class="gback" href="#s13">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-coi" data-term="COI">
+        <div class="g-h">COI（Certificate of Insurance / 保険証書）<span class="g-kana">シー・オー・アイ</span></div>
+        <p>保険に加入していることを証明する書類。<b>商業清掃では、顧客が契約の条件として提出を求めます。</b>顧客を Additional Insured に指定した COI を出せないと、契約が取れません。毎年の更新が必要です。</p>
+        <p class="g-links"><a href="#s12">関連：第12章 12-1</a><a class="gback" href="#s12">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-get" data-term="GET">
+        <div class="g-h">GET（General Excise Tax）<span class="g-kana">ジー・イー・ティー</span></div>
+        <p>ハワイ州の一般消費税。<b>名前に反して、消費税ではありません。</b>売上総額に対する事業者への課税であり、仕入税額控除がなく、赤字でも売上があれば課税され、売上ゼロでも申告義務があります。B2B 取引にも課税され、取引段階ごとに累積します（pyramiding）。オアフの最大転嫁率は 4.7120%。下請けとして提供する場合、卸売レート（0.5%）が適用できる可能性があります。</p>
+        <p class="g-links"><a href="#s5">関連：第5章 5-1、5-2、5-9</a><a class="gback" href="#s5">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-substantiality" data-term="Substantiality" data-match="Substantiality|substantiality">
+        <div class="g-h">Substantiality（投資の実質性）<span class="g-kana">サブスタンシャリティ</span></div>
+        <p>E-2 ビザの審査基準のひとつ。投資額が、事業の総取得額に対して十分な比率であり、かつ<b>絶対額として事業を成功させるに足りる</b>ことを求めます。法定の最低額はありませんが、<b>安く買えた事業ほど、この立証は難しくなります。</b></p>
+        <p class="g-links"><a href="#s3">関連：第3章 3-2</a><a class="gback" href="#s3">本文へ戻る</a></p>
+      </div>
+    </div>
+
+    <div class="g-group" id="g-ta">
+      <h3>た行</h3>
+
+      <div class="gterm" id="g-w2" data-term="W-2">
+        <div class="g-h">W-2<span class="g-kana">ダブリュー・ツー</span></div>
+        <p>従業員に交付する、年間の給与と源泉徴収額の証明書。日本の源泉徴収票に相当します。<b>従業員（W-2）と独立契約者（1099）のどちらで扱うかが、雇用主の義務の大半を決めます。</b>州にも提出が必要です。</p>
+        <p class="g-links"><a href="#s6">関連：第6章 6-15</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-taxclearance" data-term="Tax Clearance">
+        <div class="g-h">Tax Clearance（Form A-6）<span class="g-kana">タックス・クリアランス</span></div>
+        <p>ハワイ州と IRS に対する未納がないことを、州が公式に証明する書類。<b>事業譲渡の場面では、唯一の公式な確認手段</b>です。解散登記の際にも必要になります。Hawaii Tax Online から申請できます。</p>
+        <p class="g-links"><a href="#s2">関連：第2章 2-6、第14章</a><a class="gback" href="#s2">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-dcca" data-term="DCCA">
+        <div class="g-h">DCCA<span class="g-kana">ディー・シー・シー・エー</span></div>
+        <p>ハワイ州の商業消費者局。<b>法人登記、Annual Report、職業ライセンス、事業者の行政処分歴（RICO）を所管します。</b>法人の登記状態は、Business Entity Search で誰でも無料で検索できます。</p>
+        <p class="g-links"><a href="#s4">関連：第4章 4-4、第8章 8-5</a><a class="gback" href="#s4">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-dlir" data-term="DLIR">
+        <div class="g-h">DLIR<span class="g-kana">ディー・エル・アイ・アール</span></div>
+        <p>ハワイ州の労働産業関係局。<b>PHCA（医療保険）、TDI、労災、失業保険、最低賃金、労働安全（HIOSH）を所管します。</b>雇用に関する州の義務は、ほぼすべてこの役所が窓口です。</p>
+        <p class="g-links"><a href="#s6">関連：第6章</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-tdi" data-term="TDI">
+        <div class="g-h">TDI（一時傷病保険）<span class="g-kana">ティー・ディー・アイ</span></div>
+        <p>業務<b>外</b>の疾病や負傷で働けなくなった従業員に、賃金の一部を補償する制度。ハワイでは、<b>雇用主が民間保険を購入するか、州の承認を得た自家保険を用意する義務</b>があります。業務<b>上</b>の負傷は労災（Workers' Comp）の領域で、別の制度です。</p>
+        <p class="g-links"><a href="#s6">関連：第6章 6-4</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-tfrp" data-term="Trust Fund Recovery Penalty" data-match="Trust Fund Recovery Penalty|TFRP">
+        <div class="g-h">TFRP（Trust Fund Recovery Penalty）<span class="g-kana">ティー・エフ・アール・ピー</span></div>
+        <p>従業員から預かった源泉税を会社が納付しなかった場合に、<b>「責任ある個人」に未納額の全額を負担させる制度</b>。オーナー、役員、経理担当、小切手の署名権を持つ者が対象になり得ます。<b>会社が倒産しても、この債務は個人に残ります。</b>「知らなかった」「他の支払を優先した」は抗弁になりません。</p>
+        <p class="g-links"><a href="#s5">関連：第5章 5-7</a><a class="gback" href="#s5">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-duediligence" data-term="Due Diligence" data-match="Due Diligence|デューデリジェンス">
+        <div class="g-h">Due Diligence（買収前の調査）<span class="g-kana">デュー・デリジェンス</span></div>
+        <p>買収の前に、対象会社の債務、税務、労務、訴訟、契約を調査すること。<b>買収後であっても、承継したものを洗い出す「棚卸し」として実施する必要があります</b>（第2章 2-3）。法人ごと買った場合、調査を怠った債務も、すべて承継しています。</p>
+        <p class="g-links"><a href="#s2">関連：第2章 2-3</a><a class="gback" href="#s2">本文へ戻る</a></p>
+      </div>
+    </div>
+
+    <div class="g-group" id="g-na">
+      <h3>な行</h3>
+
+      <div class="gterm" id="g-noncompete" data-term="競業避止" data-match="競業避止（non-compete）|競業避止">
+        <div class="g-h">Non-compete（競業避止）<span class="g-kana">ノン・コンピート</span></div>
+        <p>退職後、一定期間、一定地域で、同種の事業を行わない義務。<b>有効性は州法および連邦の規制動向により制限される方向にあり、範囲が過度に広いと無効とされます。</b>期間、地域、対象業務を必要最小限に限定し、ハワイ州法に精通した弁護士に起案させてください。</p>
+        <p class="g-links"><a href="#s9">関連：第9章 9-5</a><a class="gback" href="#s9">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-nonsolicit" data-term="non-solicitation" data-match="顧客誘引の禁止（non-solicitation）|non-solicitation">
+        <div class="g-h">Non-solicitation（顧客誘引の禁止）<span class="g-kana">ノン・ソリシテーション</span></div>
+        <p>退職後、一定期間、会社の顧客や従業員に勧誘を行わない義務。<b>競業避止より認められやすい傾向があり、実務上はこちらの方が現実的な防御になります。</b>「顧客」の定義を明確にしてください。清掃業では、顧客リストが最大の資産であるため、特に重要です。</p>
+        <p class="g-links"><a href="#s9">関連：第9章 9-5</a><a class="gback" href="#s9">本文へ戻る</a></p>
+      </div>
+    </div>
+
+    <div class="g-group" id="g-ha">
+      <h3>は行</h3>
+
+      <div class="gterm" id="g-pg" data-term="Personal Guaranty" data-match="個人保証（Personal Guaranty）|Personal Guaranty">
+        <div class="g-h">Personal Guaranty（個人保証）<span class="g-kana">パーソナル・ギャランティ</span></div>
+        <p>会社が支払えなくなった場合に、経営者個人が代わりに支払うことを約束する契約。<b>署名すると、会社が倒産しても、個人の資産で支払う義務が残ります。</b>米国の商業リースでは、acceleration clause により<b>残期間の賃料全額</b>を請求され得るため、金額の桁が日本と異なります。署名前に必ず弁護士に相談してください。</p>
+        <p class="g-links"><a href="#s11">関連：第11章</a><a class="gback" href="#s11">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-hiosh" data-term="HIOSH">
+        <div class="g-h">HIOSH（ハワイ版OSHA）<span class="g-kana">ハイオッシュ</span></div>
+        <p>ハワイ州が運営する労働安全衛生プログラム。検査と是正命令は州が行います。<b>事業者向けの無料の相談サービス（consultation）があり、これは検査部門とは別で、相談の結果が制裁につながることは原則としてありません。</b>清掃業では利用価値が高い制度です。</p>
+        <p class="g-links"><a href="#s8">関連：第8章 8-4</a><a class="gback" href="#s8">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-bantthebox" data-term="ban the box">
+        <div class="g-h">ban the box<span class="g-kana">バン・ザ・ボックス</span></div>
+        <p>採用の<b>内定を出す前に、犯罪歴を聞くこと・調べることを原則として禁止する</b>規制。ハワイでは、照会できるのは条件付き内定を出した後であり、遡って参照できる期間にも制限があります。<b>逮捕歴は州法上の保護属性です。</b>検証してよいもの（会社のライセンス、行政処分歴、法人設立履歴、民事訴訟記録、リファレンス）と、内定前に検証してはいけないもの（個人の犯罪歴、逮捕歴）を明確に区別してください。</p>
+        <p class="g-links"><a href="#s6">関連：第6章 6-12</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-phca" data-term="PHCA" data-match="PHCA|Prepaid Health Care Act">
+        <div class="g-h">PHCA（Prepaid Health Care Act）<span class="g-kana">ピー・エイチ・シー・エー</span></div>
+        <p><b>全米でハワイだけの、雇用主による医療保険提供義務。</b>週20時間以上働き、月収が州最低賃金の86.67倍（2026年で 1,386.72ドル）以上の従業員が対象で、連続4週間の勤務後に発効します。雇用主は保険料の50%以上を負担し、従業員負担は「保険料の50%」か「月給の1.5%」の低い方が上限です。<b>結果として、低賃金の従業員ほど、雇用主がほぼ全額を負担する構造になります。</b>罰則は1日あたり従業員1人につき1ドルまたは25ドルの高い方で、30日以上の不履行では営業停止もあり得ます。</p>
+        <p class="g-links"><a href="#s6">関連：第6章 6-3</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-f941" data-term="Form 941">
+        <div class="g-h">Form 941<span class="g-kana">フォーム・キュウ・ヨン・イチ</span></div>
+        <p>連邦の給与源泉税を四半期ごとに申告する様式。<b>従業員から預かった源泉税は「会社の金」ではなく、政府のために預かっている信託資金です。</b>未納は Trust Fund Recovery Penalty により、個人責任に及びます。ハワイ州には別途 HW-14 があり、連邦と州の両方に申告義務があります。</p>
+        <p class="g-links"><a href="#s5">関連：第5章 5-7、第6章 6-15</a><a class="gback" href="#s5">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-f5472" data-term="Form 5472">
+        <div class="g-h">Form 5472<span class="g-kana">フォーム・ゴー・ヨン・ナナ・ニ</span></div>
+        <p>外国人が25%以上を保有する米国法人が、外国関連者との取引を報告する様式。<b>未提出または不完全な提出は、1件につき25,000ドルの罰金</b>です。売上がゼロでも、報告対象取引（資本の払込、貸付を含む）があれば提出義務が生じます。<b>買収資金の払い込み自体が該当し得ます。</b>本土の一般的なCPAは失念しがちです。</p>
+        <p class="g-links"><a href="#s5">関連：第5章 5-4</a><a class="gback" href="#s5">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-progressive" data-term="progressive discipline" data-match="progressive discipline|段階的懲戒">
+        <div class="g-h">Progressive Discipline（段階的懲戒）<span class="g-kana">プログレッシブ・ディシプリン</span></div>
+        <p>口頭注意、書面警告、停職、解雇と段階を踏む懲戒手続。<b>ハンドブックでこれを「約束」すると、黙示の契約と認定され、At-will が壊れます。</b>言及する場合は、必ず「会社は、その裁量により、いかなる段階も省略し、または直ちに解雇することができる」という留保を併記してください。</p>
+        <p class="g-links"><a href="#s7">関連：第7章 7-3</a><a class="gback" href="#s7">本文へ戻る</a></p>
+      </div>
+    </div>
+
+    <div class="g-group" id="g-ma">
+      <h3>ま行</h3>
+
+      <div class="gterm" id="g-marginality" data-term="Marginality" data-match="Marginality|marginality">
+        <div class="g-h">Marginality（限界性）<span class="g-kana">マージナリティ</span></div>
+        <p>E-2 ビザの審査基準のひとつ。<b>投資家と家族が最低限の生活費を稼ぐだけの事業では、ビザは認められません。</b>米国経済に貢献すること、具体的には<b>雇用を生むこと</b>が求められます。事業計画書に雇用計画（何年目に何人）を入れることが、この要件を否定する要です。</p>
+        <p class="g-links"><a href="#s3">関連：第3章 3-2</a><a class="gback" href="#s3">本文へ戻る</a></p>
+      </div>
+    </div>
+
+    <div class="g-group" id="g-ya">
+      <h3>や行</h3>
+
+      <div class="gterm" id="g-ucc" data-term="UCC">
+        <div class="g-h">UCC（統一商事法典に基づく担保の登録）<span class="g-kana">ユー・シー・シー</span></div>
+        <p>会社の資産（設備、売掛金、在庫）に対する第三者の担保権を公示する登録制度。<b>買収した会社の資産に担保が付いていないかを、UCC の検索で確認してください。</b>担保が付いていれば、その資産は実質的にあなたのものではありません。</p>
+        <p class="g-links"><a href="#s2">関連：第2章 2-6</a><a class="gback" href="#s2">本文へ戻る</a></p>
+      </div>
+    </div>
+
+    <div class="g-group" id="g-ra">
+      <h3>ら行</h3>
+
+      <div class="gterm" id="g-regagent" data-term="Registered Agent">
+        <div class="g-h">Registered Agent<span class="g-kana">レジスタード・エージェント</span></div>
+        <p>州内に物理的な住所を持ち、<b>訴状や行政からの通知を受け取る代理人</b>。ハワイ州の法人には常時、維持が義務付けられています（私書箱は不可）。<b>機能していないと、訴状の送達に気づかず、欠席判決を受けるリスクがあります。</b>買収した法人の Registered Agent が前オーナーやその関係者のままになっていないか、今すぐ確認してください。</p>
+        <p class="g-links"><a href="#s4">関連：第4章 4-3</a><a class="gback" href="#s4">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-repwarr" data-term="表明保証" data-match="Representations and Warranties|表明保証">
+        <div class="g-h">Representations &amp; Warranties（表明保証）<span class="g-kana">レプリゼンテーションズ・アンド・ワランティーズ</span></div>
+        <p>買収契約で、売主が「税務、労務、訴訟、契約について、未払や違反がない」と表明し、保証する条項。<b>これが虚偽だった場合に、補償（Indemnification）を請求する根拠になります。</b>存続期間（survival period）とエスクローの残高を必ず確認してください。</p>
+        <p class="g-links"><a href="#s2">関連：第2章 2-4</a><a class="gback" href="#s2">本文へ戻る</a></p>
+      </div>
+    </div>
+
+    <div class="g-group" id="g-wa">
+      <h3>わ行</h3>
+
+      <div class="gterm" id="g-warn" data-term="WARN">
+        <div class="g-h">WARN（大量解雇の事前通知法）<span class="g-kana">ワーン</span></div>
+        <p>事業所の閉鎖や大量解雇の際に、従業員への事前通知を義務付ける法律。<b>連邦は従業員100人以上が対象ですが、ハワイ州（Dislocated Workers Act）は50人以上と、より厳しい</b>基準です。退職手当の支払義務が生じる場合もあります。撤退を検討する段階で必ず確認してください。</p>
+        <p class="g-links"><a href="#s6">関連：第6章 6-17、第14章</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+
+      <div class="gterm" id="g-wc" data-term="Workers' Compensation" data-match="Workers' Compensation|Workers&#39; Comp">
+        <div class="g-h">Workers' Compensation（労災保険）<span class="g-kana">ワーカーズ・コンペンセーション</span></div>
+        <p>業務<b>上</b>の負傷や疾病を補償する保険。<b>ハワイでは、従業員を1人でも雇用すれば加入が義務</b>です。保険料は雇用主が全額負担し、従業員に負担させることはできません。<b>無保険の場合、exclusive remedy（労災保険による免責）の保護を失い、従業員から直接、上限なく訴えられます。</b></p>
+        <p class="g-links"><a href="#s6">関連：第6章 6-5</a><a class="gback" href="#s6">本文へ戻る</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 20 ============ -->
+  <section id="s20">
+    <h2><span class="chap">Chapter 20</span>免責事項（再掲）</h2>
 
     <div class="disc">
       <div class="dt">免責事項</div>
       <p>本資料は一般的な情報提供を目的としたものであり、法律、税務、移民に関する助言ではありません。作成者は弁護士、公認会計士、移民コンサルタントではありません。個別の判断は必ず有資格の専門家にご相談ください。情報は2026年7月時点のものであり、法令および料率は変更される可能性があります。</p>
     </div>
 
-    <h3>15-1 本資料の限界</h3>
+    <h3>20-1 本資料の限界</h3>
     <ul>
       <li>本資料に記載した金額、税率、罰則は、<strong>2026年7月時点で公表されている情報に基づきます</strong>。法令、料率、行政の運用は変更されます。判断の前に、必ず各章に記載した公式URLで原典を確認してください。</li>
       <li>「<span class="est">推定</span>」を付した数値は、法定値ではなく、一般的な水準からの試算です。<span class="hl">実額は、業種、規模、事故歴、選択するプラン、および事業者ごとの料率通知により大きく変動します。</span></li>
-      <li>本資料は、<strong>特定の弁護士、会計士、事務所、個人を推奨するものではありません。</strong>専門家については、第13章に記載した公的機関の検索窓口をご利用ください。</li>
+      <li>本資料は、<strong>特定の弁護士、会計士、事務所、個人を推奨するものではありません。</strong>専門家については、第17章に記載した公的機関の検索窓口をご利用ください。</li>
       <li>本資料は、ハワイ州（主にオアフ島、ホノルル市郡）を前提としています。他の島では、GET の郡上乗せなど、適用が異なる項目があります。</li>
       <li>個別の事業内容、資本構成、従業員構成により、適用される制度と結論は変わります。<strong>本資料を、専門家への相談に代えないでください。</strong></li>
     </ul>
 
-    <h3>15-2 特に、次の3点は必ず専門家に確認してください</h3>
+    <h3>20-2 特に、次の3点は必ず専門家に確認してください</h3>
     <div class="alert alert--key">
       <span class="at">重要</span>
       <ol>
@@ -2725,80 +4331,170 @@ footer{
 
 <script>
 (function () {
-  var toc = document.getElementById('toc');
-  var tocLinks = Array.prototype.slice.call(toc.querySelectorAll('a'));
-  var sections = tocLinks
-    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
-    .filter(Boolean);
+  'use strict';
 
-  var overlay = document.getElementById('tocOverlay');
-  var ovBody = document.getElementById('ovBody');
-  var ovClose = document.getElementById('ovClose');
-  var fabToc = document.getElementById('fabToc');
-  var fabTop = document.getElementById('fabTop');
+  var content  = document.querySelector('.content');
+  var sections = Array.prototype.slice.call(content.querySelectorAll('section'));
 
-  /* ---------- オーバーレイ目次（モバイル）を、サイドバー目次から複製して構築 ---------- */
-  var ovLinks = [];
-  tocLinks.forEach(function (a) {
-    var link = a.cloneNode(true);
-    ovBody.appendChild(link);
-    ovLinks.push(link);
+  /* =========================================================
+     1. 見出しに「最終確認」バッジを付ける
+     ========================================================= */
+  sections.forEach(function (sec) {
+    var h2 = sec.querySelector('h2');
+    if (!h2) { return; }
+    var b = document.createElement('span');
+    b.className = 'h-badge';
+    b.textContent = '最終確認：2026年7月';
+    h2.appendChild(b);
   });
+
+  /* =========================================================
+     2. 節（h3）に id を振る（目次と検索のジャンプ先にする）
+     ========================================================= */
+  sections.forEach(function (sec, si) {
+    var subs = sec.querySelectorAll('h3');
+    Array.prototype.forEach.call(subs, function (h3, hi) {
+      if (!h3.id) { h3.id = 'h-' + (sec.id || si) + '-' + hi; }
+      h3.style.scrollMarginTop = '12px';
+    });
+  });
+
+  /* =========================================================
+     3. 目次を2階層で生成（章＋節。節は折りたたみ）
+     ========================================================= */
+  var toc = document.getElementById('toc');
+
+  function chapterLabel(h2) {
+    var chap = h2.querySelector('.chap');
+    var num = chap ? chap.textContent.replace(/[^0-9]/g, '') : '';
+    var clone = h2.cloneNode(true);
+    Array.prototype.forEach.call(clone.querySelectorAll('.chap,.h-badge'), function (n) { n.remove(); });
+    return { num: num, title: clone.textContent.trim() };
+  }
+
+  var tocModel = sections.map(function (sec) {
+    var h2 = sec.querySelector('h2');
+    var info = chapterLabel(h2);
+    var subs = Array.prototype.slice.call(sec.querySelectorAll('h3')).map(function (h3) {
+      return { id: h3.id, title: h3.textContent.trim() };
+    });
+    return { id: sec.id, num: info.num, title: info.title, subs: subs };
+  });
+
+  function buildToc(root, isOverlay) {
+    root.innerHTML = '';
+    tocModel.forEach(function (ch) {
+      var li = document.createElement('li');
+
+      var row = document.createElement('div');
+      row.className = 'toc-row';
+
+      var a = document.createElement('a');
+      a.href = '#' + ch.id;
+      a.setAttribute('data-sec', ch.id);
+      var num = document.createElement('span');
+      num.className = 'num';
+      num.textContent = ch.num === '' ? '＊' : ch.num;
+      a.appendChild(num);
+      a.appendChild(document.createTextNode(ch.title));
+      row.appendChild(a);
+
+      var subUl = null;
+      if (ch.subs.length) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'sub-toggle';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', ch.title + ' の節を開く');
+        row.appendChild(btn);
+
+        subUl = document.createElement('ul');
+        subUl.className = 'subs';
+        ch.subs.forEach(function (s) {
+          var sli = document.createElement('li');
+          var sa = document.createElement('a');
+          sa.href = '#' + s.id;
+          sa.textContent = s.title;
+          sli.appendChild(sa);
+          subUl.appendChild(sli);
+        });
+
+        btn.addEventListener('click', function () {
+          var open = subUl.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      li.appendChild(row);
+      if (subUl) { li.appendChild(subUl); }
+      root.appendChild(li);
+    });
+
+    if (isOverlay) {
+      Array.prototype.forEach.call(root.querySelectorAll('a'), function (a) {
+        a.addEventListener('click', closeOverlay);
+      });
+    }
+  }
+
+  /* =========================================================
+     4. モバイル：FAB とオーバーレイ目次
+     ========================================================= */
+  var overlay = document.getElementById('tocOverlay');
+  var ovBody  = document.getElementById('ovBody');
+  var ovClose = document.getElementById('ovClose');
+  var fabToc  = document.getElementById('fabToc');
+  var fabTop  = document.getElementById('fabTop');
 
   function openOverlay() {
     overlay.classList.add('open');
     document.body.classList.add('ov-open');
     fabToc.setAttribute('aria-expanded', 'true');
   }
-
   function closeOverlay() {
     overlay.classList.remove('open');
     document.body.classList.remove('ov-open');
     fabToc.setAttribute('aria-expanded', 'false');
   }
 
+  var ovList = document.createElement('ul');
+  ovList.className = 'toc';
+  ovBody.appendChild(ovList);
+
+  buildToc(toc, false);
+  buildToc(ovList, true);
+
   fabToc.addEventListener('click', function () {
     if (overlay.classList.contains('open')) { closeOverlay(); } else { openOverlay(); }
   });
   ovClose.addEventListener('click', closeOverlay);
-
-  // 背景（パネルの外）をタップしたら閉じる
-  overlay.addEventListener('click', function (e) {
-    if (e.target === overlay) { closeOverlay(); }
-  });
-
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) { closeOverlay(); } });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && overlay.classList.contains('open')) { closeOverlay(); }
   });
-
-  // 目次項目をタップしたら閉じてから該当セクションへ移動する
-  // （既定のアンカー遷移を使うため preventDefault はしない）
-  ovLinks.forEach(function (a) {
-    a.addEventListener('click', function () { closeOverlay(); });
-  });
-
-  // トップへ戻る
   fabTop.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  /* ---------- 現在読んでいるセクションのハイライト ---------- */
+  /* =========================================================
+     5. 現在読んでいる章のハイライト
+     ========================================================= */
   var current = null;
+  var chapterLinks = function () {
+    return Array.prototype.slice.call(document.querySelectorAll('.toc a[data-sec]'));
+  };
 
   function setActive(id) {
     if (id === current) { return; }
     current = id;
-    var mark = function (a) {
-      var on = a.getAttribute('href') === '#' + id;
+    chapterLinks().forEach(function (a) {
+      var on = a.getAttribute('data-sec') === id;
       a.classList.toggle('active', on);
       if (on) { a.setAttribute('aria-current', 'true'); }
       else { a.removeAttribute('aria-current'); }
-    };
-    tocLinks.forEach(mark);
-    ovLinks.forEach(mark);
+    });
   }
 
-  // 読んでいる位置（ビューポート上部から25%の線）を含むセクションを選ぶ
   function currentSection() {
     var line = window.innerHeight * 0.25;
     var pick = sections[0];
@@ -2806,7 +4502,6 @@ footer{
       if (sections[i].getBoundingClientRect().top <= line) { pick = sections[i]; }
       else { break; }
     }
-    // 最下部まで読み切ったときは最後のセクションを見ているとみなす
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
       pick = sections[sections.length - 1];
     }
@@ -2815,26 +4510,20 @@ footer{
 
   function update() {
     if (sections.length) { setActive(currentSection().id); }
-    // 「トップへ戻る」は少しスクロールしてから出す
     fabTop.classList.toggle('show', window.scrollY > 600);
   }
 
-  // 主たる検知は IntersectionObserver
   if ('IntersectionObserver' in window && sections.length) {
-    var observer = new IntersectionObserver(update, {
-      rootMargin: '-25% 0px -70% 0px',
-      threshold: 0
-    });
+    var observer = new IntersectionObserver(update, { rootMargin: '-25% 0px -70% 0px', threshold: 0 });
     sections.forEach(function (s) { observer.observe(s); });
   }
-
-  // 保険としてスクロールとリサイズでも再計算する
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
 
-  /* ---------- 表：横スクロール可能なとき、右端にフェードを出す ---------- */
-  var tws = Array.prototype.slice.call(document.querySelectorAll('.tw'));
-  tws.forEach(function (tw) {
+  /* =========================================================
+     6. 表：横スクロール可能なときに右端へフェードを出す
+     ========================================================= */
+  Array.prototype.forEach.call(document.querySelectorAll('.tw'), function (tw) {
     var wrap = document.createElement('div');
     wrap.className = 'tw-wrap';
     if (tw.querySelector('table.cmp')) { wrap.classList.add('is-card'); }
@@ -2846,11 +4535,302 @@ footer{
       var atEnd = tw.scrollLeft + tw.clientWidth >= tw.scrollWidth - 2;
       wrap.classList.toggle('has-fade', scrollable && !atEnd);
     }
-
     tw.addEventListener('scroll', refresh, { passive: true });
     window.addEventListener('resize', refresh);
     refresh();
   });
+
+  /* =========================================================
+     7. 用語集：本文の初出用語から用語集へリンクを張る
+     ========================================================= */
+  (function linkGlossary() {
+    var glossary = document.getElementById('s19');
+    if (!glossary) { return; }
+
+    var entries = Array.prototype.slice.call(glossary.querySelectorAll('.gterm')).map(function (g) {
+      var raw = g.getAttribute('data-match') || g.getAttribute('data-term') || '';
+      var alts = raw.split('|').filter(Boolean).sort(function (a, b) { return b.length - a.length; });
+      return { el: g, id: g.id, alts: alts, done: false };
+    }).sort(function (a, b) {
+      var la = a.alts[0] ? a.alts[0].length : 0;
+      var lb = b.alts[0] ? b.alts[0].length : 0;
+      return lb - la;
+    });
+
+    // 走査対象は本文の段落、リスト項目、表のセルのテキストノードのみ
+    var hosts = content.querySelectorAll('p, li, td, th');
+
+    function skip(node) {
+      var el = node.parentElement;
+      while (el && el !== document.body) {
+        if (el === glossary) { return true; }
+        var t = el.tagName;
+        if (t === 'A' || t === 'H2' || t === 'H3' || t === 'H4' || t === 'CAPTION') { return true; }
+        if (el.classList && (el.classList.contains('term') || el.classList.contains('src') || el.classList.contains('questions'))) { return true; }
+        el = el.parentElement;
+      }
+      return false;
+    }
+
+    Array.prototype.forEach.call(hosts, function (host) {
+      var pending = entries.filter(function (e) { return !e.done; });
+      if (!pending.length) { return; }
+
+      var walker = document.createTreeWalker(host, NodeFilter.SHOW_TEXT, null);
+      var nodes = [];
+      var n;
+      while ((n = walker.nextNode())) { nodes.push(n); }
+
+      nodes.forEach(function (node) {
+        if (skip(node)) { return; }
+        var text = node.nodeValue;
+        if (!text || !text.trim()) { return; }
+
+        for (var i = 0; i < entries.length; i++) {
+          var e = entries[i];
+          if (e.done) { continue; }
+          for (var j = 0; j < e.alts.length; j++) {
+            var term = e.alts[j];
+            var idx = text.indexOf(term);
+            if (idx === -1) { continue; }
+
+            var before = text.slice(0, idx);
+            var after  = text.slice(idx + term.length);
+            var link = document.createElement('a');
+            link.className = 'tref';
+            link.href = '#' + e.id;
+            link.id = 'ref-' + e.id;
+            link.title = '用語集へ：' + term;
+            link.textContent = term;
+
+            var frag = document.createDocumentFragment();
+            if (before) { frag.appendChild(document.createTextNode(before)); }
+            frag.appendChild(link);
+            if (after) { frag.appendChild(document.createTextNode(after)); }
+            node.parentNode.replaceChild(frag, node);
+
+            e.done = true;
+            var back = e.el.querySelector('.gback');
+            if (back) { back.href = '#ref-' + e.id; }
+            return; // このテキストノードはもう存在しない
+          }
+        }
+      });
+    });
+  })();
+
+  /* =========================================================
+     8. 90日チェックリスト（localStorage で状態を保持）
+     ========================================================= */
+  (function checklist() {
+    var sec = document.getElementById('s16');
+    if (!sec) { return; }
+
+    var KEY = 'hbg-check-v1';
+    var store = {};
+    try { store = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (err) { store = {}; }
+
+    function save() {
+      try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (err) { /* 保存不可でも動作は継続する */ }
+    }
+
+    var items = Array.prototype.slice.call(sec.querySelectorAll('.ck li'));
+
+    // 進捗バーを、章の冒頭（最初の h3 の前）に置く
+    var bar = document.createElement('div');
+    bar.className = 'ck-bar';
+    bar.innerHTML =
+      '<span class="ck-count"><b id="ckDone">0</b> / ' + items.length + ' 件 完了</span>' +
+      '<span class="ck-track"><span class="ck-fill" id="ckFill"></span></span>' +
+      '<button type="button" class="ck-reset" id="ckReset">進捗をリセット</button>';
+    var firstH3 = sec.querySelector('h3');
+    if (firstH3) { sec.insertBefore(bar, firstH3.previousElementSibling || firstH3); }
+    else { sec.appendChild(bar); }
+
+    var doneEl = document.getElementById('ckDone');
+    var fillEl = document.getElementById('ckFill');
+
+    function key(li, i) {
+      var t = (li.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 70);
+      return i + '|' + t;
+    }
+
+    function refresh() {
+      var n = items.filter(function (li) { return li.classList.contains('done'); }).length;
+      doneEl.textContent = String(n);
+      fillEl.style.width = items.length ? (n / items.length * 100) + '%' : '0%';
+    }
+
+    items.forEach(function (li, i) {
+      var k = key(li, i);
+
+      var label = document.createElement('label');
+      while (li.firstChild) { label.appendChild(li.firstChild); }
+
+      var box = document.createElement('input');
+      box.type = 'checkbox';
+      box.checked = !!store[k];
+      box.setAttribute('aria-label', 'チェック');
+
+      li.appendChild(box);
+      li.appendChild(label);
+      li.classList.toggle('done', box.checked);
+
+      box.addEventListener('change', function () {
+        if (box.checked) { store[k] = 1; } else { delete store[k]; }
+        li.classList.toggle('done', box.checked);
+        save();
+        refresh();
+      });
+
+      // ラベル内のリンクは、チェックの切り替えではなく本来の遷移を行う
+      Array.prototype.forEach.call(label.querySelectorAll('a'), function (a) {
+        a.addEventListener('click', function (e) { e.stopPropagation(); });
+      });
+    });
+
+    document.getElementById('ckReset').addEventListener('click', function () {
+      items.forEach(function (li) {
+        var box = li.querySelector('input[type="checkbox"]');
+        if (box) { box.checked = false; }
+        li.classList.remove('done');
+      });
+      store = {};
+      save();
+      refresh();
+    });
+
+    refresh();
+  })();
+
+  /* =========================================================
+     9. ページ内検索（インクリメンタル、バニラJS）
+     ========================================================= */
+  (function search() {
+    var input   = document.getElementById('q');
+    var results = document.getElementById('qResults');
+    var clearBtn = document.getElementById('qClear');
+    if (!input) { return; }
+
+    // 検索インデックスを作る（見出しと本文ブロック）
+    var index = [];
+    sections.forEach(function (sec) {
+      var h2 = sec.querySelector('h2');
+      var secTitle = h2 ? chapterLabel(h2).title : sec.id;
+      var secNum = h2 ? chapterLabel(h2).num : '';
+      var label = (secNum ? '第' + secNum + '章 ' : '') + secTitle;
+
+      if (h2) {
+        index.push({ id: sec.id, sec: label, text: secTitle, el: sec });
+      }
+      Array.prototype.forEach.call(sec.querySelectorAll('h3, h4, p, li, td'), function (el) {
+        var text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+        if (text.length < 4) { return; }
+        var target = el;
+        // 段落や表のセルは、直近の見出し（h3）にジャンプできるようにしておく
+        index.push({ id: '', sec: label, text: text, el: target });
+      });
+    });
+
+    function escapeHtml(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function snippet(text, q) {
+      var i = text.toLowerCase().indexOf(q.toLowerCase());
+      if (i === -1) { return escapeHtml(text.slice(0, 70)); }
+      var start = Math.max(0, i - 24);
+      var raw = text.slice(start, start + 90);
+      var pos = raw.toLowerCase().indexOf(q.toLowerCase());
+      var out = escapeHtml(raw.slice(0, pos)) +
+        '<mark>' + escapeHtml(raw.slice(pos, pos + q.length)) + '</mark>' +
+        escapeHtml(raw.slice(pos + q.length));
+      return (start > 0 ? '…' : '') + out + '…';
+    }
+
+    function jump(el) {
+      var y = el.getBoundingClientRect().top + window.scrollY - 16;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      el.classList.remove('flash');
+      void el.offsetWidth;
+      el.classList.add('flash');
+      window.setTimeout(function () { el.classList.remove('flash'); }, 2200);
+    }
+
+    function render(q) {
+      results.innerHTML = '';
+      if (!q) { results.classList.remove('show'); return; }
+
+      var lower = q.toLowerCase();
+      var hits = [];
+      for (var i = 0; i < index.length && hits.length < 20; i++) {
+        if (index[i].text.toLowerCase().indexOf(lower) !== -1) { hits.push(index[i]); }
+      }
+
+      if (!hits.length) {
+        var none = document.createElement('div');
+        none.className = 'r-none';
+        none.textContent = '「' + q + '」に一致する箇所はありません。';
+        results.appendChild(none);
+        results.classList.add('show');
+        return;
+      }
+
+      hits.forEach(function (hit) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.innerHTML = '<span class="r-sec">' + escapeHtml(hit.sec) + '</span>' + snippet(hit.text, q);
+        b.addEventListener('click', function () {
+          results.classList.remove('show');
+          jump(hit.el);
+        });
+        results.appendChild(b);
+      });
+      results.classList.add('show');
+    }
+
+    var timer = null;
+    input.addEventListener('input', function () {
+      var q = input.value.trim();
+      clearBtn.classList.toggle('show', q.length > 0);
+      window.clearTimeout(timer);
+      timer = window.setTimeout(function () { render(q); }, 120);
+    });
+
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        input.value = '';
+        clearBtn.classList.remove('show');
+        results.classList.remove('show');
+      }
+      if (e.key === 'Enter') {
+        var first = results.querySelector('button');
+        if (first) { first.click(); }
+      }
+    });
+
+    clearBtn.addEventListener('click', function () {
+      input.value = '';
+      clearBtn.classList.remove('show');
+      results.classList.remove('show');
+      input.focus();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!results.contains(e.target) && e.target !== input) { results.classList.remove('show'); }
+    });
+  })();
+
+  /* =========================================================
+     10. 印刷 / PDF保存
+     ========================================================= */
+  var btnPrint = document.getElementById('btnPrint');
+  if (btnPrint) {
+    btnPrint.addEventListener('click', function () {
+      // 印刷前に目次の節をすべて開いておく必要はない（印刷では目次を隠すため）
+      window.print();
+    });
+  }
 
   update();
 })();
