@@ -19,3 +19,9 @@ desktop.ini
 *.log
 tmp/
 temp/
+
+# 独立リポジトリ（別GitHubリポで管理）
+/cpap-health-dashboard/
+
+# ローカル管理のみ（別途手元で保管）
+/steak-teppei-cpa-reports/
