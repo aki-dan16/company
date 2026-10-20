@@ -25,3 +25,7 @@ temp/
 
 # ローカル管理のみ（別途手元で保管）
 /steak-teppei-cpa-reports/
+
+# 個人書類（公開リポジトリに上げない）
+/Round One/
+/aaaaaaaa.pdf
